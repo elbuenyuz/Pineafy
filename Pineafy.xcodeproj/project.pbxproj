@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E493D992019549700B7E145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E493D982019549700B7E145 /* AppDelegate.swift */; };
+		8E493D9B2019549700B7E145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E493D9A2019549700B7E145 /* ViewController.swift */; };
+		8E493D9E2019549700B7E145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E493D9C2019549700B7E145 /* Main.storyboard */; };
+		8E493DA12019549700B7E145 /* Pineafy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */; };
+		8E493DA32019549700B7E145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E493DA22019549700B7E145 /* Assets.xcassets */; };
+		8E493DA62019549700B7E145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E493DA42019549700B7E145 /* LaunchScreen.storyboard */; };
+		8E493DB12019549800B7E145 /* PineafyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E493DB02019549800B7E145 /* PineafyTests.swift */; };
+		8E493DBC2019549800B7E145 /* PineafyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E493DBB2019549800B7E145 /* PineafyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E493DAD2019549800B7E145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E493D8D2019549700B7E145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E493D942019549700B7E145;
+			remoteInfo = Pineafy;
+		};
+		8E493DB82019549800B7E145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E493D8D2019549700B7E145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E493D942019549700B7E145;
+			remoteInfo = Pineafy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E493D952019549700B7E145 /* Pineafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pineafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E493D982019549700B7E145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E493D9A2019549700B7E145 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E493D9D2019549700B7E145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pineafy.xcdatamodel; sourceTree = "<group>"; };
+		8E493DA22019549700B7E145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E493DA52019549700B7E145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E493DA72019549700B7E145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E493DAC2019549800B7E145 /* PineafyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineafyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E493DB02019549800B7E145 /* PineafyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineafyTests.swift; sourceTree = "<group>"; };
+		8E493DB22019549800B7E145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E493DB72019549800B7E145 /* PineafyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineafyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E493DBB2019549800B7E145 /* PineafyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineafyUITests.swift; sourceTree = "<group>"; };
+		8E493DBD2019549800B7E145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E493D922019549700B7E145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DA92019549800B7E145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DB42019549800B7E145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E493D8C2019549700B7E145 = {
+			isa = PBXGroup;
+			children = (
+				8E493D972019549700B7E145 /* Pineafy */,
+				8E493DAF2019549800B7E145 /* PineafyTests */,
+				8E493DBA2019549800B7E145 /* PineafyUITests */,
+				8E493D962019549700B7E145 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E493D962019549700B7E145 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E493D952019549700B7E145 /* Pineafy.app */,
+				8E493DAC2019549800B7E145 /* PineafyTests.xctest */,
+				8E493DB72019549800B7E145 /* PineafyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E493D972019549700B7E145 /* Pineafy */ = {
+			isa = PBXGroup;
+			children = (
+				8E493D982019549700B7E145 /* AppDelegate.swift */,
+				8E493D9A2019549700B7E145 /* ViewController.swift */,
+				8E493D9C2019549700B7E145 /* Main.storyboard */,
+				8E493DA22019549700B7E145 /* Assets.xcassets */,
+				8E493DA42019549700B7E145 /* LaunchScreen.storyboard */,
+				8E493DA72019549700B7E145 /* Info.plist */,
+				8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */,
+			);
+			path = Pineafy;
+			sourceTree = "<group>";
+		};
+		8E493DAF2019549800B7E145 /* PineafyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E493DB02019549800B7E145 /* PineafyTests.swift */,
+				8E493DB22019549800B7E145 /* Info.plist */,
+			);
+			path = PineafyTests;
+			sourceTree = "<group>";
+		};
+		8E493DBA2019549800B7E145 /* PineafyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E493DBB2019549800B7E145 /* PineafyUITests.swift */,
+				8E493DBD2019549800B7E145 /* Info.plist */,
+			);
+			path = PineafyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E493D942019549700B7E145 /* Pineafy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E493DC02019549800B7E145 /* Build configuration list for PBXNativeTarget "Pineafy" */;
+			buildPhases = (
+				8E493D912019549700B7E145 /* Sources */,
+				8E493D922019549700B7E145 /* Frameworks */,
+				8E493D932019549700B7E145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pineafy;
+			productName = Pineafy;
+			productReference = 8E493D952019549700B7E145 /* Pineafy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E493DAB2019549800B7E145 /* PineafyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E493DC32019549800B7E145 /* Build configuration list for PBXNativeTarget "PineafyTests" */;
+			buildPhases = (
+				8E493DA82019549800B7E145 /* Sources */,
+				8E493DA92019549800B7E145 /* Frameworks */,
+				8E493DAA2019549800B7E145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E493DAE2019549800B7E145 /* PBXTargetDependency */,
+			);
+			name = PineafyTests;
+			productName = PineafyTests;
+			productReference = 8E493DAC2019549800B7E145 /* PineafyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E493DB62019549800B7E145 /* PineafyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E493DC62019549800B7E145 /* Build configuration list for PBXNativeTarget "PineafyUITests" */;
+			buildPhases = (
+				8E493DB32019549800B7E145 /* Sources */,
+				8E493DB42019549800B7E145 /* Frameworks */,
+				8E493DB52019549800B7E145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E493DB92019549800B7E145 /* PBXTargetDependency */,
+			);
+			name = PineafyUITests;
+			productName = PineafyUITests;
+			productReference = 8E493DB72019549800B7E145 /* PineafyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E493D8D2019549700B7E145 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = Devius;
+				TargetAttributes = {
+					8E493D942019549700B7E145 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					8E493DAB2019549800B7E145 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8E493D942019549700B7E145;
+					};
+					8E493DB62019549800B7E145 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8E493D942019549700B7E145;
+					};
+				};
+			};
+			buildConfigurationList = 8E493D902019549700B7E145 /* Build configuration list for PBXProject "Pineafy" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E493D8C2019549700B7E145;
+			productRefGroup = 8E493D962019549700B7E145 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E493D942019549700B7E145 /* Pineafy */,
+				8E493DAB2019549800B7E145 /* PineafyTests */,
+				8E493DB62019549800B7E145 /* PineafyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E493D932019549700B7E145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E493DA62019549700B7E145 /* LaunchScreen.storyboard in Resources */,
+				8E493DA32019549700B7E145 /* Assets.xcassets in Resources */,
+				8E493D9E2019549700B7E145 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DAA2019549800B7E145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DB52019549800B7E145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E493D912019549700B7E145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E493D9B2019549700B7E145 /* ViewController.swift in Sources */,
+				8E493D992019549700B7E145 /* AppDelegate.swift in Sources */,
+				8E493DA12019549700B7E145 /* Pineafy.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DA82019549800B7E145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E493DB12019549800B7E145 /* PineafyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493DB32019549800B7E145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E493DBC2019549800B7E145 /* PineafyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E493DAE2019549800B7E145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E493D942019549700B7E145 /* Pineafy */;
+			targetProxy = 8E493DAD2019549800B7E145 /* PBXContainerItemProxy */;
+		};
+		8E493DB92019549800B7E145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E493D942019549700B7E145 /* Pineafy */;
+			targetProxy = 8E493DB82019549800B7E145 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E493D9C2019549700B7E145 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E493D9D2019549700B7E145 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E493DA42019549700B7E145 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E493DA52019549700B7E145 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E493DBE2019549800B7E145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E493DBF2019549800B7E145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E493DC12019549800B7E145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = Pineafy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.Pineafy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E493DC22019549800B7E145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = Pineafy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.Pineafy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E493DC42019549800B7E145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pineafy.app/Pineafy";
+			};
+			name = Debug;
+		};
+		8E493DC52019549800B7E145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pineafy.app/Pineafy";
+			};
+			name = Release;
+		};
+		8E493DC72019549800B7E145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pineafy;
+			};
+			name = Debug;
+		};
+		8E493DC82019549800B7E145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pineafy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E493D902019549700B7E145 /* Build configuration list for PBXProject "Pineafy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DBE2019549800B7E145 /* Debug */,
+				8E493DBF2019549800B7E145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E493DC02019549800B7E145 /* Build configuration list for PBXNativeTarget "Pineafy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DC12019549800B7E145 /* Debug */,
+				8E493DC22019549800B7E145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E493DC32019549800B7E145 /* Build configuration list for PBXNativeTarget "PineafyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DC42019549800B7E145 /* Debug */,
+				8E493DC52019549800B7E145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E493DC62019549800B7E145 /* Build configuration list for PBXNativeTarget "PineafyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DC72019549800B7E145 /* Debug */,
+				8E493DC82019549800B7E145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */,
+			);
+			currentVersion = 8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */;
+			path = Pineafy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8E493D8D2019549700B7E145 /* Project object */;
+}
