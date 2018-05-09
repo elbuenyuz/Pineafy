@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        ///navigation controllers
+        let navigationBarAppearace = UINavigationBar.appearance()
+        let font = UIFont(name: "Quicksand-Bold", size: 30.0)!
+        
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.isTranslucent = true
+        navigationBarAppearace.prefersLargeTitles = true
+        navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.61, blue:0.98, alpha:1.0)
+        
+        // change navigation item title color
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: font
+            ]
+        
+        let largeAtt = [            
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: font ??
+                UIFont.systemFont(ofSize: 30)
+            ]
+        
+        
+        navigationBarAppearace.largeTitleTextAttributes = largeAtt
+        navigationBarAppearace.titleTextAttributes = attrs
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = UINavigationController(rootViewController: TabBar())
+        FirebaseApp.configure()
+//        GADMobileAds.configure(withApplicationID: "ca-app-pub-3772088375813274~1208338343")
+//
         return true
     }
 
