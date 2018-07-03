@@ -9,5 +9,7 @@ target 'Pineafy' do
   pod 'FirebaseAuth', '~> 4.4'
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'FirebaseDatabase'
+  pod 'LBTAComponents'
+
 end
 

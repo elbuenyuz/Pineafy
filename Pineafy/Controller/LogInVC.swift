@@ -114,8 +114,6 @@ class LogInVC: UIViewController {
     
     @objc func handleDismiss(){
         self.dismiss(animated: true, completion: nil)
-        
-
         print("dismiss")
     }
     

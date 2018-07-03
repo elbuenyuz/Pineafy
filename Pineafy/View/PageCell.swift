@@ -16,12 +16,12 @@ class PageCell: UICollectionViewCell {
             barImageView.image = unwrappedPage.image
             
             
-            let attributeText = NSMutableAttributedString(string: unwrappedPage.header, attributes: [ NSAttributedStringKey.font : UIFont(name: "Quicksand-Bold", size: 18)])
+            let attributeText = NSMutableAttributedString(string: unwrappedPage.header, attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-Bold", size: 18)])
             descriptionTextView.text = unwrappedPage.header
            
             
             //second Text
-            attributeText.append(NSMutableAttributedString(string: "\n\n\n \(unwrappedPage.body)", attributes: [ NSAttributedStringKey.font : UIFont(name: "Quicksand-Regular", size: 15)]))
+            attributeText.append(NSMutableAttributedString(string: "\n\n\n \(unwrappedPage.body)", attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-LightItalic", size: 15)]))
             
             descriptionTextView.attributedText = attributeText
             descriptionTextView.textAlignment = .center
@@ -42,7 +42,6 @@ class PageCell: UICollectionViewCell {
         textView.isEditable = false
         textView.isScrollEnabled = false
         textView.backgroundColor = .white
-
         textView.addShadow()
         textView.textAlignment = .center
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,32 +82,31 @@ class PageCell: UICollectionViewCell {
         
         addSubview(descriptionTextView)
         descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor).isActive = true
-        descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+        descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
         descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         
         
     }
 }
-extension UIImageView {
-    
+
+extension UIView{
     func addShadow(){
         let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
         
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowColor = graySahdow
         self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 2.5
+    }
+    
+    func addShadowIcon(){
+        let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
+        
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowColor = graySahdow
+        self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 2.5
     }
 }
 
-extension UITextView{
-    func addShadow(){
-        let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
-        
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowColor = graySahdow
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 2.5
-    }
-}

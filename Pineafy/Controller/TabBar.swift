@@ -12,62 +12,66 @@ import FirebaseAuth
 
 
 class TabBar: UIViewController, UITabBarControllerDelegate{
+    
     var tabBarCnt: UITabBarController = {
         let bar = UITabBarController()
         return bar
     }()
+    
+    let menuBar: MenuBar = {
+        let bar = MenuBar()
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        return bar
+    }()
 
     override func viewDidLoad() {
-        setupNavBar()
-        presentWalkthrough()
         setupTabBar()
+        presentWalkthrough()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        if Auth.auth().currentUser?.uid == nil{
-//            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-//        }
-        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    //setups
-    private func setupNavBar(){
-        view.backgroundColor = .white
-        self.navigationItem.title = "Hi Daniel "
-        
-        let menuBtn = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        self.navigationItem.leftBarButtonItem  = menuBtn
-    }
     
     func setupTabBar(){
         tabBarCnt = UITabBarController()
         tabBarCnt.delegate = self
-        
-        tabBarCnt.tabBar.tintColor = .gray
+        tabBarCnt.tabBar.unselectedItemTintColor = UIColor.lightGray
+        tabBarCnt.tabBar.addShadow()
+        tabBarCnt.tabBar.tintColor = .black
         tabBarCnt.tabBar.barTintColor = .white
-        tabBarCnt.tabBar.alpha = 0.9
+        tabBarCnt.tabBar.alpha = 1
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 11)], for: .normal)
-    
         
-        let layout = PinterestLayout()
-        let dInsight = DailyInsightVC(collectionViewLayout: layout)
-        let retention = dInsight
-        retention.title = "Insight"
-        retention.tabBarItem.image = #imageLiteral(resourceName: "astrologersIcon25px")
+//        let pinterestLayout = PinterestLayout()
+        let layoutInsight = UICollectionViewFlowLayout()
         
+        let layoutAdvisor = UICollectionViewFlowLayout()
+        layoutAdvisor.itemSize = CGSize(width: view.frame.width, height: view.frame.height)
+        //creation of second layout
+        let layoutExplorer = UICollectionViewFlowLayout()
+        let layoutExplorerServices = UICollectionViewFlowLayout()
+        layoutExplorerServices.scrollDirection = .horizontal
+        
+        
+        let isnightVC = UINavigationController(rootViewController: InsightsVC(collectionViewLayout: layoutInsight))
+        isnightVC.title = "Insight"
+        isnightVC.tabBarItem.image = #imageLiteral(resourceName: "astrologersIcon25px")
         
         let providers = UIViewController()
         providers.title = "Astrologers"
         providers.tabBarItem.image = #imageLiteral(resourceName: "jupiter")
         
+        let explore = UINavigationController(rootViewController: ExploreVC(collectionViewLayout: layoutExplorer))
+        explore.title = "Explore"
+        explore.navigationBar.prefersLargeTitles = false
+        explore.tabBarItem.image = #imageLiteral(resourceName: "landingSpace25px")
         
-        let services = UIViewController()
-        services.title = "Services"
-        services.tabBarItem.image = #imageLiteral(resourceName: "landingSpace25px")
         
-        
-        tabBarCnt.viewControllers = [retention,providers,services]
+        tabBarCnt.viewControllers = [isnightVC,explore]
         self.view.addSubview(tabBarCnt.view)
     }
  
@@ -96,18 +100,9 @@ class TabBar: UIViewController, UITabBarControllerDelegate{
         
         navigationController?.present(myCollectionVC, animated: true, completion: nil)        
     }
+
 }
 
 
 
-extension UIButton {
-    
-    func addShadow(){
-        let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
-        
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowColor = graySahdow
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 2.5
-    }
-}
+

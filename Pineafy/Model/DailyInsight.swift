@@ -11,7 +11,8 @@ import UIKit
 
 struct DailyInsight {
     let img : UIImage
-//    let frontTitle: String
+    let name: String
+    let title: String
 //    let frontDescription: String
 //    let provider: String
 //    let type: String

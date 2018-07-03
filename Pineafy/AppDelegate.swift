@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,26 +22,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ///navigation controllers
         let navigationBarAppearace = UINavigationBar.appearance()
-        let font = UIFont(name: "Quicksand-Bold", size: 30.0)!
+        let font = UIFont(name: "JosefinSlab-Bold", size: 30.0)!
         
-        navigationBarAppearace.tintColor = .white
-        navigationBarAppearace.isTranslucent = true
-        navigationBarAppearace.prefersLargeTitles = true
-        navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.61, blue:0.98, alpha:1.0)
+        navigationBarAppearace.tintColor = UIColor.darkGray
+        navigationBarAppearace.isTranslucent = false
+        navigationBarAppearace.backgroundColor = .white
+        navigationBarAppearace.prefersLargeTitles = false
         
+        //Get rid of black bar underneath navbar
+        navigationBarAppearace.shadowImage = UIImage()
+        navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         // change navigation item title color
         let attrs = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.foregroundColor: UIColor.darkGray,
             NSAttributedStringKey.font: font
             ]
         
         let largeAtt = [            
-            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.foregroundColor: UIColor.darkGray,
             NSAttributedStringKey.font: font ??
-                UIFont.systemFont(ofSize: 30)
+                UIFont.systemFont(ofSize: 25)
             ]
-        
-        
+                
         navigationBarAppearace.largeTitleTextAttributes = largeAtt
         navigationBarAppearace.titleTextAttributes = attrs
         
@@ -54,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

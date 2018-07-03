@@ -14,7 +14,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     private let previusButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("PREV", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        btn.titleLabel?.font = UIFont(name: "JosefinSlab-Regular", size: 14)
         btn.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -24,7 +24,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let btn = UIButton(type: .system)
         btn.backgroundColor = UIColor(red:0.26, green:0.78, blue:0.70, alpha:1.0)
         btn.isOpaque = true
-        btn.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 18)
+        btn.titleLabel?.font = UIFont(name: "JosefinSlab-Regular", size: 18)
         btn.setTitle("Start Free Insight", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.addTarget(self, action:#selector(hancleActionBtn), for: .touchUpInside)
@@ -36,8 +36,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     private let nextButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("NEXT", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "JosefinSlab-Regular", size: 14)
         btn.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -99,7 +99,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     @objc func hancleActionBtn(){
-        present(TabBar(), animated: true, completion: nil)
+       dismiss(animated: true, completion: nil)
     }
     
     fileprivate func setupBtnControlls(){
