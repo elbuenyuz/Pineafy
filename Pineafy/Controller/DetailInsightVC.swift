@@ -11,7 +11,6 @@ import UIKit
 class DetailInsightVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .purple
         self.navigationController?.isNavigationBarHidden = false
     }
 }

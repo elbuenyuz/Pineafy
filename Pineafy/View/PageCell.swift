@@ -16,12 +16,12 @@ class PageCell: UICollectionViewCell {
             barImageView.image = unwrappedPage.image
             
             
-            let attributeText = NSMutableAttributedString(string: unwrappedPage.header, attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-Bold", size: 18)])
+            let attributeText = NSMutableAttributedString(string: unwrappedPage.header, attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-Bold", size: 25)])
             descriptionTextView.text = unwrappedPage.header
            
             
             //second Text
-            attributeText.append(NSMutableAttributedString(string: "\n\n\n \(unwrappedPage.body)", attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-LightItalic", size: 15)]))
+            attributeText.append(NSMutableAttributedString(string: "\n\n\n \(unwrappedPage.body)", attributes: [ NSAttributedStringKey.font : UIFont(name: "JosefinSlab-Light", size: 20)]))
             
             descriptionTextView.attributedText = attributeText
             descriptionTextView.textAlignment = .center

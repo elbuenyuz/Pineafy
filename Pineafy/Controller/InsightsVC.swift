@@ -9,10 +9,12 @@
 import UIKit
 
 class InsightsVC: UICollectionViewController,UICollectionViewDelegateFlowLayout{
-   let cellId = "cellId"
+    let cellId = "cellId"
+    var appCategories:[AppCategory]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        appCategories = AppCategory.sampleAppCategories()
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.title = "Daily Insight"
         collectionView?.register(BaseCell.self, forCellWithReuseIdentifier: cellId)
@@ -22,7 +24,9 @@ class InsightsVC: UICollectionViewController,UICollectionViewDelegateFlowLayout{
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseCell
-        cell.backgroundColor = .clear
+        //color change cell
+    
+        cell.appCategory = appCategories?[indexPath.item]
         return cell
     }
     
@@ -32,12 +36,15 @@ class InsightsVC: UICollectionViewController,UICollectionViewDelegateFlowLayout{
     
     @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print("size is changing")
-        return CGSize(width: view.frame.width, height: 235)
+        return CGSize(width: view.frame.width, height: 200)
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if let count = appCategories?.count{
+            return count
+        }
+        return 0
     }
     
 }

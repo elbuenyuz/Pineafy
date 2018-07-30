@@ -10,8 +10,8 @@ import UIKit
 
 class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
-   
     
+    var homeController:ExploreVC?
     let categoriesArray = [
         CategoryModel(nameCategory:"Money", numberCategory: "1"),
         CategoryModel(nameCategory:"Work", numberCategory: "2"),
@@ -22,11 +22,12 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDelegateFlowLay
     ]
     
     lazy var collectionView: UICollectionView = {
+        let zion = UIColor(red:0.53, green:0.35, blue:0.55, alpha:1.0)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         //UIcolor UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0) -> gray
         let cv = UICollectionView(frame: .zero,collectionViewLayout: layout)
-        cv.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+        cv.backgroundColor = _ZION
         cv.showsHorizontalScrollIndicator = false
         cv.delegate = self
         cv.dataSource = self
@@ -63,7 +64,7 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdCell, for: indexPath) as! MenuCategoryCell
-        cell.backgroundColor = .black
+        cell.backgroundColor = _ZION
         cell.categories = categoriesArray[indexPath.item]
         return cell
     }
@@ -75,4 +76,13 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("isSelected")
+        
+        //Send information to ExploreServicesController
+        NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
+    }
+    
+    
 }

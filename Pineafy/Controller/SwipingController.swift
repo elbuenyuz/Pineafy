@@ -22,12 +22,12 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     private let actionBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.backgroundColor = UIColor(red:0.26, green:0.78, blue:0.70, alpha:1.0)
+        btn.backgroundColor = _ZION
         btn.isOpaque = true
-        btn.titleLabel?.font = UIFont(name: "JosefinSlab-Regular", size: 18)
-        btn.setTitle("Start Free Insight", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "JosefinSlab-Bold", size: 18)
+        btn.setTitle("LET'S START", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.addTarget(self, action:#selector(hancleActionBtn), for: .touchUpInside)
+        btn.addTarget(self, action:#selector(handleActionBtn), for: .touchUpInside)
         btn.addShadow()
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -53,16 +53,17 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     //define pages
     let pages = [
-        Page(image: #imageLiteral(resourceName: "Planet"), header: "Daily Free Insight", body: "In this chaotic life we really need to see the big picture of every situation, every day you can find a daily free insight"),
-        Page(image: #imageLiteral(resourceName: "Alignment"), header: "Up Coming Planetary Energies", body: "Be aware of up coming energies and don't let nothing stop your goals."),
-        Page(image: #imageLiteral(resourceName: "Astrologers"), header: "Personilized Insight", body: "Open your vision to new and daily opportnunities thanks to our personilized insight"),
-        Page(image: #imageLiteral(resourceName: "starActivation"), header: "We Like To Help", body: "in Pineafy we care about you and we want to provide valuable resources so you can get the necesary tools to succeed"),
+        Page(image: #imageLiteral(resourceName: "Alignment"), header: "Welcome to Pineafy!", body: "Pineafy let you find clarity to any situation in your personal life", showBtn: false),
+        Page(image: #imageLiteral(resourceName: "Astrologers"), header: "How is the universe treating you today?", body: "Find specific services created by profesional Astrologers", showBtn: false),
+        Page(image: #imageLiteral(resourceName: "Planet"), header: "Daily Insight", body: "Read valuable daily insigh horoscopes, created by our astrologers", showBtn: false),
+        Page(image: #imageLiteral(resourceName: "starActivation"), header: "We care about you!", body: "in Pineafy we care about you and your information so we keep it safe!", showBtn: true),
     
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()       
         setupBtnControlls()
+        
         navigationController?.navigationBar.isHidden = true
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView?.isPagingEnabled = true
@@ -96,14 +97,16 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let index = IndexPath(item: nextIndex, section: 0)
         pageController.currentPage = nextIndex
         collectionView?.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        
+        
     }
     
-    @objc func hancleActionBtn(){
+    @objc func handleActionBtn(){
        dismiss(animated: true, completion: nil)
     }
     
     fileprivate func setupBtnControlls(){
-        
+        actionBtn.isHidden = true
         let bottomControllStackView = UIStackView(arrangedSubviews: [previusButton,pageController,nextButton])
                 
         view.addSubview(bottomControllStackView)
@@ -135,6 +138,19 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageController.currentPage = Int(x / view.frame.width)
+        print("current fucking page \(pageController.currentPage)")
+        
+        switch pageController.currentPage {
+        case 3:
+            
+            UIView.animate(withDuration: 2.0, delay: 2.0, options: .transitionCrossDissolve, animations: {
+                self.actionBtn.isHidden = false
+            }, completion: nil)
+            
+            
+        default:
+            actionBtn.isHidden = true
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

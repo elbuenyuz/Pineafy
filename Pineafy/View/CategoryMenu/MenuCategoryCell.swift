@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuCategoryCell: UICollectionViewCell {
-    
+ 
     //connect with the VC to fetch Data
     var categories: CategoryModel? {
         didSet{
@@ -21,18 +21,19 @@ class MenuCategoryCell: UICollectionViewCell {
     }
     override var isHighlighted: Bool {
         didSet{
-            self.backgroundColor = isHighlighted ? UIColor.white : UIColor.black
-            nameCategory.textColor = isHighlighted ? UIColor.black : UIColor.white
-            selectedLine.backgroundColor = isHighlighted ? UIColor.black : .white
+            self.backgroundColor = isHighlighted ? _STRONG_ZION : _STRONG_ZION
+            nameCategory.textColor = isHighlighted ? UIColor.white : UIColor.black
+            nameCategory.backgroundColor = isHighlighted ? UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0) : _ZION
             
         }
     }
     
     override var isSelected: Bool {
         didSet{
-            self.backgroundColor = isSelected ? UIColor.white : UIColor.black
-            nameCategory.textColor = isSelected ? UIColor.black : UIColor.white
-            selectedLine.backgroundColor = isSelected ? UIColor.black : .white
+            self.backgroundColor = isSelected ? _STRONG_ZION : _STRONG_ZION
+            nameCategory.textColor = isSelected ? UIColor.white : UIColor.black
+            nameCategory.backgroundColor = isSelected ? UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0) : _ZION
+            
         }
     }
     
@@ -46,16 +47,10 @@ class MenuCategoryCell: UICollectionViewCell {
         return name
     }()
     
-    let selectedLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        nameCategory.textColor = .black
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,16 +58,12 @@ class MenuCategoryCell: UICollectionViewCell {
     }
     
     private func setupView(){
-        addSubview(selectedLine)
-        selectedLine.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        selectedLine.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        selectedLine.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        selectedLine.heightAnchor.constraint(equalToConstant: 8).isActive = true
         
         addSubview(nameCategory)
         nameCategory.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         nameCategory.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         nameCategory.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        nameCategory.bottomAnchor.constraint(equalTo: self.selectedLine.topAnchor).isActive = true
+        nameCategory.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+
     }
 }

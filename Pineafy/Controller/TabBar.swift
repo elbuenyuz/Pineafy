@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+
 
 
 
@@ -38,11 +38,12 @@ class TabBar: UIViewController, UITabBarControllerDelegate{
     func setupTabBar(){
         tabBarCnt = UITabBarController()
         tabBarCnt.delegate = self
-        tabBarCnt.tabBar.unselectedItemTintColor = UIColor.lightGray
+        tabBarCnt.tabBar.unselectedItemTintColor = UIColor.darkGray
         tabBarCnt.tabBar.addShadow()
-        tabBarCnt.tabBar.tintColor = .black
-        tabBarCnt.tabBar.barTintColor = .white
+        tabBarCnt.tabBar.tintColor = .white
+        tabBarCnt.tabBar.barTintColor = UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0)//vergandie
         tabBarCnt.tabBar.alpha = 1
+        tabBarCnt.tabBar.isTranslucent = true
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 11)], for: .normal)
         
@@ -71,19 +72,14 @@ class TabBar: UIViewController, UITabBarControllerDelegate{
         explore.tabBarItem.image = #imageLiteral(resourceName: "landingSpace25px")
         
         
-        tabBarCnt.viewControllers = [isnightVC,explore]
+        tabBarCnt.viewControllers = [explore,isnightVC]
         self.view.addSubview(tabBarCnt.view)
     }
  
     @objc func handleLogout(){
         print("Handle logOut")
         //force logged in
-        do{
-            try Auth.auth().signOut()
-
-        }catch let logoutError {
-            print(logoutError)
-        }
+       
 
     }
     

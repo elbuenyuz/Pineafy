@@ -13,4 +13,5 @@ struct Page {
     let image: UIImage
     let header: String
     let body: String
+    let showBtn: Bool
 }
