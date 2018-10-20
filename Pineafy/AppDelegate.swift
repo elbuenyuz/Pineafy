@@ -11,12 +11,45 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    
+        ///navigation controllers
+        let navigationBarAppearace = UINavigationBar.appearance()
+        let font = UIFont(name: "JosefinSlab-Bold", size: 30.0)
+        
+        navigationBarAppearace.barTintColor = UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0)
+        navigationBarAppearace.isTranslucent = false
+
+        navigationBarAppearace.prefersLargeTitles = false
+        
+        //Get rid of black bar underneath navbar
+        navigationBarAppearace.shadowImage = UIImage()
+        navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
+        // change navigation item title color
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+//            NSAttributedStringKey.font: font
+        ]
+        
+        let largeAtt = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: font ??
+                UIFont.systemFont(ofSize: 25)
+        ]
+        
+        navigationBarAppearace.largeTitleTextAttributes = largeAtt
+        navigationBarAppearace.titleTextAttributes = attrs
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        let layout = UICollectionViewFlowLayout()
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        //        GADMobileAds.configure(withApplicationID: "ca-app-pub-3772088375813274~1208338343")
+        
         return true
     }
 
@@ -88,6 +121,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
 }
 

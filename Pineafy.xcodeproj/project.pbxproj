@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */; };
+		8E4E105E2165E01100F5840B /* friendHoroscopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */; };
+		8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */; };
+		8E67E71721603183003EB09C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67E71621603183003EB09C /* DatePickerView.swift */; };
 		8E774DAD2159CE9500AD4350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DAC2159CE9500AD4350 /* AppDelegate.swift */; };
 		8E774DAF2159CE9500AD4350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DAE2159CE9500AD4350 /* ViewController.swift */; };
-		8E774DB22159CE9500AD4350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DB02159CE9500AD4350 /* Main.storyboard */; };
 		8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DB32159CE9500AD4350 /* Pineafy.xcdatamodeld */; };
 		8E774DB72159CE9600AD4350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DB62159CE9600AD4350 /* Assets.xcassets */; };
 		8E774DBA2159CE9600AD4350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */; };
 		8E774DC52159CE9600AD4350 /* PineafyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DC42159CE9600AD4350 /* PineafyTests.swift */; };
 		8E774DD02159CE9600AD4350 /* PineafyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DCF2159CE9600AD4350 /* PineafyUITests.swift */; };
+		8E774DE12159FA8A00AD4350 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DE02159FA8A00AD4350 /* Page.swift */; };
+		8E774DE32159FB2500AD4350 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DE22159FB2500AD4350 /* PageCell.swift */; };
+		8E774DE52159FB9300AD4350 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DE42159FB9300AD4350 /* SwipingController.swift */; };
+		8E774DE7215B0A2F00AD4350 /* JosefinSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DE6215B0A2F00AD4350 /* JosefinSlab-Bold.ttf */; };
+		8E774DE9215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DE8215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf */; };
+		8E774DEB215B0A3E00AD4350 /* JosefinSlab-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DEA215B0A3E00AD4350 /* JosefinSlab-Italic.ttf */; };
+		8E774DED215B0A4700AD4350 /* JosefinSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DEC215B0A4700AD4350 /* JosefinSlab-Light.ttf */; };
+		8E774DEF215B0A5500AD4350 /* JosefinSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DEE215B0A5500AD4350 /* JosefinSlab-Regular.ttf */; };
+		8E774DF1215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DF0215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf */; };
+		8E774DF3215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */; };
+		8EB613C0216B0A7B00AB9475 /* FriendHorosocopeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */; };
+		8EB613C2216B0B7B00AB9475 /* FriendHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
+		704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendHoroscopeCell.swift; sourceTree = "<group>"; };
+		8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeModel.swift; sourceTree = "<group>"; };
+		8E67E71621603183003EB09C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		8E774DA92159CE9500AD4350 /* Pineafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pineafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E774DAC2159CE9500AD4350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E774DAE2159CE9500AD4350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8E774DB12159CE9500AD4350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E774DB42159CE9500AD4350 /* Pineafy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pineafy.xcdatamodel; sourceTree = "<group>"; };
 		8E774DB62159CE9600AD4350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E774DB92159CE9600AD4350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +68,19 @@
 		8E774DCB2159CE9600AD4350 /* PineafyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineafyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E774DCF2159CE9600AD4350 /* PineafyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineafyUITests.swift; sourceTree = "<group>"; };
 		8E774DD12159CE9600AD4350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E774DE02159FA8A00AD4350 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		8E774DE22159FB2500AD4350 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		8E774DE42159FB9300AD4350 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
+		8E774DE6215B0A2F00AD4350 /* JosefinSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Bold.ttf"; sourceTree = "<group>"; };
+		8E774DE8215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8E774DEA215B0A3E00AD4350 /* JosefinSlab-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Italic.ttf"; sourceTree = "<group>"; };
+		8E774DEC215B0A4700AD4350 /* JosefinSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Light.ttf"; sourceTree = "<group>"; };
+		8E774DEE215B0A5500AD4350 /* JosefinSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Regular.ttf"; sourceTree = "<group>"; };
+		8E774DF0215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-SemiBold.ttf"; sourceTree = "<group>"; };
+		8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendHorosocopeCollectionView.swift; path = Pineafy/View/FriendHorosocopeCollectionView.swift; sourceTree = SOURCE_ROOT; };
+		8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHoroscopeView.swift; sourceTree = "<group>"; };
+		F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +109,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0147394006312487013095BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */,
+				448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0EB56C7E066BD5823CA19615 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E4E1063216717C500F5840B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E774DE22159FB2500AD4350 /* PageCell.swift */,
+				8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8E774DA02159CE9500AD4350 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +142,8 @@
 				8E774DC32159CE9600AD4350 /* PineafyTests */,
 				8E774DCE2159CE9600AD4350 /* PineafyUITests */,
 				8E774DAA2159CE9500AD4350 /* Products */,
+				0147394006312487013095BA /* Pods */,
+				0EB56C7E066BD5823CA19615 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +160,14 @@
 		8E774DAB2159CE9500AD4350 /* Pineafy */ = {
 			isa = PBXGroup;
 			children = (
+				8E774DF4215B4BC000AD4350 /* Fonts */,
+				8E774DDD2159F99800AD4350 /* Contrtoller */,
+				8E774DDE2159F9AB00AD4350 /* View */,
+				8E774DDF2159F9B300AD4350 /* Model */,
 				8E774DAC2159CE9500AD4350 /* AppDelegate.swift */,
-				8E774DAE2159CE9500AD4350 /* ViewController.swift */,
-				8E774DB02159CE9500AD4350 /* Main.storyboard */,
 				8E774DB62159CE9600AD4350 /* Assets.xcassets */,
 				8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */,
 				8E774DBB2159CE9600AD4350 /* Info.plist */,
-				8E774DB32159CE9500AD4350 /* Pineafy.xcdatamodeld */,
 			);
 			path = Pineafy;
 			sourceTree = "<group>";
@@ -122,10 +184,54 @@
 		8E774DCE2159CE9600AD4350 /* PineafyUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8E774DB32159CE9500AD4350 /* Pineafy.xcdatamodeld */,
 				8E774DCF2159CE9600AD4350 /* PineafyUITests.swift */,
 				8E774DD12159CE9600AD4350 /* Info.plist */,
 			);
 			path = PineafyUITests;
+			sourceTree = "<group>";
+		};
+		8E774DDD2159F99800AD4350 /* Contrtoller */ = {
+			isa = PBXGroup;
+			children = (
+				8E774DE42159FB9300AD4350 /* SwipingController.swift */,
+				8E774DAE2159CE9500AD4350 /* ViewController.swift */,
+			);
+			path = Contrtoller;
+			sourceTree = "<group>";
+		};
+		8E774DDE2159F9AB00AD4350 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E4E1063216717C500F5840B /* Cells */,
+				8E67E71621603183003EB09C /* DatePickerView.swift */,
+				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
+				8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E774DDF2159F9B300AD4350 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E774DE02159FA8A00AD4350 /* Page.swift */,
+				8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8E774DF4215B4BC000AD4350 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8E774DEA215B0A3E00AD4350 /* JosefinSlab-Italic.ttf */,
+				8E774DF0215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf */,
+				8E774DE6215B0A2F00AD4350 /* JosefinSlab-Bold.ttf */,
+				8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */,
+				8E774DEE215B0A5500AD4350 /* JosefinSlab-Regular.ttf */,
+				8E774DEC215B0A4700AD4350 /* JosefinSlab-Light.ttf */,
+				8E774DE8215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E774DD42159CE9600AD4350 /* Build configuration list for PBXNativeTarget "Pineafy" */;
 			buildPhases = (
+				23947CE7F534F43F86EC4848 /* [CP] Check Pods Manifest.lock */,
 				8E774DA52159CE9500AD4350 /* Sources */,
 				8E774DA62159CE9500AD4350 /* Frameworks */,
 				8E774DA72159CE9500AD4350 /* Resources */,
+				B1761C30E62E727C3DDFB10B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,9 +340,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E774DF1215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf in Resources */,
+				8E774DEF215B0A5500AD4350 /* JosefinSlab-Regular.ttf in Resources */,
+				8E774DED215B0A4700AD4350 /* JosefinSlab-Light.ttf in Resources */,
 				8E774DBA2159CE9600AD4350 /* LaunchScreen.storyboard in Resources */,
+				8E774DE7215B0A2F00AD4350 /* JosefinSlab-Bold.ttf in Resources */,
+				8E774DE9215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf in Resources */,
+				8E774DEB215B0A3E00AD4350 /* JosefinSlab-Italic.ttf in Resources */,
+				8E774DF3215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf in Resources */,
 				8E774DB72159CE9600AD4350 /* Assets.xcassets in Resources */,
-				8E774DB22159CE9500AD4350 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +368,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23947CE7F534F43F86EC4848 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pineafy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1761C30E62E727C3DDFB10B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E774DA52159CE9500AD4350 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8E774DAF2159CE9500AD4350 /* ViewController.swift in Sources */,
+				8E774DE32159FB2500AD4350 /* PageCell.swift in Sources */,
+				8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */,
+				8EB613C0216B0A7B00AB9475 /* FriendHorosocopeCollectionView.swift in Sources */,
 				8E774DAD2159CE9500AD4350 /* AppDelegate.swift in Sources */,
+				8E774DE12159FA8A00AD4350 /* Page.swift in Sources */,
+				8E67E71721603183003EB09C /* DatePickerView.swift in Sources */,
 				8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */,
+				8E774DE52159FB9300AD4350 /* SwipingController.swift in Sources */,
+				8E4E105E2165E01100F5840B /* friendHoroscopeCell.swift in Sources */,
+				8EB613C2216B0B7B00AB9475 /* FriendHoroscopeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +466,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8E774DB02159CE9500AD4350 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E774DB12159CE9500AD4350 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,16 +593,18 @@
 		};
 		8E774DD52159CE9600AD4350 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83M9X3N895;
 				INFOPLIST_FILE = Pineafy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.Pineafy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,16 +613,18 @@
 		};
 		8E774DD62159CE9600AD4350 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83M9X3N895;
 				INFOPLIST_FILE = Pineafy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.Pineafy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
