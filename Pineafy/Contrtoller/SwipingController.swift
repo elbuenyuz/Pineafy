@@ -45,7 +45,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBtnControlls()
-        
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
         navigationController?.navigationBar.isHidden = true
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView?.isPagingEnabled = true
@@ -70,7 +71,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     
     @objc func handleActionBtn(){
-        NotificationCenter.default.post(name: Notification.Name.tabVC, object: nil)
+        NotificationCenter.default.post(name:.tabVC, object: nil)
         dismiss(animated: true, completion: nil)
         print("walkthrough dismissed")
     }
@@ -144,10 +145,4 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
 }
-extension Notification.Name{
-    static let tabVC = Notification.Name(rawValue: "tabvc")
-    static let bDate = Notification.Name(rawValue: "bdate")
-    static let hidden = Notification.Name(rawValue: "hidden")
-    static let friend = Notification.Name(rawValue: "friend")
-    static let shareFriend = Notification.Name(rawValue: "shareFriend")
-}
+
