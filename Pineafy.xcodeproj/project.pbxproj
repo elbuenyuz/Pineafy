@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */; };
+		8E21F86421B777790034640D /* viewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21F86321B777790034640D /* viewControllerTest.swift */; };
+		8E2AFEAF218F5F1500F18A3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AFEAE218F5F1500F18A3C /* Constants.swift */; };
+		8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CBFF21DB0CB900D52F95 /* SettingsLauncher.swift */; };
+		8E38CC0221DB0D2500D52F95 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CC0121DB0D2500D52F95 /* SettingsCell.swift */; };
+		8E38CC0421DB0DB700D52F95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CC0321DB0DB700D52F95 /* Settings.swift */; };
+		8E44678F21AB8D2100D13EE0 /* FriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E44678E21AB8D2100D13EE0 /* FriendVC.swift */; };
+		8E483D3C217C2ADE00C815E0 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483D3B217C2ADE00C815E0 /* NotificationNameExtension.swift */; };
+		8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483D3D217C2F4400C815E0 /* BaseUserModel.swift */; };
+		8E483D40217D071F00C815E0 /* ViewController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483D3F217D071F00C815E0 /* ViewController+Handlers.swift */; };
 		8E4E105E2165E01100F5840B /* friendHoroscopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */; };
 		8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */; };
 		8E67E71721603183003EB09C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67E71621603183003EB09C /* DatePickerView.swift */; };
 		8E774DAD2159CE9500AD4350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DAC2159CE9500AD4350 /* AppDelegate.swift */; };
 		8E774DAF2159CE9500AD4350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DAE2159CE9500AD4350 /* ViewController.swift */; };
 		8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DB32159CE9500AD4350 /* Pineafy.xcdatamodeld */; };
-		8E774DB72159CE9600AD4350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DB62159CE9600AD4350 /* Assets.xcassets */; };
 		8E774DBA2159CE9600AD4350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */; };
 		8E774DC52159CE9600AD4350 /* PineafyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DC42159CE9600AD4350 /* PineafyTests.swift */; };
 		8E774DD02159CE9600AD4350 /* PineafyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774DCF2159CE9600AD4350 /* PineafyUITests.swift */; };
@@ -30,6 +38,7 @@
 		8E774DF3215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */; };
 		8EB613C0216B0A7B00AB9475 /* FriendHorosocopeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */; };
 		8EB613C2216B0B7B00AB9475 /* FriendHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */; };
+		8ED4AF2121AE2D86005D31DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4AF2021AE2D86005D31DB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,15 @@
 /* Begin PBXFileReference section */
 		448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
 		704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E21F86321B777790034640D /* viewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllerTest.swift; sourceTree = "<group>"; };
+		8E2AFEAE218F5F1500F18A3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E38CBFF21DB0CB900D52F95 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		8E38CC0121DB0D2500D52F95 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		8E38CC0321DB0DB700D52F95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8E44678E21AB8D2100D13EE0 /* FriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVC.swift; sourceTree = "<group>"; };
+		8E483D3B217C2ADE00C815E0 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		8E483D3D217C2F4400C815E0 /* BaseUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUserModel.swift; sourceTree = "<group>"; };
+		8E483D3F217D071F00C815E0 /* ViewController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Handlers.swift"; sourceTree = "<group>"; };
 		8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendHoroscopeCell.swift; sourceTree = "<group>"; };
 		8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeModel.swift; sourceTree = "<group>"; };
 		8E67E71621603183003EB09C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -59,7 +77,6 @@
 		8E774DAC2159CE9500AD4350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E774DAE2159CE9500AD4350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8E774DB42159CE9500AD4350 /* Pineafy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pineafy.xcdatamodel; sourceTree = "<group>"; };
-		8E774DB62159CE9600AD4350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E774DB92159CE9600AD4350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E774DBB2159CE9600AD4350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E774DC02159CE9600AD4350 /* PineafyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineafyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +97,7 @@
 		8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-ThinItalic.ttf"; sourceTree = "<group>"; };
 		8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendHorosocopeCollectionView.swift; path = Pineafy/View/FriendHorosocopeCollectionView.swift; sourceTree = SOURCE_ROOT; };
 		8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHoroscopeView.swift; sourceTree = "<group>"; };
+		8ED4AF2021AE2D86005D31DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,11 +144,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E483D3A217C2AB600C815E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E483D3B217C2ADE00C815E0 /* NotificationNameExtension.swift */,
+				8E2AFEAE218F5F1500F18A3C /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8E4E1063216717C500F5840B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				8E774DE22159FB2500AD4350 /* PageCell.swift */,
 				8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */,
+				8E38CC0121DB0D2500D52F95 /* SettingsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -160,12 +188,13 @@
 		8E774DAB2159CE9500AD4350 /* Pineafy */ = {
 			isa = PBXGroup;
 			children = (
+				8E483D3A217C2AB600C815E0 /* Utils */,
 				8E774DF4215B4BC000AD4350 /* Fonts */,
 				8E774DDD2159F99800AD4350 /* Contrtoller */,
 				8E774DDE2159F9AB00AD4350 /* View */,
 				8E774DDF2159F9B300AD4350 /* Model */,
 				8E774DAC2159CE9500AD4350 /* AppDelegate.swift */,
-				8E774DB62159CE9600AD4350 /* Assets.xcassets */,
+				8ED4AF2021AE2D86005D31DB /* Assets.xcassets */,
 				8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */,
 				8E774DBB2159CE9600AD4350 /* Info.plist */,
 			);
@@ -196,6 +225,9 @@
 			children = (
 				8E774DE42159FB9300AD4350 /* SwipingController.swift */,
 				8E774DAE2159CE9500AD4350 /* ViewController.swift */,
+				8E483D3F217D071F00C815E0 /* ViewController+Handlers.swift */,
+				8E44678E21AB8D2100D13EE0 /* FriendVC.swift */,
+				8E21F86321B777790034640D /* viewControllerTest.swift */,
 			);
 			path = Contrtoller;
 			sourceTree = "<group>";
@@ -207,6 +239,7 @@
 				8E67E71621603183003EB09C /* DatePickerView.swift */,
 				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
 				8EB613C1216B0B7B00AB9475 /* FriendHoroscopeView.swift */,
+				8E38CBFF21DB0CB900D52F95 /* SettingsLauncher.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +249,8 @@
 			children = (
 				8E774DE02159FA8A00AD4350 /* Page.swift */,
 				8E4E105F2165E10A00F5840B /* HoroscopeModel.swift */,
+				8E483D3D217C2F4400C815E0 /* BaseUserModel.swift */,
+				8E38CC0321DB0DB700D52F95 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,8 +382,8 @@
 				8E774DE7215B0A2F00AD4350 /* JosefinSlab-Bold.ttf in Resources */,
 				8E774DE9215B0A3700AD4350 /* JosefinSlab-BoldItalic.ttf in Resources */,
 				8E774DEB215B0A3E00AD4350 /* JosefinSlab-Italic.ttf in Resources */,
+				8ED4AF2121AE2D86005D31DB /* Assets.xcassets in Resources */,
 				8E774DF3215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf in Resources */,
-				8E774DB72159CE9600AD4350 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,12 +436,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -420,17 +459,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E38CC0221DB0D2500D52F95 /* SettingsCell.swift in Sources */,
 				8E774DAF2159CE9500AD4350 /* ViewController.swift in Sources */,
 				8E774DE32159FB2500AD4350 /* PageCell.swift in Sources */,
+				8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */,
 				8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */,
+				8E21F86421B777790034640D /* viewControllerTest.swift in Sources */,
+				8E483D3C217C2ADE00C815E0 /* NotificationNameExtension.swift in Sources */,
 				8EB613C0216B0A7B00AB9475 /* FriendHorosocopeCollectionView.swift in Sources */,
+				8E44678F21AB8D2100D13EE0 /* FriendVC.swift in Sources */,
 				8E774DAD2159CE9500AD4350 /* AppDelegate.swift in Sources */,
 				8E774DE12159FA8A00AD4350 /* Page.swift in Sources */,
 				8E67E71721603183003EB09C /* DatePickerView.swift in Sources */,
+				8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */,
 				8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */,
+				8E38CC0421DB0DB700D52F95 /* Settings.swift in Sources */,
 				8E774DE52159FB9300AD4350 /* SwipingController.swift in Sources */,
 				8E4E105E2165E01100F5840B /* friendHoroscopeCell.swift in Sources */,
 				8EB613C2216B0B7B00AB9475 /* FriendHoroscopeView.swift in Sources */,
+				8E483D40217D071F00C815E0 /* ViewController+Handlers.swift in Sources */,
+				8E2AFEAF218F5F1500F18A3C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,16 +644,18 @@
 			baseConfigurationReference = F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83M9X3N895;
+				DEVELOPMENT_TEAM = 7579Y7U4SZ;
 				INFOPLIST_FILE = Pineafy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deviusLLC.pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -616,16 +666,18 @@
 			baseConfigurationReference = 448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83M9X3N895;
+				DEVELOPMENT_TEAM = 7579Y7U4SZ;
 				INFOPLIST_FILE = Pineafy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deviusLLC.pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
