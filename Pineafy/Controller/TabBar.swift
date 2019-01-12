@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-
-
 class TabBar: UIViewController, UITabBarControllerDelegate{
     
     var tabBarCnt: UITabBarController = {
@@ -72,7 +69,7 @@ class TabBar: UIViewController, UITabBarControllerDelegate{
         explore.tabBarItem.image = #imageLiteral(resourceName: "landingSpace25px")
         
         
-        tabBarCnt.viewControllers = [explore,isnightVC]
+        tabBarCnt.viewControllers = [isnightVC,explore]
         self.view.addSubview(tabBarCnt.view)
     }
  

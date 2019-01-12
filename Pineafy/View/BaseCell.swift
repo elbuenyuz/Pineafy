@@ -10,6 +10,8 @@ import UIKit
 
 class BaseCell: UICollectionViewCell,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
+    var homeController: InsightsVC?
+    
     var appCategory: AppCategory? {
         didSet{
             guard let unwrappedCategory = appCategory else { return }
@@ -40,7 +42,7 @@ class BaseCell: UICollectionViewCell,UICollectionViewDataSource, UICollectionVie
         separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         addSubview(nameCollectionCategory)
-        nameCollectionCategory.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        nameCollectionCategory.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         nameCollectionCategory.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         nameCollectionCategory.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         nameCollectionCategory.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -88,6 +90,7 @@ class BaseCell: UICollectionViewCell,UICollectionViewDataSource, UICollectionVie
     }
     let categoryCellId = "categoryCellId"
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCellId, for: indexPath) as! CategoryItemCell
         
         cell.app = appCategory?.apps?[indexPath.item]
@@ -103,8 +106,14 @@ class BaseCell: UICollectionViewCell,UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print("detail")
+        self.homeController?.showSettings()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 50
+    }
+    
 }
 
 
@@ -124,19 +133,20 @@ class CategoryItemCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(itemImage)
         itemImage.backgroundColor = .clear
-        itemImage.frame = CGRect(x: 0, y: 120, width: frame.width, height: frame.width)
+        itemImage.frame = CGRect(x: 0, y: 115, width: frame.width, height: frame.width)
         addSubview(labelName)
       
-        labelName.frame = CGRect(x: 0, y: frame.width + 122, width: frame.width, height: 15)
+        labelName.frame = CGRect(x: 0, y: frame.width + 120, width: frame.width, height: 15)
         addSubview(categoryLabel)
-        categoryLabel.frame = CGRect(x: 0, y: frame.width + 136, width: frame.width, height: 15)
+        categoryLabel.frame = CGRect(x: 0, y: frame.width + 135, width: frame.width, height: 15)
         addSubview(priceLabel)
-        priceLabel.frame = CGRect(x: 0, y: frame.width + 151, width: frame.width, height: 15)
+        priceLabel.frame = CGRect(x: 0, y: frame.width + 152, width: frame.width, height: 15)
     }
     
     private let itemImage: UIImageView = {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "u3")
+        img.addShadow()
         img.contentMode = .scaleAspectFill
         img.layer.cornerRadius = 20
 //        img.clipsToBounds = true

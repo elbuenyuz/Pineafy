@@ -87,11 +87,8 @@ class ExploreVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     @objc func loadList(notification: NSNotification) {
         self.collectionView?.performBatchUpdates(
             {
-                
                 exploreCategories.append(exploreCategories2[0])
-                
                 self.collectionView?.reloadSections(NSIndexSet(index: 0) as IndexSet)
-                
                 
         }, completion: { (finished:Bool) -> Void in
         })
@@ -147,6 +144,7 @@ class ExploreVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.showSettings()
     }
+    
     
     
     //Show DetailInformation
