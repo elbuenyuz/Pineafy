@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+extension Notification.Name{
+
+    static let tabVC = Notification.Name(rawValue: "tabvc")
+    static let bDate = Notification.Name(rawValue: "bdate")
+    static let hidden = Notification.Name(rawValue: "hidden")
+    static let shareFriend = Notification.Name(rawValue: "shareFriend")
+    static let dismiss = Notification.Name(rawValue: "dismiss")
+    static let register = Notification.Name(rawValue: "register")
+}

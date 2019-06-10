@@ -11,7 +11,6 @@ import UIKit
 struct Page {
     
     let bg: UIImage
-    let image: UIImage
     let header: String
     let body: String
     let showBtn: Bool

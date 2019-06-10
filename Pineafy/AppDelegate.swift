@@ -8,6 +8,10 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+import StoreKit
+import Stripe
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+         STPPaymentConfiguration.shared().publishableKey = "pk_test_YudaPwA0QPqwzznN7rsjPXeI"
         // Override point for customization after application launch.
-    
         ///navigation controllers
         let navigationBarAppearace = UINavigationBar.appearance()
         let font = UIFont(name: "JosefinSlab-Bold", size: 30.0)
         
-        navigationBarAppearace.barTintColor = UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0)
+        navigationBarAppearace.barTintColor = UIColor(red:1.00, green:0.92, blue:0.92, alpha:1.0)
         navigationBarAppearace.isTranslucent = false
-
         navigationBarAppearace.prefersLargeTitles = false
         
         //Get rid of black bar underneath navbar
@@ -31,8 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         // change navigation item title color
         let attrs = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
-//            NSAttributedStringKey.font: font
+            NSAttributedStringKey.foregroundColor: UIColor.black,
+            NSAttributedStringKey.font: UIFont(name: "JosefinSlab-Regular", size: 25)
         ]
         
         let largeAtt = [
@@ -40,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.font: font ??
                 UIFont.systemFont(ofSize: 25)
         ]
+        
+        
         
         navigationBarAppearace.largeTitleTextAttributes = largeAtt
         navigationBarAppearace.titleTextAttributes = attrs
@@ -49,8 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
         //        GADMobileAds.configure(withApplicationID: "ca-app-pub-3772088375813274~1208338343")
-        
+        FirebaseApp.configure()
         return true
+    }
+    
+    func requestReview(){
+        SKStoreReviewController.requestReview()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

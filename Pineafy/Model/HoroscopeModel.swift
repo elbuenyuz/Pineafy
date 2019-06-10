@@ -7,25 +7,28 @@
 //
 import UIKit
 import Foundation
-struct HoroscopeModel: Decodable{
+
+struct HoroscopeModel{
     let horoscope: String?
     let sign: String?
     let date: String?
-   
+    let image: UIImage?
+
 //    enum CodingKeys: String, CodingKey {
 //        case horoscope
 //        case sunsign
 //        case date
 //    }
+	
+    init(horoscope: String,sign: String, date: String,image: UIImage) {
 
-    init(json: [String: Any]) {
-
-        self.horoscope = json["horoscope"] as? String
-        self.sign = json["sunsign"] as? String
-        self.date = json["date"] as? String
-
+        self.horoscope = horoscope
+        self.sign = sign
+        self.date = date
+        self.image = image 
     }
 
+    
 }
 
 

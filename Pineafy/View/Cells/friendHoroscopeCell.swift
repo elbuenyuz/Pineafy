@@ -15,18 +15,18 @@ class friendHoroscopeCell: UICollectionViewCell {
             guard let unwrappedCategories = categories else {return}
             //Setup Values UI
             nameHoroscope.text = unwrappedCategories.sign
-//            imageHoroscope.image = unwrappedCategories.image
+            imageHoroscope.image = unwrappedCategories.image
             
         }
     }
-//    override var isHighlighted: Bool {
-//        didSet{
-//            self.backgroundColor = isHighlighted ? .white : .white
-//            nameHoroscope.textColor = isHighlighted ? UIColor.white : UIColor.black
-//            nameHoroscope.backgroundColor = isHighlighted ? UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0) : .white
-//
-//        }
-//    }
+    override var isHighlighted: Bool {
+        didSet{
+            self.backgroundColor = isHighlighted ? .white : UIColor(red:1.00, green:0.92, blue:0.92, alpha:1.0)
+            nameHoroscope.textColor = isHighlighted ? UIColor.white : UIColor.black
+            nameHoroscope.backgroundColor = isHighlighted ? .black : UIColor(red:1.00, green:0.92, blue:0.92, alpha:1.0)
+
+        }
+    }
 //
 //    override var isSelected: Bool {
 //        didSet{
@@ -41,7 +41,7 @@ class friendHoroscopeCell: UICollectionViewCell {
         let name = UILabel()
         name.text = "Money"
         name.textAlignment = .center
-        name.textColor = .white
+        name.textColor = .white        
         name.font = UIFont(name: "JosefinSlab-Bold", size: 18)
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
@@ -49,7 +49,7 @@ class friendHoroscopeCell: UICollectionViewCell {
     
     var imageHoroscope: UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "good")
+        image.image = #imageLiteral(resourceName: " Scorpio")
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -58,6 +58,7 @@ class friendHoroscopeCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        self.backgroundColor = UIColor(red:1.00, green:0.92, blue:0.92, alpha:1.0)
         nameHoroscope.textColor = .black
     }
     

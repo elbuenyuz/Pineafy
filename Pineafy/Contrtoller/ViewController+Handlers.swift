@@ -10,37 +10,18 @@
 
 import UIKit
 
-extension ViewController {
-    //Show horoscope friend View
-    func showFriendhoroscope(){
-        print("sending view friendHorosocope")
-        if let window = UIApplication.shared.keyWindow{
-            presentBlackScreen()
-            window.addSubview(friendHorosocope)
-            
-            let heigth: CGFloat = window.frame.height - 100
-            let width: CGFloat = window.frame.width - 25
-            //modificar posicion inicial de la colleccion
-            self.friendHorosocope.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: heigth)
-            
-            UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.blackView.isUserInteractionEnabled = true
-                self.blackView.alpha = 1
-                self.friendHorosocope.frame = CGRect(x: window.frame.width/2 - width/2, y: window.frame.height - heigth + 20, width: width, height: self.friendHorosocope.frame.height - 80)
-                
-            }, completion: nil)
-        }
-    }
+
+extension ViewController{
+    
     //SHow pickerview View
     @objc func showPickerView(){
         if let window = UIApplication.shared.keyWindow{
             presentBlackScreen()
             //
-            blackView.isUserInteractionEnabled = false
             window.addSubview(datePickerView)
             self.blackView.isUserInteractionEnabled = false
-            let heigth: CGFloat = window.frame.height/2
-            let width: CGFloat = window.frame.width - 50
+            let heigth: CGFloat = window.frame.height/2.1
+            let width: CGFloat = window.frame.width - 40
             //modificar posicion inicial de la colleccion
             datePickerView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: heigth)
             
@@ -52,40 +33,64 @@ extension ViewController {
             }, completion: nil)
         }
     }
+
     //function handle the popup closing after ask for BDate and transaction of information
     @objc func handlePopupClosing(notification: Notification){
         handledismissBlackView()
-        let user: BaseUserModel = notification.object as! BaseUserModel
-        guard let bdate = user.bDate else {return}
-        let scopeUser = asignHoroscope(date: bdate)
         
+        self.navigationController?.navigationBar.isUserInteractionEnabled = true
         
-        for x in arrayHoroscopes{
-            if scopeUser == x.sign{
-                DispatchQueue.main.async {
-                    self.updateView(horoscope: x)
-                    self.collectionview.reloadData()
-//                    guard let algo = UserDefaults.standard.value(forKey: "id") as? [HoroscopeModel] else {return print("BIG ERROR")}
-              
-                }
-            }else{
-               
+        let date = notification.object as! String
+        let nameScopeUser = asignHoroscope(date: date)
+    
+
+        //save locally the user for post DB
+        UserDefaults.standard.set(date, forKey: KEY_USER_DATE)
+        UserDefaults.standard.set(nameScopeUser, forKey: KEY_USER_SIGN)
+        UserDefaults.standard.synchronize()
+        print("local: \(localArray.count)")
+        
+        for x in localArray{
+            if x.sign == nameScopeUser{
+                navigationController?.navigationBar.topItem?.title = x.sign
+                self.handleHidden()
+                self.updateView(horoscope: x)
             }
         }
-        //save locally the user for post DB
+        collectionview.reloadData()
     }
-    @objc func handleEmail(){
+    
+    func updateView(horoscope: HoroscopeModel){
+        
+        titleLabel.text = horoscope.sign?.uppercased()
+        horoscopeInfo.text = horoscope.horoscope
+        dateLabel.text = horoscope.date
+		zodiacSignImageView.image = horoscope.image
+    }
+    
+    //    MARK: Persistant data
+
+    @objc func handleEmail(scope: String, signName: String){
         self.sendEmail()
     }
+ 
     //Constrains setup View
     func setupView(){
+		
+		
+        
         //Collection bottom
         view.addSubview(collectionview)
-        collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
         collectionview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionview.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
+        view.addSubview(friendLabel)
+        friendLabel.bottomAnchor.constraint(equalTo: collectionview.topAnchor).isActive = true
+        friendLabel.leadingAnchor.constraint(equalTo: collectionview.leadingAnchor, constant: 20).isActive = true
+        friendLabel.widthAnchor.constraint(equalTo: collectionview.widthAnchor).isActive = true
+        friendLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         //Description container
         view.addSubview(descriptionContainer)
@@ -93,66 +98,65 @@ extension ViewController {
         descriptionContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         descriptionContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         descriptionContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
-        
-        descriptionContainer.addSubview(headerContainer)
-        headerContainer.topAnchor.constraint(equalTo: descriptionContainer.topAnchor, constant: 20).isActive = true
-        headerContainer.centerXAnchor.constraint(equalTo: descriptionContainer.centerXAnchor).isActive = true
-        headerContainer.widthAnchor.constraint(equalTo: descriptionContainer.widthAnchor).isActive = true
-        headerContainer.heightAnchor.constraint(equalToConstant: 81).isActive = true
-        
-        //header Title and Date
-        headerContainer.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: headerContainer.topAnchor).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: headerContainer.centerXAnchor).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: descriptionContainer.widthAnchor).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        headerContainer.addSubview(dateLabel)
-        dateLabel.bottomAnchor.constraint(equalTo: headerContainer.bottomAnchor).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: headerContainer.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: headerContainer.trailingAnchor).isActive = true
-        dateLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
+		
+		view.addSubview(zodiacSignImageView)
+		zodiacSignImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+		zodiacSignImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+		zodiacSignImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+		zodiacSignImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+		
+		view.addSubview(dateLabel)
+        dateLabel.topAnchor.constraint(equalTo: zodiacSignImageView.bottomAnchor).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: descriptionContainer.leadingAnchor).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: descriptionContainer.trailingAnchor).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+
         descriptionContainer.addSubview(horoscopeInfo)
-        horoscopeInfo.topAnchor.constraint(equalTo: headerContainer.bottomAnchor, constant:20).isActive = true
-        horoscopeInfo.centerXAnchor.constraint(equalTo: descriptionContainer.centerXAnchor).isActive = true
-        horoscopeInfo.widthAnchor.constraint(equalTo: descriptionContainer.widthAnchor,constant: -12).isActive = true
-        horoscopeInfo.heightAnchor.constraint(equalToConstant: 300).isActive = true
+//        horoscopeInfo.backgroundColor = .yellow
+        horoscopeInfo.topAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
+        horoscopeInfo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        horoscopeInfo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        horoscopeInfo.bottomAnchor.constraint(equalTo: friendLabel.topAnchor).isActive = true
         
-        descriptionContainer.addSubview(actionContainer)
-        actionContainer.topAnchor.constraint(equalTo: horoscopeInfo.bottomAnchor, constant: 30).isActive = true
-        actionContainer.leadingAnchor.constraint(equalTo: horoscopeInfo.leadingAnchor).isActive = true
-        actionContainer.widthAnchor.constraint(equalTo: horoscopeInfo.widthAnchor).isActive = true
-        actionContainer.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
-        actionContainer.addSubview(iconShare)
-        iconShare.backgroundColor = .black
-        iconShare.topAnchor.constraint(equalTo: actionContainer.topAnchor).isActive = true
-        iconShare.centerXAnchor.constraint(equalTo: actionContainer.centerXAnchor).isActive = true
-        iconShare.widthAnchor.constraint(equalToConstant: 1).isActive = true
-        iconShare.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        actionContainer.addSubview(iconMessage)
-        iconMessage.topAnchor.constraint(equalTo: actionContainer.topAnchor).isActive = true
-        iconMessage.centerXAnchor.constraint(equalTo: actionContainer.centerXAnchor,constant:-80).isActive = true
-        iconMessage.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        iconMessage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        actionContainer.addSubview(iconGood)
-        iconGood.topAnchor.constraint(equalTo: actionContainer.topAnchor).isActive = true
-        iconGood.centerXAnchor.constraint(equalTo: actionContainer.centerXAnchor,constant:80).isActive = true
-        iconGood.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        iconGood.heightAnchor.constraint(equalToConstant: 50).isActive = true
+       
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         spinner.widthAnchor.constraint(equalToConstant: 50).isActive = true
         spinner.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
     }
+    
+    
+    @objc func handleLogOut(){
+        
+//        UserDefaults.standard.removeObject(forKey: KEY_USER_DATE)
+//        UserDefaults.standard.removeObject(forKey: KEY_NAME_USER)
+//        UserDefaults.standard.removeObject(forKey: KEY_EMAIL_USER)
+        
+        
+        hiddenInfo()
+        navigationController?.navigationBar.topItem?.title = ""
+        dateLabel.text = ""
+        presentWalkthrough()
+        return
+    }
+    
+    func hiddenInfo(){
+       
+        self.descriptionContainer.isHidden = true
+        self.actionContainer.isHidden = true
+        self.headerContainer.isHidden = true
+        self.horoscopeInfo.isHidden = true
+        self.collectionview.isHidden = true
+        self.friendLabel.isHidden = true
+        self.dateLabel.isHidden = true
+    }
+    
     //Function used when we show a popup to the view
     func presentBlackScreen(){
-        blackView.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        blackView.backgroundColor = UIColor(white: 0, alpha: 0.9)
         blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handledismissBlackView)))
         
         if let window = UIApplication.shared.keyWindow{
@@ -171,6 +175,7 @@ extension ViewController {
         self.horoscopeInfo.isHidden = false
         self.collectionview.isHidden = false
         self.friendLabel.isHidden = false
+        self.dateLabel.isHidden = false
     }
     
     //Handle adding a image to the horoscopes
@@ -195,7 +200,7 @@ extension ViewController {
         case "Pisces":
             return  #imageLiteral(resourceName: " Pisces")
         case "Capricorn":
-            return #imageLiteral(resourceName: "Sagittarius")
+            return #imageLiteral(resourceName: " Capricorn")
         case "Libra":
             return #imageLiteral(resourceName: " Libra")
         case "Sagittarius":
@@ -206,6 +211,9 @@ extension ViewController {
         default:
             return UIImage()
         }
+    }
+    func handleAccount(){
+        self.navigationController?.pushViewController(AccountVC(), animated: true)
     }
     
     //received a date and return a name of the horoscope selected

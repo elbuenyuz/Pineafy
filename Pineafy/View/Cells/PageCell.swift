@@ -14,15 +14,13 @@ class PageCell: UICollectionViewCell {
         didSet {
             guard let unwrappedPage = page else{return}
             bgImage.image = unwrappedPage.bg
-            
-            barImageView.image = unwrappedPage.image
-
+        
             descriptionTextView.text = unwrappedPage.header
-            descriptionTitle.text = unwrappedPage.body
+            descriptionText.text = unwrappedPage.body
             
-            descriptionTextView.textAlignment = .center
-            descriptionTextView.font = UIFont(name: "JosefinSlab-Bold", size: 35)
-            descriptionTitle.font = UIFont(name: "JosefinSlab-Light", size: 23)
+            descriptionTextView.textAlignment = .left
+            descriptionTextView.font = UIFont(name: "JosefinSlab-Bold", size: 40)
+            descriptionText.font = UIFont(name: "JosefinSlab-Regular", size: 28)
 
         }
     }
@@ -35,40 +33,38 @@ class PageCell: UICollectionViewCell {
         return bg
     }()
     
-    private let barImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "insight"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.addShadow()
-        return imageView
-    }()
-    
     let descriptionTextView: UILabel = {
         let textView = UILabel()
-        textView.backgroundColor = .white
-        textView.textAlignment = .center
+        textView.alpha = 1.0
         textView.sizeToFit()
+        textView.addShadowText()
+        textView.textColor = UIColor(red:0.35, green:0.70, blue:0.93, alpha:1.0)
         textView.numberOfLines = 3
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
-    let descriptionTitle: UILabel = {
+    let descriptionText: UILabel = {
         let textView = UILabel()
-        textView.backgroundColor = .white
+        textView.backgroundColor = .clear
+        textView.textColor = .white
         textView.sizeToFit()
         textView.numberOfLines = 8
-        textView.textAlignment = .center
+        textView.textAlignment = .left
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
+    let container: UIView = {
+        let cv = UIView()
+        cv.backgroundColor = .clear
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        return cv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .white
-        
-        
+        backgroundColor = .black
         setElementsPage()
         
     }
@@ -84,32 +80,24 @@ class PageCell: UICollectionViewCell {
         bgImage.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         bgImage.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        let topImageContainerView = UIView()
+        addSubview(container)
+        container.centerXAnchor.constraint(equalTo: self.bgImage.centerXAnchor).isActive = true
+        container.centerYAnchor.constraint(equalTo: self.bgImage.centerYAnchor).isActive = true
+        container.widthAnchor.constraint(equalTo: self.bgImage.widthAnchor, constant: -60).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(topImageContainerView)
-        topImageContainerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        topImageContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        topImageContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        topImageContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
         
-        topImageContainerView.addSubview(barImageView)
-        
-        barImageView.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor).isActive = true
-        barImageView.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor).isActive = true
-        barImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        barImageView.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5).isActive = true
-        
-        addSubview(descriptionTextView)
-        descriptionTextView.topAnchor.constraint(equalTo: barImageView.bottomAnchor, constant: 20).isActive = true
-        descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
-        descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
+        container.addSubview(descriptionTextView)
+        descriptionTextView.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
+        descriptionTextView.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        descriptionTextView.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
         descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        addSubview(descriptionTitle)
-        descriptionTitle.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 20).isActive = true
-        descriptionTitle.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
-        descriptionTitle.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
-        descriptionTitle.heightAnchor.constraint(equalToConstant: 200)
+        
+        container.addSubview(descriptionText)
+        descriptionText.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 10).isActive = true
+        descriptionText.leftAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
+        descriptionText.rightAnchor.constraint(equalTo: rightAnchor, constant: -30).isActive = true
+        descriptionText.heightAnchor.constraint(equalToConstant: 200)
         
         
     }
@@ -119,18 +107,26 @@ extension UIView{
     func addShadow(){
         let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
         
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowOffset = CGSize(width: 1, height: 0.5)
         self.layer.shadowColor = graySahdow
-        self.layer.shadowRadius = 4
+        self.layer.shadowRadius = 2
         self.layer.shadowOpacity = 2.5
     }
     
-    func addShadowIcon(){
-        let graySahdow = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0).cgColor
-        
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+    func addShadowText(){
+        let graySahdow = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0).cgColor
+    
+        self.layer.shadowOffset = CGSize(width: 0.5, height:0.5)
         self.layer.shadowColor = graySahdow
-        self.layer.shadowRadius = 5
-        self.layer.shadowOpacity = 2.5
+        self.layer.shadowRadius = 1
+        self.layer.shadowOpacity = 1
+    }
+    
+    func addShadowIcon(){
+        
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowColor = UIColor(red:0.91, green:0.91, blue:0.91, alpha:1.0).cgColor
+        self.layer.shadowRadius = 2
+        self.layer.shadowOpacity = 0.5
     }
 }

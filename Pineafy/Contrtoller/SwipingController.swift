@@ -36,15 +36,17 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     //define pages
     let pages = [
         
-        Page(bg: #imageLiteral(resourceName: "b1"),image: #imageLiteral(resourceName: "Astrologers"), header: "Pineafy Help You Find Clarity", body: "Pineafy help you find clarity to any situation in your daily life.", showBtn: false),
-        Page(bg: #imageLiteral(resourceName: "b2"),image: #imageLiteral(resourceName: "Alignment"), header: "The Big Picture", body: "The best astrologers creating daily insight, with pineafy every day is a new opportunity.", showBtn: false),
-        Page(bg: #imageLiteral(resourceName: "b3"),image: #imageLiteral(resourceName: "Planet"), header: "Features", body: "Book situational readings with the best astrologers and find situational clarity, Universe want you to keep moving", showBtn: true)
+        
+        Page(bg: #imageLiteral(resourceName: "b1"), header: "Horoscope", body: "Free insight based on your birthdate every day.", showBtn: false),
+        Page(bg: #imageLiteral(resourceName: "b2"), header: "Marketplace", body: "The perfect place to find top-rate insights for any situation in your life.", showBtn: false),
+        Page(bg: #imageLiteral(resourceName: "b3"), header: "Pineafy", body: "Just the best astrologers, providing trustable insights and helping people to gain clarity in any situation.", showBtn: false)
         
         ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBtnControlls()
+        
         collectionView?.delegate = self
         collectionView?.dataSource = self
         navigationController?.navigationBar.isHidden = true
@@ -72,6 +74,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     @objc func handleActionBtn(){
         NotificationCenter.default.post(name:.tabVC, object: nil)
+        homeController?.navigationController?.navigationBar.isHidden = true
         dismiss(animated: true, completion: nil)
         print("walkthrough dismissed")
     }
@@ -79,7 +82,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     fileprivate func setupBtnControlls(){
         actionBtn.isHidden = true
         let bottomControllStackView = UIStackView(arrangedSubviews: [pageController])
-        
+        collectionView?.backgroundColor = .black
         view.addSubview(bottomControllStackView)
         
         NSLayoutConstraint.activate([
@@ -94,8 +97,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         view.addSubview(actionBtn)
         actionBtn.bottomAnchor.constraint(equalTo: bottomControllStackView.topAnchor).isActive = true
         actionBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        actionBtn.widthAnchor.constraint(equalToConstant: 161).isActive = true
-        actionBtn.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        actionBtn.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        actionBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         actionBtn.isUserInteractionEnabled = true
         
@@ -114,7 +117,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageController.currentPage = Int(x / view.frame.width)
-        print("current fucking page \(pageController.currentPage)")
+        print("current page \(pageController.currentPage)")
         
         switch pageController.currentPage {
         case 2:

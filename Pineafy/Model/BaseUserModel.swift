@@ -6,4 +6,11 @@
 //  Copyright © 2018 Devius. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct BaseUserModel {
+    let name: String?
+    let bDate: String?
+    let email: String?
+    let horoscope: HoroscopeModel?
+}
