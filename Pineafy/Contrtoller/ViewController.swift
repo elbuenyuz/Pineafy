@@ -15,7 +15,7 @@ import Firebase
 typealias DownloadComplete = () -> ()
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate, MFMailComposeViewControllerDelegate{
-
+	
     let blackView = UIView()
     let IdCell = "cellId"
     let ID_ARRAY = "id"
@@ -23,7 +23,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
     var todayDate = ""
     var ref: DatabaseReference!
     
-    lazy var settingsLaunch: SettingsLauncher = {
+	
+	var arrayHoroscopes = [HoroscopeModel]()
+	/**
+	List of the screen items Start
+	*/
+	
+	lazy var settingsLaunch: SettingsLauncher = {
         let vc  = SettingsLauncher()
         vc.homeController = self
         return vc
@@ -68,8 +74,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
         return cv
     }()
     
-    var arrayHoroscopes = [HoroscopeModel]()
-    lazy var descriptionContainer: UIScrollView = {
+	
+	
+	lazy var descriptionContainer: UIScrollView = {
         let view = UIScrollView(frame: UIScreen.main.bounds)
         //        view.backgroundColor = .purple
         view.showsVerticalScrollIndicator = false
@@ -122,8 +129,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
         return h
     }()
     
-
-    
     let iconShare: UILabel = {
         let btn = UILabel()
         btn.text = "|"
@@ -162,47 +167,71 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    var localArray = [HoroscopeModel]()
+	
+	/**
+	List of the screen items Ends
+	*/
+	
+	//ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
-        
+		print("---viewdDidAppear---")
+		
+		//Editing the NavigationBar
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = PINK_BG
-        
-        view.backgroundColor = PINK_BG//bgcolor
+		//Editing the background color of the viewcontroller
+		view.backgroundColor = PINK_BG//bgcolor
+		//Editing the background color of the horoscopeInfo View
         horoscopeInfo.backgroundColor = PINK_BG//bgcolor
-        print("---viewdDidAppear---")
-        //information daily update
+		
+		//today variable with a type of value date, that would help us to make the
+		//call to the webservice providing the horoscope of the date selected
         todayDate = formattedDate
+		
+		//verificamos si hay informacion sobre la fecha actual dentro de UserDefaults
         guard let localDate = UserDefaults.standard.string(forKey: KEY_FORMATTED_DATE) else {return}
-        
+		//if the date is diferent from the one saved we replace the date with today's date
         if localDate != todayDate{
+			//we remove the reference saved inside UserDefaults for the actual date
             UserDefaults.standard.removeObject(forKey: KEY_FORMATTED_DATE)
-            UserDefaults.standard.removeObject(forKey: KEY_ARRAY)
-            print("---localDate: \(localDate)---")
+			//we remove the information of the array saved in UserDefaults so we can bring the new one form today
+			UserDefaults.standard.removeObject(forKey: KEY_ARRAY)
+			//print today date and  saved locally date
+			print("---localDate: \(localDate)---")
             print("---todayDate: \(todayDate)---")
+			
+			//Download and parse the Json
             parseUrl {
+				//Fetch the horoscopes
                 populate()
+				//reload collectionView for horoscopes
                 collectionview.reloadData()
-                
             }
         }else{
+			//the date is correct from today
             print("---localDate not different: \(localDate)---")
         }
     }
     
     
-    
+    //ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
-        populate()
+		//Fetch array of horoscopes
+		populate()
+		//SetupView
         setupView()
+		
+		
+		//this piece of code help us when we ask for the bday, to keep the background menu unabled for the user
         if let date = UserDefaults.standard.string(forKey: KEY_USER_DATE){
             self.navigationController?.navigationBar.isUserInteractionEnabled = true
             self.handleHidden()
-            
+			
         }else{
             self.navigationController?.navigationBar.isUserInteractionEnabled = false
         }
+		
+		
         print("---viewdWillAppear---")
         self.collectionview.backgroundColor = PINK_BG
         self.navigationController?.navigationBar.isTranslucent = false
@@ -211,88 +240,102 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
     
     //Function to populate if there is any [Array] saved in userDefaults
     func populate(){
-        //get result from UserDefault
+        //get the array saved in userdefaults
         if let result = UserDefaults.standard.dictionary(forKey: KEY_ARRAY){
-            //empty arrays
-            localArray = []
+            //empty arrays to save information
             arrayHoroscopes = []
-            //ke from the dic
+			
+			//let keys: Dictionary<String, Any>. Keys
             let keys = result.keys
-            
-            //for x in the array
+			
+			
+            //with the key we iterate the Dictionary of horoscopes
             print("keys : \(keys)")
             for key in keys{
+				//Guard the item that we get from the Dictionary
                 guard let scopeDic = result[key] as? [String: Any] else {return}
-                
+                //We create the values from the Horoscope Model
                 if let scopeInfo = scopeDic["horoscope"] as? String, let scopeName = scopeDic["sunsign"] as? String, let scopeDate = scopeDic["date"] as? String {
                     let image = self.handleImage(key: scopeName)
+					//We create model Horoscope
                     let model = HoroscopeModel(horoscope: scopeInfo, sign: scopeName, date: scopeDate, image: image)
-
+					//We append the model to the array
                     arrayHoroscopes.append(model)
-                    localArray.append(model)
 					
                 }
             }
-            //Friends horoscope updates
+            //At the end we Reload the data from the friends Horoscopes CollectionView.
             collectionview.reloadData()
             
         }else{
+			//Si no existe el Dic mandamos el request a la API
             parseUrl {                
                 
             }
         }
-       
+	//We select the bday and the sign related and we update the view with his sign related
     if let nameScope =  UserDefaults.standard.string(forKey: KEY_USER_SIGN){
         navigationController?.navigationBar.topItem?.title = nameScope
-        for x in localArray{
+        for x in arrayHoroscopes{
                 if nameScope == x.sign{
+					//update view with the personal user sign horoscope
                     updateView(horoscope: x)
                     
                 }
             }
         }
     }
-    
+	
+	//Function to setup the views for the CollectionView and the Notofication Center
     func setupViews(){
-        // Do any additional setup after loading the view, typically from a nib.
-       
+		//Insets for the descriptionContainer
         descriptionContainer.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -50, right: 0)
         descriptionContainer.contentSize = CGSize(width: self.view.frame.width, height: 600)
-        
+		
+//Notification Center // Need to double check this ones    <---- <---- <---- <---- <---- <---- <----
         NotificationCenter.default.addObserver(self, selector: #selector(showPickerView), name: Notification.Name.tabVC, object: nil)
+		//Send notification from The bDay when confirm close the view
         NotificationCenter.default.addObserver(self, selector: #selector(handlePopupClosing), name: Notification.Name.bDate, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRegister), name: Notification.Name.register, object: nil )
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFriendShareHorosocope), name: NSNotification.Name.shareFriend, object: nil)
+		//send the notification from the user account to show the register ViewController
+		NotificationCenter.default.addObserver(self, selector: #selector(handleRegister), name: Notification.Name.register, object: nil )
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(handleFriendShareHorosocope), name: NSNotification.Name.shareFriend, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handledismissBlackView), name: NSNotification.Name.dismiss, object: nil)
-        
+		
+		//collectionView Setup
         collectionview.register(friendHoroscopeCell.self, forCellWithReuseIdentifier: IdCell)
         collectionview.delegate = self
         collectionview.dataSource = self
         collectionview.showsHorizontalScrollIndicator = false
     }
-    
+	
+	//ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         print("---viewdDidLoad---")
-        //check if users date is saved locally
+        //check if users date is saved locally if not present the Walkthrough
         if UserDefaults.standard.string(forKey: KEY_USER_DATE) == nil{
             presentWalkthrough()
         }
-        
+        //Call setupViews
         setupViews()
-        //NAvigationBar Setup
+        //NavigationBar Setup add Button Menu
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "burgMenu").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleBurguerMenuAction))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "mklogo").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAccessPineafyAstrologers))
+		//NavigationBar Setup add Button Marketplace
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "mklogo").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAccessPineafyAstrologers))
         
     }
-    
+	
+	//fucntion attached to the notification center to show the FromVC
     @objc func handleRegister(){
         self.navigationController?.pushViewController(FormVC(), animated: true)
     }
-    
+	
+	//Right Navigation Button created to get access to the marketplace.
     @objc func handleAccessPineafyAstrologers(){
         print("premium")
-        if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
+		
+		if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
             print("user already registered, name: \(name) email: \(mail)")
             navigationController?.pushViewController(CategoryVC(), animated: true)
         }else{

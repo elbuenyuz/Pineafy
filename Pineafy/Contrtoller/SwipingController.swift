@@ -6,6 +6,8 @@
 //  Copyright © 2018 Devius. All rights reserved.
 //
 
+
+
 import UIKit
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -70,7 +72,6 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         
         return cell
     }
-    
     
     @objc func handleActionBtn(){
         NotificationCenter.default.post(name:.tabVC, object: nil)
