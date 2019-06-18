@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */; };
+		8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C99222B8AD8400CDB1E5 /* signInVC.swift */; };
 		8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17492E221D1E17007DC9E7 /* DataService.swift */; };
 		8E174931221D2154007DC9E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E174930221D2154007DC9E7 /* GoogleService-Info.plist */; };
 		8E1C38862288B64600E6386D /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C38852288B64600E6386D /* FeedbackModel.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
 		704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8351C99222B8AD8400CDB1E5 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		8E17492E221D1E17007DC9E7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8E174930221D2154007DC9E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E1C38852288B64600E6386D /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				8E2CCBE522939B8D00486C3F /* titleDescView.swift */,
 				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
 				8E67E71621603183003EB09C /* DatePickerView.swift */,
+				8351C99222B8AD8400CDB1E5 /* signInVC.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				8E774DE32159FB2500AD4350 /* PageCell.swift in Sources */,
 				8E1C38862288B64600E6386D /* FeedbackModel.swift in Sources */,
 				8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */,
+				8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */,
 				8E585B52227BF8420061B004 /* CategoryCell.swift in Sources */,
 				8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */,
 				8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */,
