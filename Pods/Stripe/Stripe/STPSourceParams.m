@@ -227,6 +227,10 @@
                                          currency:(NSString *)currency
                                         returnURL:(NSString *)returnURL
                                              card:(NSString *)card {
+<<<<<<< HEAD
+=======
+    NSCAssert(card != nil, @"'card' id is required to create a 3DS params for the card");
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     STPSourceParams *params = [self new];
     params.type = STPSourceTypeThreeDSecure;
     params.amount = @(amount);

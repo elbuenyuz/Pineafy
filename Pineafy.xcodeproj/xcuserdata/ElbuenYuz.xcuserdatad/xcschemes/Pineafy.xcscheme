@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+<<<<<<< HEAD
    LastUpgradeVersion = "0930"
+=======
+   LastUpgradeVersion = "1000"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +18,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "8E493D942019549700B7E145"
+=======
+               BlueprintIdentifier = "8E774DA82159CE9500AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
                BuildableName = "Pineafy.app"
                BlueprintName = "Pineafy"
                ReferencedContainer = "container:Pineafy.xcodeproj">
@@ -32,7 +40,11 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "8E3C911A20AFF69400694FA4"
+=======
+               BlueprintIdentifier = "8E774DBF2159CE9600AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
                BuildableName = "PineafyTests.xctest"
                BlueprintName = "PineafyTests"
                ReferencedContainer = "container:Pineafy.xcodeproj">
@@ -42,7 +54,11 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "8E493DB62019549800B7E145"
+=======
+               BlueprintIdentifier = "8E774DCA2159CE9600AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
                BuildableName = "PineafyUITests.xctest"
                BlueprintName = "PineafyUITests"
                ReferencedContainer = "container:Pineafy.xcodeproj">
@@ -52,7 +68,11 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "8E493D942019549700B7E145"
+=======
+            BlueprintIdentifier = "8E774DA82159CE9500AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
             BuildableName = "Pineafy.app"
             BlueprintName = "Pineafy"
             ReferencedContainer = "container:Pineafy.xcodeproj">
@@ -75,12 +95,17 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "8E493D942019549700B7E145"
+=======
+            BlueprintIdentifier = "8E774DA82159CE9500AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
             BuildableName = "Pineafy.app"
             BlueprintName = "Pineafy"
             ReferencedContainer = "container:Pineafy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+<<<<<<< HEAD
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
@@ -88,6 +113,14 @@
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
+=======
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "FIRAnalyticsDebugEnabled"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -101,7 +134,11 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "8E493D942019549700B7E145"
+=======
+            BlueprintIdentifier = "8E774DA82159CE9500AD4350"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
             BuildableName = "Pineafy.app"
             BlueprintName = "Pineafy"
             ReferencedContainer = "container:Pineafy.xcodeproj">

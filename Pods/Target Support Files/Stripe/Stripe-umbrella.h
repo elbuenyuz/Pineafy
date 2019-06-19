@@ -41,6 +41,12 @@
 #import "STPPaymentCardTextField.h"
 #import "STPPaymentConfiguration.h"
 #import "STPPaymentContext.h"
+<<<<<<< HEAD
+=======
+#import "STPPaymentIntent.h"
+#import "STPPaymentIntentEnums.h"
+#import "STPPaymentIntentParams.h"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 #import "STPPaymentMethod.h"
 #import "STPPaymentMethodsViewController.h"
 #import "STPPaymentResult.h"

@@ -7,22 +7,38 @@
 		<key>Pineafy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>5</integer>
+=======
+			<integer>0</integer>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< HEAD
 		<key>8E493D942019549700B7E145</key>
+=======
+		<key>8E774DA82159CE9500AD4350</key>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>8E493DAB2019549800B7E145</key>
+=======
+		<key>8E774DBF2159CE9600AD4350</key>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>8E493DB62019549800B7E145</key>
+=======
+		<key>8E774DCA2159CE9600AD4350</key>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		<dict>
 			<key>primary</key>
 			<true/>

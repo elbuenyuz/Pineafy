@@ -115,10 +115,13 @@ typedef NS_ENUM(NSUInteger, STPPaymentCardSection) {
     STPPaymentCardTextFieldCell *paymentCell = [[STPPaymentCardTextFieldCell alloc] init];
     paymentCell.paymentField.delegate = self;
     self.paymentCell = paymentCell;
+<<<<<<< HEAD
 
     if (self.prefilledInformation.billingAddress != nil) {
         self.addressViewModel.address = self.prefilledInformation.billingAddress;
     }
+=======
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     
     self.activityIndicator = [[STPPaymentActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20.0f, 20.0f)];
     
@@ -128,6 +131,13 @@ typedef NS_ENUM(NSUInteger, STPPaymentCardSection) {
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 
+<<<<<<< HEAD
+=======
+    if (self.prefilledInformation.billingAddress != nil) {
+        self.addressViewModel.address = self.prefilledInformation.billingAddress;
+    }
+
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     STPSectionHeaderView *addressHeaderView = [STPSectionHeaderView new];
     addressHeaderView.theme = self.theme;
     addressHeaderView.title = STPLocalizedString(@"Billing Address", @"Title for billing address entry section");
@@ -398,14 +408,30 @@ typedef NS_ENUM(NSUInteger, STPPaymentCardSection) {
 #pragma mark - STPAddressViewModelDelegate
 
 - (void)addressViewModel:(__unused STPAddressViewModel *)addressViewModel addedCellAtIndex:(NSUInteger)index {
+<<<<<<< HEAD
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:STPPaymentCardBillingAddressSection];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+=======
+    NSInteger rowsInSection = [self.tableView numberOfRowsInSection:STPPaymentCardBillingAddressSection];
+    if (rowsInSection != NSNotFound && rowsInSection < [self tableView:self.tableView numberOfRowsInSection:STPPaymentCardBillingAddressSection]) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:STPPaymentCardBillingAddressSection];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     [self updateInputAccessoryVisiblity];
 }
 
 - (void)addressViewModel:(__unused STPAddressViewModel *)addressViewModel removedCellAtIndex:(NSUInteger)index {
+<<<<<<< HEAD
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:STPPaymentCardBillingAddressSection];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+=======
+    NSInteger rowsInSection = [self.tableView numberOfRowsInSection:STPPaymentCardBillingAddressSection];
+    if (rowsInSection != NSNotFound && index < (NSUInteger)rowsInSection) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:STPPaymentCardBillingAddressSection];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     [self updateInputAccessoryVisiblity];
 }
 

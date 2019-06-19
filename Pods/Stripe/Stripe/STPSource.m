@@ -269,8 +269,12 @@
 #pragma mark - STPPaymentMethod
 
 - (UIImage *)image {
+<<<<<<< HEAD
     if (self.type == STPSourceTypeCard
         && self.cardDetails != nil) {
+=======
+    if (self.type == STPSourceTypeCard && self.cardDetails != nil) {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         return [STPImageLibrary brandImageForCardBrand:self.cardDetails.brand];
     }
     else {
@@ -279,8 +283,12 @@
 }
 
 - (UIImage *)templateImage {
+<<<<<<< HEAD
     if (self.type == STPSourceTypeCard
         && self.cardDetails != nil) {
+=======
+    if (self.type == STPSourceTypeCard && self.cardDetails != nil) {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         return [STPImageLibrary templatedBrandImageForCardBrand:self.cardDetails.brand];
     }
     else {
@@ -289,6 +297,7 @@
 }
 
 - (NSString *)label {
+<<<<<<< HEAD
     if (self.type == STPSourceTypeCard
         && self.cardDetails != nil) {
         NSString *brand = [STPCard stringFromBrand:self.cardDetails.brand];
@@ -300,4 +309,40 @@
 }
 
 
+=======
+    switch (self.type) {
+        case STPSourceTypeBancontact:
+            return STPLocalizedString(@"Bancontact", @"Source type brand name");
+        case STPSourceTypeCard:
+            if (self.cardDetails != nil) {
+                NSString *brand = [STPCard stringFromBrand:self.cardDetails.brand];
+                return [NSString stringWithFormat:@"%@ %@", brand, self.cardDetails.last4];
+            }
+            else {
+                return [STPCard stringFromBrand:STPCardBrandUnknown];
+            }
+        case STPSourceTypeGiropay:
+            return STPLocalizedString(@"Giropay", @"Source type brand name");
+        case STPSourceTypeIDEAL:
+            return STPLocalizedString(@"iDEAL", @"Source type brand name");
+        case STPSourceTypeSEPADebit:
+            return STPLocalizedString(@"SEPA Direct Debit", @"Source type brand name");
+        case STPSourceTypeSofort:
+            return STPLocalizedString(@"SOFORT", @"Source type brand name");
+        case STPSourceTypeThreeDSecure:
+            return STPLocalizedString(@"3D Secure", @"Source type brand name");
+        case STPSourceTypeAlipay:
+            return STPLocalizedString(@"Alipay", @"Source type brand name");
+        case STPSourceTypeP24:
+            return STPLocalizedString(@"P24", @"Source type brand name");
+        case STPSourceTypeEPS:
+            return STPLocalizedString(@"EPS", @"Source type brand name");
+        case STPSourceTypeMultibanco:
+            return STPLocalizedString(@"Multibanco", @"Source type brand name");
+        case STPSourceTypeUnknown:
+            return STPLocalizedString(@"Unknown", @"Default missing source type label");
+    }
+}
+
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 @end

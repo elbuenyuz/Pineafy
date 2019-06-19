@@ -18,9 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The current version of this library.
  */
+<<<<<<< HEAD
 static NSString *const STPSDKVersion = @"13.0.3";
 
 @class STPBankAccount, STPBankAccountParams, STPCard, STPCardParams, STPConnectAccountParams, STPSourceParams, STPToken, STPPaymentConfiguration;
+=======
+static NSString *const STPSDKVersion = @"13.2.0";
+
+@class STPBankAccount, STPBankAccountParams, STPCard, STPCardParams, STPConnectAccountParams;
+@class STPPaymentConfiguration, STPPaymentIntentParams, STPSourceParams, STPToken;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 
 /**
  A top-level class that imports the rest of the Stripe SDK.
@@ -130,7 +137,11 @@ static NSString *const STPSDKVersion = @"13.0.3";
 #pragma mark Connect Accounts
 
 /**
+<<<<<<< HEAD
  Stripe extensions for working with Connect Accounts
+=======
+ STPAPIClient extensions for working with Connect Accounts
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
  */
 @interface STPAPIClient (ConnectAccounts)
 
@@ -320,6 +331,40 @@ static NSString *const STPSDKVersion = @"13.0.3";
 
 @end
 
+<<<<<<< HEAD
+=======
+#pragma mark Payment Intents
+
+/**
+ STPAPIClient extensions for working with PaymentIntent objects.
+ */
+@interface STPAPIClient (PaymentIntents)
+
+/**
+ Retrieves the PaymentIntent object using the given secret. @see https://stripe.com/docs/api#retrieve_payment_intent
+
+ @param secret      The client secret of the payment intent to be retrieved. Cannot be nil.
+ @param completion  The callback to run with the returned PaymentIntent object, or an error.
+ */
+- (void)retrievePaymentIntentWithClientSecret:(NSString *)secret
+                                   completion:(STPPaymentIntentCompletionBlock)completion;
+
+/**
+ Confirms the PaymentIntent object with the provided params object.
+
+ At a minimum, the params object must include the `clientSecret`.
+
+ @see https://stripe.com/docs/api#confirm_payment_intent
+
+ @param paymentIntentParams  The `STPPaymentIntentParams` to pass to `/confirm`
+ @param completion           The callback to run with the returned PaymentIntent object, or an error.
+ */
+- (void)confirmPaymentIntentWithParams:(STPPaymentIntentParams *)paymentIntentParams
+                            completion:(STPPaymentIntentCompletionBlock)completion;
+
+@end
+
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 #pragma mark URL callbacks
 
 /**
