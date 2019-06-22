@@ -59,6 +59,7 @@
 
 /* Begin PBXBuildFile section */
 		4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */; };
+		8338649922BDFA6500BB7961 /* SignInVC+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338649822BDFA6500BB7961 /* SignInVC+Handlers.swift */; };
 		8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C99222B8AD8400CDB1E5 /* signInVC.swift */; };
 		8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17492E221D1E17007DC9E7 /* DataService.swift */; };
 		8E174931221D2154007DC9E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E174930221D2154007DC9E7 /* GoogleService-Info.plist */; };
@@ -185,6 +186,7 @@
 =======
 		448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
 		704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8338649822BDFA6500BB7961 /* SignInVC+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+Handlers.swift"; sourceTree = "<group>"; };
 		8351C99222B8AD8400CDB1E5 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		8E17492E221D1E17007DC9E7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8E174930221D2154007DC9E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -565,7 +567,12 @@
 				8E9EB484222A40870018539A /* AccountVC.swift */,
 				8E585B55227E9C660061B004 /* CategoryDetailVC.swift */,
 				8E2D993822873B7E00BF1700 /* BookingVC.swift */,
+<<<<<<< HEAD
+				8351C99222B8AD8400CDB1E5 /* signInVC.swift */,
+				8338649822BDFA6500BB7961 /* SignInVC+Handlers.swift */,
+=======
 				8E2C13DB22B32F3D00561CD7 /* FourStepsVC.swift */,
+>>>>>>> master
 			);
 			path = Contrtoller;
 			sourceTree = "<group>";
@@ -618,7 +625,6 @@
 				8E2CCBE522939B8D00486C3F /* titleDescView.swift */,
 				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
 				8E67E71621603183003EB09C /* DatePickerView.swift */,
-				8351C99222B8AD8400CDB1E5 /* signInVC.swift */,
 			);
 			path = CustomViews;
 >>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
@@ -861,9 +867,12 @@
 			);
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 			inputFileListPaths = (
 			);
 >>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
+>>>>>>> master
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
@@ -871,9 +880,12 @@
 			name = "[CP] Check Pods Manifest.lock";
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 			outputFileListPaths = (
 			);
 >>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
+>>>>>>> master
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Pineafy-checkManifestLockResult.txt",
 			);
@@ -892,6 +904,8 @@
 			files = (
 			);
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
@@ -902,24 +916,21 @@
 =======
 			inputFileListPaths = (
 			);
+>>>>>>> master
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1020,6 +1031,7 @@
 				8E9EB485222A40870018539A /* AccountVC.swift in Sources */,
 				8E2C13DF22B332D200561CD7 /* FirstStepCell.swift in Sources */,
 				8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */,
+				8338649922BDFA6500BB7961 /* SignInVC+Handlers.swift in Sources */,
 				8E2D993722873A6E00BF1700 /* FeedbackLauncher.swift in Sources */,
 				8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */,
 				8E38CC0421DB0DB700D52F95 /* SettingsMenuModel.swift in Sources */,
