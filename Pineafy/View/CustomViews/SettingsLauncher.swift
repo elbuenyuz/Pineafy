@@ -123,6 +123,7 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
     
         }
     }
+	
     @objc func handledismissBlackView(setting: SettingMenuModel){
         
         

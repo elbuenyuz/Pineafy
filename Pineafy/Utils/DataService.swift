@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 //
 //  DataService.swift
 //  adoptMe
@@ -48,4 +50,5 @@ class DataService{
     }
 
 }
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 

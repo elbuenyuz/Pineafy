@@ -7,6 +7,23 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
+<<<<<<< HEAD
+	<string>621351047571-c44kv7jvkovilhdnc3886klvs5lgblqq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.621351047571-c44kv7jvkovilhdnc3886klvs5lgblqq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBlQLiDGd3cYKOAzUIp49-oqBESD3SaspI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>621351047571</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Devius.Pineafy</string>
+	<key>PROJECT_ID</key>
+	<string>pineafy</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pineafy.appspot.com</string>
+=======
 	<string>695625151123-jkk2tagqfgidv3drghuupn9ast974o7f.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.695625151123-jkk2tagqfgidv3drghuupn9ast974o7f</string>
@@ -22,19 +39,30 @@
 	<string>pineafy-d87b4</string>
 	<key>STORAGE_BUCKET</key>
 	<string>pineafy-d87b4.appspot.com</string>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
+<<<<<<< HEAD
+	<false></false>
+=======
 	<true></true>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
+<<<<<<< HEAD
+	<string>1:621351047571:ios:2c32ff3b869409f4</string>
+	<key>DATABASE_URL</key>
+	<string>https://pineafy.firebaseio.com</string>
+=======
 	<string>1:695625151123:ios:a7ce2145a5be6f6d</string>
 	<key>DATABASE_URL</key>
 	<string>https://pineafy-d87b4.firebaseio.com</string>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 </dict>
 </plist>

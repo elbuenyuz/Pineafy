@@ -28,6 +28,8 @@
     return [mutableReversedString copy];
 }
 
+<<<<<<< HEAD
+=======
 - (NSString *)stp_stringByRemovingSuffix:(NSString *)suffix {
     if (suffix != nil && [self hasSuffix:suffix]) {
         return [self stp_safeSubstringToIndex:self.length-suffix.length];
@@ -36,6 +38,7 @@
     }
 }
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 @end
 
 void linkNSStringCategory(void){}

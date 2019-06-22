@@ -2,11 +2,20 @@
 //  PineafyTests.swift
 //  PineafyTests
 //
+<<<<<<< HEAD
+//  Created by Daniel Ramirez on 5/18/18.
+=======
 //  Created by Daniel Ramirez on 9/24/18.
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 //  Copyright © 2018 Devius. All rights reserved.
 //
 
 import XCTest
+<<<<<<< HEAD
+
+class PineafyTests: XCTestCase {
+   
+=======
 @testable import Pineafy
 
 class PineafyTests: XCTestCase {
@@ -32,5 +41,6 @@ class PineafyTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     
 }

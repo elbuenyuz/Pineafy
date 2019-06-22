@@ -4,8 +4,11 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+<<<<<<< HEAD
+=======
 	<key>CFBundleDisplayName</key>
 	<string>PineafyModify</string>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,6 +20,21 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
+<<<<<<< HEAD
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>JosefinSlab-Thin.ttf</string>
+		<string>JosefinSlab-SemiBoldItalic.ttf</string>
+		<string>JosefinSlab-Light.ttf</string>
+		<string>JosefinSlab-LightItalic.ttf</string>
+		<string>JosefinSlab-Regular.ttf</string>
+		<string>JosefinSlab-Bold.ttf</string>
+=======
 	<string>1.2</string>
 	<key>CFBundleVersion</key>
 	<string>1.2</string>
@@ -34,6 +52,7 @@
 		<string>JosefinSlab-Bold.ttf</string>
 		<string>JosefinSlab-SemiBold.ttf</string>
 		<string>JosefinSlab-ThinItalic.ttf</string>
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -44,6 +63,10 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+<<<<<<< HEAD
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+=======
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

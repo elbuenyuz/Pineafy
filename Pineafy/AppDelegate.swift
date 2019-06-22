@@ -2,11 +2,36 @@
 //  AppDelegate.swift
 //  Pineafy
 //
+<<<<<<< HEAD
+//  Created by Daniel Ramirez on 1/24/18.
+=======
 //  Created by Daniel Ramirez on 9/24/18.
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 //  Copyright © 2018 Devius. All rights reserved.
 //
 
 import UIKit
+<<<<<<< HEAD
+import Stripe
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_g6do5S237ekq10r65BnxO6S0"
+        
+        ///navigation controllers
+        let navigationBarAppearace = UINavigationBar.appearance()
+        let font = UIFont(name: "JosefinSlab-Bold", size: 30.0)!
+        
+        navigationBarAppearace.barTintColor = UIColor(red:0.40, green:0.31, blue:0.42, alpha:1.0)
+        navigationBarAppearace.isTranslucent = false
+
+=======
 import CoreData
 import AVFoundation
 import StoreKit
@@ -28,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationBarAppearace.barTintColor = UIColor(red:1.00, green:0.92, blue:0.92, alpha:1.0)
         navigationBarAppearace.isTranslucent = false
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         navigationBarAppearace.prefersLargeTitles = false
         
         //Get rid of black bar underneath navbar
@@ -35,6 +61,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         // change navigation item title color
         let attrs = [
+<<<<<<< HEAD
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: font
+            ]
+        
+        let largeAtt = [            
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: font ??
+                UIFont.systemFont(ofSize: 25)
+            ]
+                
+=======
             NSAttributedStringKey.foregroundColor: UIColor.black,
             NSAttributedStringKey.font: UIFont(name: "JosefinSlab-Regular", size: 25)
         ]
@@ -47,11 +85,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         navigationBarAppearace.largeTitleTextAttributes = largeAtt
         navigationBarAppearace.titleTextAttributes = attrs
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+<<<<<<< HEAD
+        
+        window?.rootViewController = UINavigationController(rootViewController: TabBar())
+//        GADMobileAds.configure(withApplicationID: "ca-app-pub-3772088375813274~1208338343")
+//
+        return true
+    }
+    
+    
+    
+=======
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
         //        GADMobileAds.configure(withApplicationID: "ca-app-pub-3772088375813274~1208338343")
@@ -63,6 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SKStoreReviewController.requestReview()
     }
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -84,6 +135,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+<<<<<<< HEAD
+        
+    }
+
+=======
         self.saveContext()
     }
 
@@ -132,5 +188,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 }
 

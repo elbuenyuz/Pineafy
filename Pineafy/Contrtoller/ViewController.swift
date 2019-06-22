@@ -175,10 +175,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
 	//ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
 		print("---viewdDidAppear---")
-		
 		//Editing the NavigationBar
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.view.backgroundColor = PINK_BG
+	
 		//Editing the background color of the viewcontroller
 		view.backgroundColor = PINK_BG//bgcolor
 		//Editing the background color of the horoscopeInfo View
@@ -216,12 +214,12 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
     
     //ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
+		self.navigationController?.navigationBar.isTranslucent = false
+		self.navigationController?.navigationBar.barTintColor = PINK_BG
 		//Fetch array of horoscopes
 		populate()
 		//SetupView
         setupView()
-		
-		
 		//this piece of code help us when we ask for the bday, to keep the background menu unabled for the user
         if let date = UserDefaults.standard.string(forKey: KEY_USER_DATE){
             self.navigationController?.navigationBar.isUserInteractionEnabled = true
@@ -312,6 +310,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
 	//ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         print("---viewdDidLoad---")
         //check if users date is saved locally if not present the Walkthrough
         if UserDefaults.standard.string(forKey: KEY_USER_DATE) == nil{
@@ -334,16 +333,17 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
 	//Right Navigation Button created to get access to the marketplace.
     @objc func handleAccessPineafyAstrologers(){
         print("premium")
-		
-		if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
+        if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
             print("user already registered, name: \(name) email: \(mail)")
-            navigationController?.pushViewController(CategoryVC(), animated: true)
+			let vc = CategoryVC()
+			vc.setupView()
+            navigationController?.pushViewController(vc, animated: true)
         }else{
             print("user NOT regsitered yet!")
             //navigationController?.pushViewController(FormVC(), animated: true)
             navigationController?.pushViewController(signInVC(), animated: true)
         }
-        
+//		navigationController?.pushViewController(FourStepsVC(), animated: true)
     }
     
     @objc func handleBurguerMenuAction(){

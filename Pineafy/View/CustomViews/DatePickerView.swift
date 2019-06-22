@@ -61,6 +61,8 @@ class DatePickerView: UIView {
     }
     
     func setupPicker(){
+		
+		
         addSubview(labelTitle)
         labelTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         labelTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true

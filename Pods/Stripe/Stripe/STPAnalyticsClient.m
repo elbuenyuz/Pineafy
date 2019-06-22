@@ -213,6 +213,8 @@
     [self logPayload:payload];
 }
 
+<<<<<<< HEAD
+=======
 - (void)logPaymentIntentConfirmationAttemptWithConfiguration:(STPPaymentConfiguration *)configuration
                                                   sourceType:(NSString *)sourceType {
     NSDictionary *configurationDictionary = [self.class serializeConfiguration:configuration];
@@ -227,6 +229,7 @@
     [self logPayload:payload];
 }
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 + (NSMutableDictionary *)commonPayload {
     NSMutableDictionary *payload = [NSMutableDictionary dictionary];
     payload[@"bindings_version"] = STPSDKVersion;

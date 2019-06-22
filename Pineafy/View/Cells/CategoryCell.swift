@@ -39,7 +39,7 @@ class CategoryCell: BaseCell {
 		name.text = "namePrueba"
 		name.addShadowIcon()
 //		name.textColor = .white
-		name.textColor = .blue
+		name.textColor = .white
 		name.textAlignment = .center
 		name.translatesAutoresizingMaskIntoConstraints = false
 		return name

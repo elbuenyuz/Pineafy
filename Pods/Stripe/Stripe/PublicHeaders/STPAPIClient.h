@@ -18,10 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The current version of this library.
  */
+<<<<<<< HEAD
+static NSString *const STPSDKVersion = @"13.0.3";
+
+@class STPBankAccount, STPBankAccountParams, STPCard, STPCardParams, STPConnectAccountParams, STPSourceParams, STPToken, STPPaymentConfiguration;
+=======
 static NSString *const STPSDKVersion = @"13.2.0";
 
 @class STPBankAccount, STPBankAccountParams, STPCard, STPCardParams, STPConnectAccountParams;
 @class STPPaymentConfiguration, STPPaymentIntentParams, STPSourceParams, STPToken;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 
 /**
  A top-level class that imports the rest of the Stripe SDK.
@@ -131,7 +137,11 @@ static NSString *const STPSDKVersion = @"13.2.0";
 #pragma mark Connect Accounts
 
 /**
+<<<<<<< HEAD
+ Stripe extensions for working with Connect Accounts
+=======
  STPAPIClient extensions for working with Connect Accounts
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
  */
 @interface STPAPIClient (ConnectAccounts)
 
@@ -321,6 +331,8 @@ static NSString *const STPSDKVersion = @"13.2.0";
 
 @end
 
+<<<<<<< HEAD
+=======
 #pragma mark Payment Intents
 
 /**
@@ -352,6 +364,7 @@ static NSString *const STPSDKVersion = @"13.2.0";
 
 @end
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 #pragma mark URL callbacks
 
 /**
