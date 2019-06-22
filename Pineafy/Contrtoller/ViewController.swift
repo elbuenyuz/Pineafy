@@ -340,7 +340,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
             navigationController?.pushViewController(vc, animated: true)
         }else{
             print("user NOT regsitered yet!")
-            navigationController?.pushViewController(FormVC(), animated: true)
+            //navigationController?.pushViewController(FormVC(), animated: true)
+            navigationController?.pushViewController(signInVC(), animated: true)
         }
 //		navigationController?.pushViewController(FourStepsVC(), animated: true)
     }
