@@ -1,9 +1,12 @@
 /* {card brand} ending in {last4} */
 "%@ Ending In %@" = "%1$@ Ending In %2$@";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "3D Secure" = "3D Secure";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Title for Add a Card view */
 "Add a Card" = "Add a Card";
 
@@ -13,18 +16,24 @@
 /* Caption for Address field on address form */
 "Address" = "Address";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "Alipay" = "Alipay";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Text for Apple Pay payment method */
 "Apple Pay" = "Apple Pay";
 
 /* Caption for Apartment/Address line 2 field on address form */
 "Apt." = "Apt.";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "Bancontact" = "Bancontact";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Title for billing address entry section */
 "Billing Address" = "Billing Address";
 
@@ -55,42 +64,57 @@
 /* Caption for Email field on address form */
 "Email" = "Email";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "EPS" = "EPS";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* accessibility label for text field */
 "expiration date" = "expiration date";
 
 /* Label for free shipping method */
 "Free" = "Free";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "Giropay" = "Giropay";
 
 /* Source type brand name */
 "iDEAL" = "iDEAL";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Shipping form error message */
 "Invalid Shipping Address" = "Invalid Shipping Address";
 
 /* Title for screen when data is still loading from the network. */
 "Loading…" = "Loading…";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "Multibanco" = "Multibanco";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Caption for Name field on address form */
 "Name" = "Name";
 
 /* Button to move to the next text entry field */
 "Next" = "Next";
 
+<<<<<<< HEAD
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+=======
 /* ok button */
 "OK" = "OK";
 
 /* Source type brand name */
 "P24" = "P24";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Title for Payment Method screen */
 "Payment Method" = "Payment Method";
 
@@ -109,9 +133,12 @@
 /* Text for button to scan a credit card */
 "Scan Card" = "Scan Card";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "SEPA Direct Debit" = "SEPA Direct Debit";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Title for shipping info form */
 "Shipping" = "Shipping";
 
@@ -121,9 +148,12 @@
 /* Label for shipping method form */
 "Shipping Method" = "Shipping Method";
 
+<<<<<<< HEAD
+=======
 /* Source type brand name */
 "SOFORT" = "SOFORT";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Caption for State field on address form (only countries that use state , like United States) */
 "State" = "State";
 
@@ -136,9 +166,12 @@
 /* Unexpected error, such as a 500 from Stripe or a JSON parse error */
 "There was an unexpected error -- try again in a few seconds" = "There was an unexpected error -- try again in a few seconds";
 
+<<<<<<< HEAD
+=======
 /* Default missing source type label */
 "Unknown" = "Unknown";
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 /* Button to fill shipping address from billing address. */
 "Use Billing" = "Use Billing";
 

@@ -7,11 +7,16 @@
 //
 
 #import "STPRedirectContext.h"
+<<<<<<< HEAD
+
+#import "STPDispatchFunctions.h"
+=======
 #import "STPRedirectContext+Private.h"
 
 #import "STPBlocks.h"
 #import "STPDispatchFunctions.h"
 #import "STPPaymentIntent.h"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 #import "STPSource.h"
 #import "STPURLCallbackHandler.h"
 #import "STPWeakStrongMacros.h"
@@ -24,7 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^STPBoolCompletionBlock)(BOOL success);
 
 @interface STPRedirectContext () <SFSafariViewControllerDelegate, STPURLCallbackListener>
+<<<<<<< HEAD
+@property (nonatomic, copy) STPRedirectContextCompletionBlock completion;
+@property (nonatomic, strong) STPSource *source;
+=======
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 @property (nonatomic, strong, nullable) SFSafariViewController *safariVC;
 @property (nonatomic, assign, readwrite) STPRedirectContextState state;
 /// If we're on iOS 11+ and in the SafariVC flow, this tracks the latest URL loaded/redirected to during the initial load
@@ -37,6 +47,16 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
 @implementation STPRedirectContext
 
 - (nullable instancetype)initWithSource:(STPSource *)source
+<<<<<<< HEAD
+                             completion:(STPRedirectContextCompletionBlock)completion {
+
+    if (source.flow != STPSourceFlowRedirect
+        || !(source.status == STPSourceStatusPending ||
+             source.status == STPSourceStatusChargeable)
+        || source.redirect.returnURL == nil
+        || (source.redirect.url == nil
+            && [self nativeRedirectURLForSource:source] == nil)) {
+=======
                              completion:(STPRedirectContextSourceCompletionBlock)completion {
 
     if (source.flow != STPSourceFlowRedirect
@@ -87,16 +107,22 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
                                         completion:(STPErrorBlock)completion {
     if ((nativeRedirectUrl == nil && redirectUrl == nil)
         || returnUrl == nil) {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         return nil;
     }
 
     self = [super init];
     if (self) {
+<<<<<<< HEAD
+        _source = source;
+        _completion = [completion copy];
+=======
         _nativeRedirectUrl = nativeRedirectUrl;
         _redirectUrl = redirectUrl;
         _returnUrl = returnUrl;
         _completion = completion;
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         _subscribedToURLNotifications = NO;
         _subscribedToForegroundNotifications = NO;
     }
@@ -110,7 +136,11 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
 - (void)performAppRedirectIfPossibleWithCompletion:(STPBoolCompletionBlock)onCompletion {
 
     if (self.state == STPRedirectContextStateNotStarted) {
+<<<<<<< HEAD
+        NSURL *nativeUrl = [self nativeRedirectURLForSource:self.source];
+=======
         NSURL *nativeUrl = self.nativeRedirectUrl;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         if (!nativeUrl) {
             onCompletion(NO);
             return;
@@ -170,7 +200,11 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
     if (self.state == STPRedirectContextStateNotStarted) {
         _state = STPRedirectContextStateInProgress;
         [self subscribeToUrlNotifications];
+<<<<<<< HEAD
+        self.lastKnownSafariVCUrl = self.source.redirect.url;
+=======
         self.lastKnownSafariVCUrl = self.redirectUrl;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
         self.safariVC = [[SFSafariViewController alloc] initWithURL:self.lastKnownSafariVCUrl];
         self.safariVC.delegate = self;
         [presentingViewController presentViewController:self.safariVC
@@ -183,7 +217,11 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
     if (self.state == STPRedirectContextStateNotStarted) {
         self.state = STPRedirectContextStateInProgress;
         [self subscribeToUrlAndForegroundNotifications];
+<<<<<<< HEAD
+        [[UIApplication sharedApplication] openURL:self.source.redirect.url];
+=======
         [[UIApplication sharedApplication] openURL:self.redirectUrl];
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     }
 }
 
@@ -285,14 +323,22 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
         [self dismissPresentedViewController];
     }
 
+<<<<<<< HEAD
+    self.completion(self.source.stripeID, self.source.clientSecret, error);
+=======
     self.completion(error);
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 }
 
 - (void)subscribeToUrlNotifications {
     if (!self.subscribedToURLNotifications) {
         self.subscribedToURLNotifications = YES;
         [[STPURLCallbackHandler shared] registerListener:self
+<<<<<<< HEAD
+                                                  forURL:self.source.redirect.returnURL];
+=======
                                                   forURL:self.returnUrl];
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     }
 }
 
@@ -328,7 +374,11 @@ typedef void (^STPBoolCompletionBlock)(BOOL success);
     }
 }
 
+<<<<<<< HEAD
+- (nullable NSURL *)nativeRedirectURLForSource:(STPSource *)source {
+=======
 + (nullable NSURL *)nativeRedirectURLForSource:(STPSource *)source {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     NSString *nativeUrlString = nil;
     switch (source.type) {
         case STPSourceTypeAlipay:

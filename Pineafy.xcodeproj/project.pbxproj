@@ -3,11 +3,63 @@
 	archiveVersion = 1;
 	classes = {
 	};
+<<<<<<< HEAD
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E2AC0C320C7209D006D82AC /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AC0C220C7209D006D82AC /* ExploreVC.swift */; };
+		8E2AC0C520C724A9006D82AC /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AC0C420C724A9006D82AC /* ServiceCell.swift */; };
+		8E2AC0C720CB0D21006D82AC /* ServiceCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AC0C620CB0D21006D82AC /* ServiceCategoriesModel.swift */; };
+		8E365C3E201ACDC800E5E168 /* AdvisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E365C3D201ACDC800E5E168 /* AdvisorCell.swift */; };
+		8E365C41201AD22900E5E168 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E365C40201AD22900E5E168 /* BaseCell.swift */; };
+		8E3B3F3F2059EF5500847CD2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B3F3E2059EF5500847CD2 /* Service.swift */; };
+		8E3B3F412059F16100847CD2 /* Advisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B3F402059F16100847CD2 /* Advisor.swift */; };
+		8E3B657820AA3E8D00A240EE /* JosefinSlab-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B657720AA3E8D00A240EE /* JosefinSlab-LightItalic.ttf */; };
+		8E3B657A20AA3E9400A240EE /* JosefinSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B657920AA3E9400A240EE /* JosefinSlab-Regular.ttf */; };
+		8E3B657C20AA3EA400A240EE /* JosefinSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B657B20AA3EA400A240EE /* JosefinSlab-Bold.ttf */; };
+		8E3B657E20AA5A5B00A240EE /* JosefinSlab-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B657D20AA5A5B00A240EE /* JosefinSlab-SemiBoldItalic.ttf */; };
+		8E3C911420ACA95400694FA4 /* JosefinSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C911320ACA95400694FA4 /* JosefinSlab-Light.ttf */; };
+		8E3C911E20AFF69400694FA4 /* PineafyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C911D20AFF69400694FA4 /* PineafyTests.swift */; };
+		8E431CF0205E2BDB00CB2811 /* DailyInsightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E431CEF205E2BDB00CB2811 /* DailyInsightCell.swift */; };
+		8E493D992019549700B7E145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E493D982019549700B7E145 /* AppDelegate.swift */; };
+		8E493DA12019549700B7E145 /* Pineafy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */; };
+		8E493DA32019549700B7E145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E493DA22019549700B7E145 /* Assets.xcassets */; };
+		8E493DA62019549700B7E145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E493DA42019549700B7E145 /* LaunchScreen.storyboard */; };
+		8E493DCA2019580A00B7E145 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E493DC92019580A00B7E145 /* GoogleService-Info.plist */; };
+		8E5EE23620A2CC0900E7820C /* DailyInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5EE23520A2CC0900E7820C /* DailyInsight.swift */; };
+		8E5EE23820A2D02A00E7820C /* InsightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5EE23720A2D02900E7820C /* InsightsVC.swift */; };
+		8E5EE23A20A39EE100E7820C /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5EE23920A39EE100E7820C /* PinterestLayout.swift */; };
+		8E5EE23C20A411F200E7820C /* DetailInsightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5EE23B20A411F200E7820C /* DetailInsightVC.swift */; };
+		8E6ACE9F2107AE2C008BC078 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6ACE9E2107AE2C008BC078 /* Constants.swift */; };
+		8E6F788F20F885A200702C00 /* DetailServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F788E20F885A200702C00 /* DetailServiceView.swift */; };
+		8E7A920B20674D0300E6B3EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A920A20674D0300E6B3EB /* DataService.swift */; };
+		8E8431CC20DAF53D0025B413 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8431CB20DAF53D0025B413 /* MenuBar.swift */; };
+		8E8463092022DA8F007AF9DF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8463082022DA8F007AF9DF /* TabBar.swift */; };
+		8E8D611820EBFD8C00499AA4 /* MenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D611720EBFD8C00499AA4 /* MenuCategoryCell.swift */; };
+		8E904BE820A61DED00DBEFAA /* AdvisorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E904BE720A61DED00DBEFAA /* AdvisorsVC.swift */; };
+		8EBF00F8209CEB7A002F3582 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF00F7209CEB7A002F3582 /* SwipingController.swift */; };
+		8EBF00FA209CF0BD002F3582 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF00F9209CF0BD002F3582 /* PageCell.swift */; };
+		8EBF00FC209CFD85002F3582 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF00FB209CFD85002F3582 /* Page.swift */; };
+		8ED95AD320BFAAEF008F14E9 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED95AD220BFAAEF008F14E9 /* CategoryModel.swift */; };
+		8ED9B3D9210AC5D10087DD21 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9B3D8210AC5D10087DD21 /* Models.swift */; };
+		8ED9B3DC210C0CA70087DD21 /* UserCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9B3DB210C0CA70087DD21 /* UserCreationView.swift */; };
+		DDAFA8B99DBCB6294554BC3B /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DF00697C57CCCFB6EEED65 /* Pods_Pineafy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E3C912020AFF69400694FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E493D8D2019549700B7E145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E493D942019549700B7E145;
+=======
 	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E00902C04B6B75FC86109F7 /* Pods_Pineafy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */; };
+		8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C99222B8AD8400CDB1E5 /* signInVC.swift */; };
 		8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17492E221D1E17007DC9E7 /* DataService.swift */; };
 		8E174931221D2154007DC9E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E174930221D2154007DC9E7 /* GoogleService-Info.plist */; };
 		8E1C38862288B64600E6386D /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C38852288B64600E6386D /* FeedbackModel.swift */; };
@@ -74,13 +126,66 @@
 			containerPortal = 8E774DA12159CE9500AD4350 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8E774DA82159CE9500AD4350;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			remoteInfo = Pineafy;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+		424033364C8493A9A878C81A /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
+		64E45CF8AE4AE6BEE2155837 /* Pods_PineafyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PineafyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79DF00697C57CCCFB6EEED65 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2AC0C220C7209D006D82AC /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
+		8E2AC0C420C724A9006D82AC /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		8E2AC0C620CB0D21006D82AC /* ServiceCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategoriesModel.swift; sourceTree = "<group>"; };
+		8E365C3D201ACDC800E5E168 /* AdvisorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvisorCell.swift; sourceTree = "<group>"; };
+		8E365C40201AD22900E5E168 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		8E3B3F3E2059EF5500847CD2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		8E3B3F402059F16100847CD2 /* Advisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advisor.swift; sourceTree = "<group>"; };
+		8E3B657720AA3E8D00A240EE /* JosefinSlab-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-LightItalic.ttf"; sourceTree = "<group>"; };
+		8E3B657920AA3E9400A240EE /* JosefinSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Regular.ttf"; sourceTree = "<group>"; };
+		8E3B657B20AA3EA400A240EE /* JosefinSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Bold.ttf"; sourceTree = "<group>"; };
+		8E3B657D20AA5A5B00A240EE /* JosefinSlab-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8E3C911120ACA94300694FA4 /* JosefinSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Thin.ttf"; sourceTree = "<group>"; };
+		8E3C911320ACA95400694FA4 /* JosefinSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Light.ttf"; sourceTree = "<group>"; };
+		8E3C911B20AFF69400694FA4 /* PineafyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineafyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E3C911D20AFF69400694FA4 /* PineafyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineafyTests.swift; sourceTree = "<group>"; };
+		8E3C911F20AFF69400694FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E431CEF205E2BDB00CB2811 /* DailyInsightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInsightCell.swift; sourceTree = "<group>"; };
+		8E493D952019549700B7E145 /* Pineafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pineafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E493D982019549700B7E145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pineafy.xcdatamodel; sourceTree = "<group>"; };
+		8E493DA22019549700B7E145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E493DA52019549700B7E145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E493DA72019549700B7E145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E493DC92019580A00B7E145 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E5EE23520A2CC0900E7820C /* DailyInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInsight.swift; sourceTree = "<group>"; };
+		8E5EE23720A2D02900E7820C /* InsightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsVC.swift; sourceTree = "<group>"; };
+		8E5EE23920A39EE100E7820C /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		8E5EE23B20A411F200E7820C /* DetailInsightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInsightVC.swift; sourceTree = "<group>"; };
+		8E6ACE9E2107AE2C008BC078 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E6F788E20F885A200702C00 /* DetailServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceView.swift; sourceTree = "<group>"; };
+		8E7A920A20674D0300E6B3EB /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		8E8431CB20DAF53D0025B413 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		8E8463082022DA8F007AF9DF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		8E8D611720EBFD8C00499AA4 /* MenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCell.swift; sourceTree = "<group>"; };
+		8E904BE720A61DED00DBEFAA /* AdvisorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvisorsVC.swift; sourceTree = "<group>"; };
+		8EBF00F7209CEB7A002F3582 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
+		8EBF00F9209CF0BD002F3582 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		8EBF00FB209CFD85002F3582 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		8ED95AD220BFAAEF008F14E9 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		8ED9B3D8210AC5D10087DD21 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8ED9B3DB210C0CA70087DD21 /* UserCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationView.swift; sourceTree = "<group>"; };
+		D5CFC680D5218AD3CDEB0C2E /* Pods-Pineafy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E3C911820AFF69400694FA4 /* Frameworks */ = {
+=======
 		448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pineafy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy.release.xcconfig"; sourceTree = "<group>"; };
 		704DBB14E4A1A5ABF6DD9877 /* Pods_Pineafy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pineafy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8351C99222B8AD8400CDB1E5 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		8E17492E221D1E17007DC9E7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8E174930221D2154007DC9E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E1C38852288B64600E6386D /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
@@ -151,22 +256,194 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8E774DBD2159CE9600AD4350 /* Frameworks */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
+		8E493D922019549700B7E145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDAFA8B99DBCB6294554BC3B /* Pods_Pineafy.framework in Frameworks */,
+=======
 		8E774DC82159CE9600AD4350 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
+		8E365C3A201ACB3400E5E168 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E3B3F3E2059EF5500847CD2 /* Service.swift */,
+				8E3B3F402059F16100847CD2 /* Advisor.swift */,
+				8EBF00FB209CFD85002F3582 /* Page.swift */,
+				8E5EE23520A2CC0900E7820C /* DailyInsight.swift */,
+				8ED95AD220BFAAEF008F14E9 /* CategoryModel.swift */,
+				8E2AC0C620CB0D21006D82AC /* ServiceCategoriesModel.swift */,
+				8ED9B3D8210AC5D10087DD21 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8E365C3B201ACB3A00E5E168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8ED9B3DA210C0C5A0087DD21 /* InsightUserCreationView */,
+				8E6F788D20F8856600702C00 /* DetailServiceView */,
+				8E8D611920EC1C6A00499AA4 /* CategoryMenu */,
+				8E365C3D201ACDC800E5E168 /* AdvisorCell.swift */,
+				8E365C40201AD22900E5E168 /* BaseCell.swift */,
+				8E431CEF205E2BDB00CB2811 /* DailyInsightCell.swift */,
+				8EBF00F9209CF0BD002F3582 /* PageCell.swift */,
+				8E5EE23920A39EE100E7820C /* PinterestLayout.swift */,
+				8E2AC0C420C724A9006D82AC /* ServiceCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E365C3C201ACB3F00E5E168 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8E8463082022DA8F007AF9DF /* TabBar.swift */,
+				8E5EE23720A2D02900E7820C /* InsightsVC.swift */,
+				8EBF00F7209CEB7A002F3582 /* SwipingController.swift */,
+				8E5EE23B20A411F200E7820C /* DetailInsightVC.swift */,
+				8E904BE720A61DED00DBEFAA /* AdvisorsVC.swift */,
+				8E2AC0C220C7209D006D82AC /* ExploreVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8E3B3F372059C75A00847CD2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				8E3B657720AA3E8D00A240EE /* JosefinSlab-LightItalic.ttf */,
+				8E3B657D20AA5A5B00A240EE /* JosefinSlab-SemiBoldItalic.ttf */,
+				8E3C911320ACA95400694FA4 /* JosefinSlab-Light.ttf */,
+				8E3C911120ACA94300694FA4 /* JosefinSlab-Thin.ttf */,
+				8E3B657920AA3E9400A240EE /* JosefinSlab-Regular.ttf */,
+				8E3B657B20AA3EA400A240EE /* JosefinSlab-Bold.ttf */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		8E3C911C20AFF69400694FA4 /* PineafyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E3C911D20AFF69400694FA4 /* PineafyTests.swift */,
+				8E3C911F20AFF69400694FA4 /* Info.plist */,
+			);
+			path = PineafyTests;
+			sourceTree = "<group>";
+		};
+		8E43596A20B35DCE003988DB /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
+		8E493D8C2019549700B7E145 = {
+			isa = PBXGroup;
+			children = (
+				8E493D972019549700B7E145 /* Pineafy */,
+				8E3C911C20AFF69400694FA4 /* PineafyTests */,
+				8E493D962019549700B7E145 /* Products */,
+				90FA920891BA57C05F9D9F35 /* Pods */,
+				94D772FA3B10C06B97466F9A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8E493D962019549700B7E145 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E493D952019549700B7E145 /* Pineafy.app */,
+				8E3C911B20AFF69400694FA4 /* PineafyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E493D972019549700B7E145 /* Pineafy */ = {
+			isa = PBXGroup;
+			children = (
+				8E43596A20B35DCE003988DB /* Stripe */,
+				8E3B3F372059C75A00847CD2 /* Styles */,
+				8E84630520225C12007AF9DF /* Utils */,
+				8E365C3C201ACB3F00E5E168 /* Controller */,
+				8E365C3B201ACB3A00E5E168 /* View */,
+				8E365C3A201ACB3400E5E168 /* Model */,
+				8E493D982019549700B7E145 /* AppDelegate.swift */,
+				8E493DA22019549700B7E145 /* Assets.xcassets */,
+				8E493DA42019549700B7E145 /* LaunchScreen.storyboard */,
+				8E493DA72019549700B7E145 /* Info.plist */,
+				8E493DC92019580A00B7E145 /* GoogleService-Info.plist */,
+				8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */,
+			);
+			path = Pineafy;
+			sourceTree = "<group>";
+		};
+		8E6F788D20F8856600702C00 /* DetailServiceView */ = {
+			isa = PBXGroup;
+			children = (
+				8E6F788E20F885A200702C00 /* DetailServiceView.swift */,
+			);
+			path = DetailServiceView;
+			sourceTree = "<group>";
+		};
+		8E84630520225C12007AF9DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E7A920A20674D0300E6B3EB /* DataService.swift */,
+				8E6ACE9E2107AE2C008BC078 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8E8D611920EC1C6A00499AA4 /* CategoryMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D611720EBFD8C00499AA4 /* MenuCategoryCell.swift */,
+				8E8431CB20DAF53D0025B413 /* MenuBar.swift */,
+			);
+			path = CategoryMenu;
+			sourceTree = "<group>";
+		};
+		8ED9B3DA210C0C5A0087DD21 /* InsightUserCreationView */ = {
+			isa = PBXGroup;
+			children = (
+				8ED9B3DB210C0CA70087DD21 /* UserCreationView.swift */,
+			);
+			path = InsightUserCreationView;
+			sourceTree = "<group>";
+		};
+		90FA920891BA57C05F9D9F35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5CFC680D5218AD3CDEB0C2E /* Pods-Pineafy.debug.xcconfig */,
+				424033364C8493A9A878C81A /* Pods-Pineafy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94D772FA3B10C06B97466F9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79DF00697C57CCCFB6EEED65 /* Pods_Pineafy.framework */,
+				64E45CF8AE4AE6BEE2155837 /* Pods_PineafyUITests.framework */,
+			);
+			name = Frameworks;
+=======
 		0147394006312487013095BA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,13 +618,24 @@
 				8E2CCBE522939B8D00486C3F /* titleDescView.swift */,
 				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
 				8E67E71621603183003EB09C /* DatePickerView.swift */,
+				8351C99222B8AD8400CDB1E5 /* signInVC.swift */,
 			);
 			path = CustomViews;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+<<<<<<< HEAD
+		8E3C911A20AFF69400694FA4 /* PineafyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E3C912220AFF69400694FA4 /* Build configuration list for PBXNativeTarget "PineafyTests" */;
+			buildPhases = (
+				8E3C911720AFF69400694FA4 /* Sources */,
+				8E3C911820AFF69400694FA4 /* Frameworks */,
+				8E3C911920AFF69400694FA4 /* Resources */,
+=======
 		8E774DA82159CE9500AD4350 /* Pineafy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E774DD42159CE9600AD4350 /* Build configuration list for PBXNativeTarget "Pineafy" */;
@@ -374,10 +662,30 @@
 				8E774DBC2159CE9600AD4350 /* Sources */,
 				8E774DBD2159CE9600AD4350 /* Frameworks */,
 				8E774DBE2159CE9600AD4350 /* Resources */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
+				8E3C912120AFF69400694FA4 /* PBXTargetDependency */,
+			);
+			name = PineafyTests;
+			productName = PineafyTests;
+			productReference = 8E3C911B20AFF69400694FA4 /* PineafyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E493D942019549700B7E145 /* Pineafy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E493DC02019549800B7E145 /* Build configuration list for PBXNativeTarget "Pineafy" */;
+			buildPhases = (
+				30EDD7044520DF38C196EE9A /* [CP] Check Pods Manifest.lock */,
+				8E493D912019549700B7E145 /* Sources */,
+				8E493D922019549700B7E145 /* Frameworks */,
+				8E493D932019549700B7E145 /* Resources */,
+				6493BC08DB5D256970F8C140 /* [CP] Embed Pods Frameworks */,
+				BEE7120FEAF01D7D0522B844 /* [CP] Copy Pods Resources */,
+=======
 				8E774DC22159CE9600AD4350 /* PBXTargetDependency */,
 			);
 			name = PineafyTests;
@@ -392,20 +700,51 @@
 				8E774DC72159CE9600AD4350 /* Sources */,
 				8E774DC82159CE9600AD4350 /* Frameworks */,
 				8E774DC92159CE9600AD4350 /* Resources */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
+			);
+			name = Pineafy;
+			productName = Pineafy;
+			productReference = 8E493D952019549700B7E145 /* Pineafy.app */;
+			productType = "com.apple.product-type.application";
+=======
 				8E774DCD2159CE9600AD4350 /* PBXTargetDependency */,
 			);
 			name = PineafyUITests;
 			productName = PineafyUITests;
 			productReference = 8E774DCB2159CE9600AD4350 /* PineafyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
+<<<<<<< HEAD
+		8E493D8D2019549700B7E145 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Devius;
+				TargetAttributes = {
+					8E3C911A20AFF69400694FA4 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8E493D942019549700B7E145;
+					};
+					8E493D942019549700B7E145 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8E493D902019549700B7E145 /* Build configuration list for PBXProject "Pineafy" */;
+			compatibilityVersion = "Xcode 8.0";
+=======
 		8E774DA12159CE9500AD4350 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
@@ -428,12 +767,22 @@
 			};
 			buildConfigurationList = 8E774DA42159CE9500AD4350 /* Build configuration list for PBXProject "Pineafy" */;
 			compatibilityVersion = "Xcode 9.3";
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
+<<<<<<< HEAD
+			mainGroup = 8E493D8C2019549700B7E145;
+			productRefGroup = 8E493D962019549700B7E145 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E493D942019549700B7E145 /* Pineafy */,
+				8E3C911A20AFF69400694FA4 /* PineafyTests */,
+=======
 			mainGroup = 8E774DA02159CE9500AD4350;
 			productRefGroup = 8E774DAA2159CE9500AD4350 /* Products */;
 			projectDirPath = "";
@@ -442,11 +791,15 @@
 				8E774DA82159CE9500AD4350 /* Pineafy */,
 				8E774DBF2159CE9600AD4350 /* PineafyTests */,
 				8E774DCA2159CE9600AD4350 /* PineafyUITests */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+<<<<<<< HEAD
+		8E3C911920AFF69400694FA4 /* Resources */ = {
+=======
 		8E774DA72159CE9500AD4350 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,36 +818,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8E774DBE2159CE9600AD4350 /* Resources */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
+		8E493D932019549700B7E145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E493DA62019549700B7E145 /* LaunchScreen.storyboard in Resources */,
+				8E3B657A20AA3E9400A240EE /* JosefinSlab-Regular.ttf in Resources */,
+				8E493DA32019549700B7E145 /* Assets.xcassets in Resources */,
+				8E3B657E20AA5A5B00A240EE /* JosefinSlab-SemiBoldItalic.ttf in Resources */,
+				8E3B657C20AA3EA400A240EE /* JosefinSlab-Bold.ttf in Resources */,
+				8E493DCA2019580A00B7E145 /* GoogleService-Info.plist in Resources */,
+				8E3C911420ACA95400694FA4 /* JosefinSlab-Light.ttf in Resources */,
+				8E3B657820AA3E8D00A240EE /* JosefinSlab-LightItalic.ttf in Resources */,
+=======
 		8E774DC92159CE9600AD4350 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
+		30EDD7044520DF38C196EE9A /* [CP] Check Pods Manifest.lock */ = {
+=======
 		23947CE7F534F43F86EC4848 /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+<<<<<<< HEAD
+=======
 			inputFileListPaths = (
 			);
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+<<<<<<< HEAD
+=======
 			outputFileListPaths = (
 			);
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Pineafy-checkManifestLockResult.txt",
 			);
@@ -503,11 +882,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
+		6493BC08DB5D256970F8C140 /* [CP] Embed Pods Frameworks */ = {
+=======
 		B1761C30E62E727C3DDFB10B /* [CP] Embed Pods Frameworks */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+<<<<<<< HEAD
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+=======
 			inputFileListPaths = (
 			);
 			inputPaths = (
@@ -531,12 +923,72 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
+		BEE7120FEAF01D7D0522B844 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pineafy/Pods-Pineafy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E3C911720AFF69400694FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E3C911E20AFF69400694FA4 /* PineafyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E493D912019549700B7E145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6ACE9F2107AE2C008BC078 /* Constants.swift in Sources */,
+				8ED9B3D9210AC5D10087DD21 /* Models.swift in Sources */,
+				8E8463092022DA8F007AF9DF /* TabBar.swift in Sources */,
+				8E5EE23A20A39EE100E7820C /* PinterestLayout.swift in Sources */,
+				8E6F788F20F885A200702C00 /* DetailServiceView.swift in Sources */,
+				8E493D992019549700B7E145 /* AppDelegate.swift in Sources */,
+				8E2AC0C320C7209D006D82AC /* ExploreVC.swift in Sources */,
+				8E8D611820EBFD8C00499AA4 /* MenuCategoryCell.swift in Sources */,
+				8E431CF0205E2BDB00CB2811 /* DailyInsightCell.swift in Sources */,
+				8EBF00FC209CFD85002F3582 /* Page.swift in Sources */,
+				8E904BE820A61DED00DBEFAA /* AdvisorsVC.swift in Sources */,
+				8E3B3F412059F16100847CD2 /* Advisor.swift in Sources */,
+				8E5EE23620A2CC0900E7820C /* DailyInsight.swift in Sources */,
+				8EBF00FA209CF0BD002F3582 /* PageCell.swift in Sources */,
+				8E2AC0C520C724A9006D82AC /* ServiceCell.swift in Sources */,
+				8E5EE23820A2D02A00E7820C /* InsightsVC.swift in Sources */,
+				8E493DA12019549700B7E145 /* Pineafy.xcdatamodeld in Sources */,
+				8ED95AD320BFAAEF008F14E9 /* CategoryModel.swift in Sources */,
+				8EBF00F8209CEB7A002F3582 /* SwipingController.swift in Sources */,
+				8E7A920B20674D0300E6B3EB /* DataService.swift in Sources */,
+				8ED9B3DC210C0CA70087DD21 /* UserCreationView.swift in Sources */,
+				8E8431CC20DAF53D0025B413 /* MenuBar.swift in Sources */,
+				8E5EE23C20A411F200E7820C /* DetailInsightVC.swift in Sources */,
+				8E365C41201AD22900E5E168 /* BaseCell.swift in Sources */,
+				8E3B3F3F2059EF5500847CD2 /* Service.swift in Sources */,
+				8E365C3E201ACDC800E5E168 /* AdvisorCell.swift in Sources */,
+				8E2AC0C720CB0D21006D82AC /* ServiceCategoriesModel.swift in Sources */,
+=======
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,6 +1002,7 @@
 				8E774DE32159FB2500AD4350 /* PageCell.swift in Sources */,
 				8E1C38862288B64600E6386D /* FeedbackModel.swift in Sources */,
 				8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */,
+				8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */,
 				8E585B52227BF8420061B004 /* CategoryCell.swift in Sources */,
 				8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */,
 				8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */,
@@ -599,12 +1052,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E774DD02159CE9600AD4350 /* PineafyUITests.swift in Sources */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+<<<<<<< HEAD
+		8E3C912120AFF69400694FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E493D942019549700B7E145 /* Pineafy */;
+			targetProxy = 8E3C912020AFF69400694FA4 /* PBXContainerItemProxy */;
+=======
 		8E774DC22159CE9600AD4350 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E774DA82159CE9500AD4350 /* Pineafy */;
@@ -614,14 +1074,22 @@
 			isa = PBXTargetDependency;
 			target = 8E774DA82159CE9500AD4350 /* Pineafy */;
 			targetProxy = 8E774DCC2159CE9600AD4350 /* PBXContainerItemProxy */;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+<<<<<<< HEAD
+		8E493DA42019549700B7E145 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E493DA52019549700B7E145 /* Base */,
+=======
 		8E774DB82159CE9600AD4350 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8E774DB92159CE9600AD4350 /* Base */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -629,7 +1097,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+<<<<<<< HEAD
+		8E3C912320AFF69400694FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pineafy.app/Pineafy";
+			};
+			name = Debug;
+		};
+		8E3C912420AFF69400694FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = PineafyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.InstaKarma.PineafyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pineafy.app/Pineafy";
+			};
+			name = Release;
+		};
+		8E493DBE2019549800B7E145 /* Debug */ = {
+=======
 		8E774DD22159CE9600AD4350 /* Debug */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -639,7 +1151,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+<<<<<<< HEAD
+=======
 				CLANG_ENABLE_OBJC_WEAK = YES;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -680,7 +1195,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+=======
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -689,7 +1208,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
+		8E493DBF2019549800B7E145 /* Release */ = {
+=======
 		8E774DD32159CE9600AD4350 /* Release */ = {
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -699,7 +1222,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+<<<<<<< HEAD
+=======
 				CLANG_ENABLE_OBJC_WEAK = YES;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -734,15 +1260,36 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+=======
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
+		8E493DC12019549800B7E145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5CFC680D5218AD3CDEB0C2E /* Pods-Pineafy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = Pineafy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+=======
 		8E774DD52159CE9600AD4350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F31D18D94A517E01C26FD730 /* Pods-Pineafy.debug.xcconfig */;
@@ -760,11 +1307,26 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviusLLC.pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
+		8E493DC22019549800B7E145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424033364C8493A9A878C81A /* Pods-Pineafy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83M9X3N895;
+				INFOPLIST_FILE = Pineafy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Devius.Pineafy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+=======
 		8E774DD62159CE9600AD4350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 448BC766164962E9D179A9F3 /* Pods-Pineafy.release.xcconfig */;
@@ -782,11 +1344,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviusLLC.pineafy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E3C912220AFF69400694FA4 /* Build configuration list for PBXNativeTarget "PineafyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E3C912320AFF69400694FA4 /* Debug */,
+				8E3C912420AFF69400694FA4 /* Release */,
+=======
 		8E774DD82159CE9600AD4350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -886,24 +1459,41 @@
 			buildConfigurations = (
 				8E774DD52159CE9600AD4350 /* Debug */,
 				8E774DD62159CE9600AD4350 /* Release */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
+		8E493D902019549700B7E145 /* Build configuration list for PBXProject "Pineafy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DBE2019549800B7E145 /* Debug */,
+				8E493DBF2019549800B7E145 /* Release */,
+=======
 		8E774DD72159CE9600AD4350 /* Build configuration list for PBXNativeTarget "PineafyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E774DD82159CE9600AD4350 /* Debug */,
 				8E774DD92159CE9600AD4350 /* Release */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
+		8E493DC02019549800B7E145 /* Build configuration list for PBXNativeTarget "Pineafy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E493DC12019549800B7E145 /* Debug */,
+				8E493DC22019549800B7E145 /* Release */,
+=======
 		8E774DDA2159CE9600AD4350 /* Build configuration list for PBXNativeTarget "PineafyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E774DDB2159CE9600AD4350 /* Debug */,
 				8E774DDC2159CE9600AD4350 /* Release */,
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -911,17 +1501,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+<<<<<<< HEAD
+		8E493D9F2019549700B7E145 /* Pineafy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */,
+			);
+			currentVersion = 8E493DA02019549700B7E145 /* Pineafy.xcdatamodel */;
+=======
 		8E774DB32159CE9500AD4350 /* Pineafy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				8E774DB42159CE9500AD4350 /* Pineafy.xcdatamodel */,
 			);
 			currentVersion = 8E774DB42159CE9500AD4350 /* Pineafy.xcdatamodel */;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 			path = Pineafy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
+<<<<<<< HEAD
+	rootObject = 8E493D8D2019549700B7E145 /* Project object */;
+=======
 	rootObject = 8E774DA12159CE9500AD4350 /* Project object */;
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 }

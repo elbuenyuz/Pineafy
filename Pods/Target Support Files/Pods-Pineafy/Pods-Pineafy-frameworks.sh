@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+<<<<<<< HEAD
+=======
 set -u
 set -o pipefail
 
@@ -8,21 +10,30 @@ if [ -z ${FRAMEWORKS_FOLDER_PATH+x} ]; then
     # frameworks to, so exit 0 (signalling the script phase was successful).
     exit 0
 fi
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 
 echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
+<<<<<<< HEAD
+SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+
+=======
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
 SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 
 # Used as a return value for each invocation of `strip_invalid_archs` function.
 STRIP_BINARY_RETVAL=0
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 # This protects against multiple targets copying the same framework dependency at the same time. The solution
 # was originally proposed here: https://lists.samba.org/archive/rsync/2008-February/020158.html
 RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 
+<<<<<<< HEAD
+=======
 # Copies and strips a vendored framework
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 install_framework()
 {
   if [ -r "${BUILT_PRODUCTS_DIR}/$1" ]; then
@@ -71,6 +82,14 @@ install_framework()
   fi
 }
 
+<<<<<<< HEAD
+# Copies the dSYM of a vendored framework
+install_dsym() {
+  local source="$1"
+  if [ -r "$source" ]; then
+    echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${DWARF_DSYM_FOLDER_PATH}\""
+    rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${DWARF_DSYM_FOLDER_PATH}"
+=======
 # Copies and strips a vendored dSYM
 install_dsym() {
   local source="$1"
@@ -96,15 +115,23 @@ install_dsym() {
       # The dSYM was not stripped at all, in this case touch a fake folder so the input/output paths from Xcode do not reexecute this script because the file is missing.
       touch "${DWARF_DSYM_FOLDER_PATH}/${basename}.framework.dSYM"
     fi
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
   fi
 }
 
 # Signs a framework with the provided identity
 code_sign_if_enabled() {
+<<<<<<< HEAD
+  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
+    # Use the current code_sign_identitiy
+    echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
+    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements '$1'"
+=======
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
     local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$1'"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 
     if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
@@ -117,6 +144,12 @@ code_sign_if_enabled() {
 # Strip invalid architectures
 strip_invalid_archs() {
   binary="$1"
+<<<<<<< HEAD
+  # Get architectures for current file
+  archs="$(lipo -info "$binary" | rev | cut -d ':' -f1 | rev)"
+  stripped=""
+  for arch in $archs; do
+=======
   # Get architectures for current target binary
   binary_archs="$(lipo -info "$binary" | rev | cut -d ':' -f1 | awk '{$1=$1;print}' | rev)"
   # Intersect them with the architectures we are building for
@@ -129,6 +162,7 @@ strip_invalid_archs() {
   fi
   stripped=""
   for arch in $binary_archs; do
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
     if ! [[ "${ARCHS}" == *"$arch"* ]]; then
       # Strip non-valid architectures in-place
       lipo -remove "$arch" -output "$binary" "$binary" || exit 1
@@ -138,11 +172,20 @@ strip_invalid_archs() {
   if [[ "$stripped" ]]; then
     echo "Stripped $binary of architectures:$stripped"
   fi
+<<<<<<< HEAD
+=======
   STRIP_BINARY_RETVAL=1
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 }
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+<<<<<<< HEAD
+  install_framework "${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework"
+=======
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
@@ -159,6 +202,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

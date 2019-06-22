@@ -29,7 +29,10 @@
 - (void)logSourceCreationAttemptWithConfiguration:(STPPaymentConfiguration *)configuration
                                        sourceType:(NSString *)sourceType;
 
+<<<<<<< HEAD
+=======
 - (void)logPaymentIntentConfirmationAttemptWithConfiguration:(STPPaymentConfiguration *)configuration
                                                   sourceType:(NSString *)sourceType;
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 @end

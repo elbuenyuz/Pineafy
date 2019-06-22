@@ -9,7 +9,10 @@
 #import "STPPaymentCardTextFieldViewModel.h"
 
 #import "NSString+Stripe.h"
+<<<<<<< HEAD
+=======
 #import "STPCardValidator+Private.h"
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 #import "STPPostalCodeValidator.h"
 
 @implementation STPPaymentCardTextFieldViewModel
@@ -21,6 +24,8 @@
     _cardNumber = [sanitizedNumber stp_safeSubstringToIndex:maxLength];
 }
 
+<<<<<<< HEAD
+=======
 - (NSString *)compressedCardNumber {
     NSString *cardNumber = self.cardNumber;
     if (cardNumber.length == 0) {
@@ -53,6 +58,7 @@
     return nil;
 }
 
+>>>>>>> 6955d9fa30d1b4dfe0d146cf03cb639fe1cf5925
 // This might contain slashes.
 - (void)setRawExpiration:(NSString *)expiration {
     NSString *sanitizedExpiration = [STPCardValidator sanitizedNumericStringForString:expiration];
