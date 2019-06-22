@@ -12,7 +12,18 @@ import UIKit
 class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	var blackView = UIView()
 	var titleCatgegory = ""
-	let services = [ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "profileImg"), price: "$75.00", categoryName: "Money"), ServiceProviderModel(name: "Monica Herrera", rate: #imageLiteral(resourceName: "rate3"), profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$65.00", categoryName: "Money"), ServiceProviderModel(name: "Brenda Tam", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$70.00", categoryName: "Business"),ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "profileImg"), price: "$75.00", categoryName: "Money"), ServiceProviderModel(name: "Monica Herrera", rate: #imageLiteral(resourceName: "rate3"), profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$65.00", categoryName: "Money"), ServiceProviderModel(name: "Brenda Tam", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$70.00", categoryName: "Business")]
+	
+	var catDetail: CategoryModel? {
+		didSet {
+			guard let unwrappedCat = catDetail else{return}
+			descCategory.text = unwrappedCat.description
+			self.navigationItem.title = unwrappedCat.name
+		}
+	}
+	
+	
+	
+	let services = [ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "profileImg"), price: "$115.00", categoryName: "Money"), ServiceProviderModel(name: "Monica Herrera", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$145.00", categoryName: "Money"), ServiceProviderModel(name: "Susana Tam", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$80.00", categoryName: "Business"),ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "pro7"), price: "$150.00", categoryName: "Money"), ServiceProviderModel(name: "Yazmin Villagomez", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "pro5"), price: "$95.00", categoryName: "Money"), ServiceProviderModel(name: "Brenda Segura", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "pro6"), price: "$120.00", categoryName: "Business")]
 	
 	lazy var collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
@@ -97,7 +108,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	
 	override func viewDidAppear(_ animated: Bool) {
 //		self.blackView.backgroundColor = UIColor(white: 0, alpha: 0.9)
-		self.navigationController?.navigationBar.topItem?.title = titleCatgegory
+
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

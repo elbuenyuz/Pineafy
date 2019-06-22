@@ -14,6 +14,8 @@
 		8E1C38882288B7BC00E6386D /* ProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C38872288B7BC00E6386D /* ProviderModel.swift */; };
 		8E21F86421B777790034640D /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21F86321B777790034640D /* CategoryVC.swift */; };
 		8E2AFEAF218F5F1500F18A3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AFEAE218F5F1500F18A3C /* Constants.swift */; };
+		8E2C13DC22B32F3D00561CD7 /* FourStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C13DB22B32F3D00561CD7 /* FourStepsVC.swift */; };
+		8E2C13DF22B332D200561CD7 /* FirstStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C13DE22B332D200561CD7 /* FirstStepCell.swift */; };
 		8E2CCBE2228BC44700486C3F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CCBE1228BC44700486C3F /* ProfileView.swift */; };
 		8E2CCBE4228BC48500486C3F /* profileProviderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CCBE3228BC48500486C3F /* profileProviderCell.swift */; };
 		8E2CCBE622939B8D00486C3F /* titleDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CCBE522939B8D00486C3F /* titleDescView.swift */; };
@@ -85,6 +87,8 @@
 		8E1C38872288B7BC00E6386D /* ProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderModel.swift; sourceTree = "<group>"; };
 		8E21F86321B777790034640D /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		8E2AFEAE218F5F1500F18A3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E2C13DB22B32F3D00561CD7 /* FourStepsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourStepsVC.swift; sourceTree = "<group>"; };
+		8E2C13DE22B332D200561CD7 /* FirstStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepCell.swift; sourceTree = "<group>"; };
 		8E2CCBE1228BC44700486C3F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8E2CCBE3228BC48500486C3F /* profileProviderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileProviderCell.swift; sourceTree = "<group>"; };
 		8E2CCBE522939B8D00486C3F /* titleDescView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titleDescView.swift; sourceTree = "<group>"; };
@@ -180,6 +184,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E2C13DD22B32FA900561CD7 /* FourSteps */ = {
+			isa = PBXGroup;
+			children = (
+				8E2C13DE22B332D200561CD7 /* FirstStepCell.swift */,
+			);
+			path = FourSteps;
+			sourceTree = "<group>";
+		};
 		8E483D3A217C2AB600C815E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +205,7 @@
 		8E4E1063216717C500F5840B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E2C13DD22B32FA900561CD7 /* FourSteps */,
 				8E774DE22159FB2500AD4350 /* PageCell.swift */,
 				8E4E105D2165E01100F5840B /* friendHoroscopeCell.swift */,
 				8E2CCBE3228BC48500486C3F /* profileProviderCell.swift */,
@@ -275,6 +288,7 @@
 				8E9EB484222A40870018539A /* AccountVC.swift */,
 				8E585B55227E9C660061B004 /* CategoryDetailVC.swift */,
 				8E2D993822873B7E00BF1700 /* BookingVC.swift */,
+				8E2C13DB22B32F3D00561CD7 /* FourStepsVC.swift */,
 			);
 			path = Contrtoller;
 			sourceTree = "<group>";
@@ -551,6 +565,7 @@
 				8E774DE12159FA8A00AD4350 /* Page.swift in Sources */,
 				8E67E71721603183003EB09C /* DatePickerView.swift in Sources */,
 				8E9EB485222A40870018539A /* AccountVC.swift in Sources */,
+				8E2C13DF22B332D200561CD7 /* FirstStepCell.swift in Sources */,
 				8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */,
 				8E2D993722873A6E00BF1700 /* FeedbackLauncher.swift in Sources */,
 				8E774DB52159CE9500AD4350 /* Pineafy.xcdatamodeld in Sources */,
@@ -564,6 +579,7 @@
 				8E1C38882288B7BC00E6386D /* ProviderModel.swift in Sources */,
 				8E2D993922873B7E00BF1700 /* BookingVC.swift in Sources */,
 				8E585B54227BF8810061B004 /* CategotyModel.swift in Sources */,
+				8E2C13DC22B32F3D00561CD7 /* FourStepsVC.swift in Sources */,
 				8E2AFEAF218F5F1500F18A3C /* Constants.swift in Sources */,
 				8E370D4F2281D7C90011844D /* ServiceProviderModel.swift in Sources */,
 				8E2E7FC5220FD3DC0054253B /* FormVC.swift in Sources */,

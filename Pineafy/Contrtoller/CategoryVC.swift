@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 	
-	let categories = [CategoryModel(name: "Money", image: "money", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Relationship", image: "relationship", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Buisness", image: "business", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Health", image: "health", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "General", image: "relationship", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers.")]
+	let categories = [CategoryModel(name: "Money", image: "money", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Stuck", image: "stuck", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Job/Business", image: "job", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Relationship", image: "relationship", description: "Have you ever try to understand how the energies affect the way you relate with others around?, well you are in the correct place!")]
 	
 	var cat = [CategoryModel]()
 
@@ -37,7 +37,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		view.backgroundColor = .white
 		collectionView.dataSource = self
 		collectionView.delegate = self
-	
+		collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
 		collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "categoryId")
 		setupView()
     }
@@ -45,6 +45,12 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 	override func viewDidAppear(_ animated: Bool) {
 		self.navigationController?.navigationBar.topItem?.title = "Categories"
 		fetchCategoryJSON()
+		
+		
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		self.navigationController?.navigationBar.barTintColor = BLUE_BG
 	}
 	
 	func setupView(){
@@ -83,14 +89,13 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let selectCategory = categories[indexPath.item]
 		let vc = CategoryDetailVC()
-		guard let name = selectCategory.name else { return }
-		vc.titleCatgegory = name
+		vc.catDetail = selectCategory
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
-		return CGSize(width: collectionView.frame.width, height: 70)
+		return CGSize(width: collectionView.frame.width, height: 140)
 	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		
