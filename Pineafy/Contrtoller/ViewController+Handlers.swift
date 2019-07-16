@@ -48,9 +48,8 @@ extension ViewController{
         UserDefaults.standard.set(date, forKey: KEY_USER_DATE)
         UserDefaults.standard.set(nameScopeUser, forKey: KEY_USER_SIGN)
         UserDefaults.standard.synchronize()
-        print("local: \(localArray.count)")
         
-        for x in localArray{
+        for x in arrayHoroscopes{
             if x.sign == nameScopeUser{
                 navigationController?.navigationBar.topItem?.title = x.sign
                 self.handleHidden()

@@ -31,6 +31,7 @@ class titleDescView: UIView{
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
+		self.backgroundColor = .red
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

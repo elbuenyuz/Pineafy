@@ -6,9 +6,9 @@ target 'Pineafy' do
   
   use_frameworks!
   pod 'Alamofire', '~> 4.7'
-  pod 'RealmSwift'
   pod 'Stripe'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 end
 

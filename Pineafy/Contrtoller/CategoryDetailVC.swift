@@ -24,6 +24,9 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		cv.translatesAutoresizingMaskIntoConstraints = false
 		return cv
 	}()
+    
+    var SignInVC: signInVC?
+    
 	
 	let feedbackView: FeedbackLauncher = {
 		let view = FeedbackLauncher()
@@ -32,7 +35,15 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		view.backgroundColor = .clear
 		return view
 	}()
+    
+    let signInView: signInVC = {
+        let view = signInVC()
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        return view
 	
+    }()
 	let profileView: ProfileView = {
 		let view = ProfileView()
 		view.layer.cornerRadius = 10
@@ -137,13 +148,46 @@ extension CategoryDetailVC: ProviderCellButtonTappedDelegate {
 	
 	func didBookingTapped() {
 		print("boooking tapped")
-		navigationController?.pushViewController(BookingVC(), animated: true)
+        //SignInVC?.showSettings()
+        showSignIn()
+        
+		//navigationController?.pushViewController(BookingVC(), animated: true)
+        //navigationController?.pushViewController(signInVC(), animated: true)
 	}
 }
 
 
 //feedback show
 extension CategoryDetailVC {
+    
+    func showSignIn(){
+        
+        if let window = UIApplication.shared.keyWindow{
+            
+            blackView.backgroundColor = UIColor(white: 0, alpha: 0.7)
+            
+            window.addSubview(blackView)
+            window.addSubview(signInView)
+            
+            //collectionV
+            let heigth: CGFloat = 550
+            
+            //modificar posicion inicial de la colleccion
+            signInView.frame = CGRect(x: 0, y: (0 - window.frame.height) - 30, width: window.frame.width - 20, height: heigth)
+            
+            blackView.frame = window.frame
+            blackView.alpha = 0
+            
+            //animation
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                
+                self.blackView.alpha = 1
+                
+                self.signInView.frame = CGRect(x: window.frame.width/2 - self.signInView.frame.width/2, y: 30, width: self.signInView.frame.width, height: self.signInView.frame.height)
+                
+            }, completion: nil)
+        }
+    }
 	
 	func showFeedbacks(){
 		
@@ -191,6 +235,7 @@ extension CategoryDetailVC {
 			let heigth: CGFloat = 400
 			if let window = UIApplication.shared.keyWindow{
 				self.feedbackView.frame = CGRect(x: 0, y: (0 - window.frame.height) - 40, width: window.frame.width - 20, height: heigth)
+                self.signInView.frame = CGRect(x: 0, y: (0 - window.frame.height) - 40, width: window.frame.width - 20, height: heigth)
 				self.profileView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: heigth)
 			}
 			

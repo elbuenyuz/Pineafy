@@ -35,7 +35,6 @@ class AccountVC: UITableViewController {
         return 1
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accountItems.count
     }
@@ -57,7 +56,6 @@ class AccountVC: UITableViewController {
         case "Edit Birthday":
             print("edit birthday")
             UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-                
                  self.navigationController?.popToRootViewController(animated: true)
             }) { (true) in
                NotificationCenter.default.post(name:.tabVC, object: nil)
