@@ -15,6 +15,7 @@ let KEY_USER_DATE = "key"
 let KEY_EMAIL_USER = "mail"
 let KEY_NAME_USER = "name"
 let KEY_USER_SIGN = "sign"
+let KEY_PHONE_USER = "phone"
 
 //Cell id
 let KEY_ACCOUNT_CELLID = "keyAccount"

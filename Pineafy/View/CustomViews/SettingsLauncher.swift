@@ -58,8 +58,9 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
     
     func showSettings(){
         
+        
         if let window = UIApplication.shared.keyWindow{
-            
+           
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.7)
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handledismissBlackViewBlackView)))
             
@@ -67,7 +68,7 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
             window.addSubview(collectionV)
             
             //collectionV
-            let heigth: CGFloat = CGFloat(settings.count) * cellHeight
+           let heigth: CGFloat = CGFloat(settings.count) * cellHeight
             
             //modificar posicion inicial de la colleccion
             collectionV.frame = CGRect(x: 0, y: (0 - window.frame.height) - 40, width: window.frame.width - 40, height: heigth)
@@ -109,6 +110,7 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
     }
     
     @objc func handledismissBlackViewBlackView(){
+        print("entro")
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options:.curveEaseOut, animations: {
             self.blackView.alpha = 0
             let heigth: CGFloat = CGFloat(self.settings.count) * self.cellHeight
@@ -125,6 +127,7 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
     }
     @objc func handledismissBlackView(setting: SettingMenuModel){
         
+        print("menu de todo")
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options:.curveEaseOut, animations: {
             self.blackView.alpha = 0

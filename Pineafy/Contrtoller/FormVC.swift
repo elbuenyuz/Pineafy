@@ -76,10 +76,22 @@ class FormVC: UIViewController {
         return titleLabel
     }()
     
+    let phoneTextfield: UITextField = {
+        let phone = UITextField()
+        phone.textAlignment = .center
+        phone.backgroundColor = .white
+        phone.addShadow()
+        phone.layer.cornerRadius = 5
+        phone.placeholder = "Mobile phone"
+        phone.translatesAutoresizingMaskIntoConstraints = false
+        return phone
+    }()
+    
     let mailTextfield: UITextField = {
         let mail = UITextField()
         mail.textAlignment = .center
         mail.backgroundColor = .white
+        mail.autocapitalizationType = .none
         mail.addShadow()
         mail.layer.cornerRadius = 5
         mail.placeholder = "Email"
@@ -151,9 +163,10 @@ class FormVC: UIViewController {
     @objc func hanldeBtnAction(){
        
         
-        if let email = mailTextfield.text, mailTextfield.text != "", let name = nameField.text, nameField.text != "" {
+        if let email = mailTextfield.text, mailTextfield.text != "", let name = nameField.text, nameField.text != "", let phone = phoneTextfield.text, phoneTextfield.text != "" {
             print("\(email)")
             print("\(name)")
+            print("\(phone)")
             
             print("action")
             createSpinnerView()
@@ -162,9 +175,10 @@ class FormVC: UIViewController {
             
             guard let sign = UserDefaults.standard.string(forKey: KEY_USER_SIGN),let date = UserDefaults.standard.string(forKey: KEY_USER_DATE) else {return}
                 
-                ref.setValue([email,name,sign,date]) { (error, DatabaseReference) in
+                ref.setValue([email,name,phone,sign,date]) { (error, DatabaseReference) in
                     UserDefaults.standard.set("\(email)", forKey: KEY_EMAIL_USER)
                     UserDefaults.standard.set("\(name)", forKey: KEY_NAME_USER)
+                    UserDefaults.standard.set("\(phone)", forKey: KEY_PHONE_USER)
                 }
             
             self.displayAlertSuccess(name: name)
@@ -298,7 +312,7 @@ class FormVC: UIViewController {
 //        textfieldContainer.bottomAnchor.constraint(equalTo: self.labelWhite.topAnchor, constant: -15).isActive = true
         textfieldContainer.leadingAnchor.constraint(equalTo: self.labelDesc.leadingAnchor).isActive = true
         textfieldContainer.trailingAnchor.constraint(equalTo: self.labelDesc.trailingAnchor).isActive = true
-        textfieldContainer.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        textfieldContainer.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         
         textfieldContainer.addSubview(nameField)
@@ -313,6 +327,12 @@ class FormVC: UIViewController {
         mailTextfield.leadingAnchor.constraint(equalTo: nameField.leadingAnchor).isActive = true
         mailTextfield.trailingAnchor.constraint(equalTo: nameField.trailingAnchor).isActive = true
         mailTextfield.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        textfieldContainer.addSubview(phoneTextfield)
+        phoneTextfield.bottomAnchor.constraint(equalTo: self.mailTextfield.topAnchor, constant: -10).isActive = true
+        phoneTextfield.leadingAnchor.constraint(equalTo: mailTextfield.leadingAnchor).isActive = true
+        phoneTextfield.trailingAnchor.constraint(equalTo: mailTextfield.trailingAnchor).isActive = true
+        phoneTextfield.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
         

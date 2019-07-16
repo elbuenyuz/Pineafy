@@ -338,10 +338,11 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICol
 		if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
             print("user already registered, name: \(name) email: \(mail)")
             navigationController?.pushViewController(CategoryVC(), animated: true)
+            //navigationController?.pushViewController(FormVC(), animated: true)
         }else{
             print("user NOT regsitered yet!")
-            //navigationController?.pushViewController(FormVC(), animated: true)
-            navigationController?.pushViewController(signInVC(), animated: true)
+            navigationController?.pushViewController(FormVC(), animated: true)
+            //navigationController?.pushViewController(signInVC(), animated: true)
         }
         
     }
