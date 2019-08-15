@@ -13,6 +13,7 @@ import MessageUI
 class FeedbackLauncher: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 	
 	let feedbacks = [FeedbackModel(title: "-Is Amazing-", feedback: "First time booking a reading and it was amazing, bright insight and it help me to move on.", createdBy: "Stephanie Wilson"),FeedbackModel(title: "-Unbelievable-", feedback: "First time booking a reading and it was amazing, bright insight and it help me to move on.", createdBy: "Stephanie Wilson"),FeedbackModel(title: "-Is Great-", feedback: "First time booking a reading and it was amazing, bright insight and it help me to move on.", createdBy: "Stephanie Wilson"),FeedbackModel(title: "-Worth it!-", feedback: "First time booking a reading and it was amazing, bright insight and it help me to move on.", createdBy: "Stephanie Wilson")]
+	
 	var homeController: CategoryDetailVC?
 	
 	let collectionV: UICollectionView = {

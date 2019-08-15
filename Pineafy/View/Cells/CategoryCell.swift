@@ -9,15 +9,7 @@
 import UIKit
 
 class CategoryCell: BaseCell {
-	
-	//hightlight
-	override var isHighlighted: Bool{
-		
-		didSet{
-			backgroundColor = isHighlighted ? UIColor.darkGray: .white
-			categoryName.textColor = isHighlighted ? UIColor(red:0.35, green:0.70, blue:0.93, alpha:1.0) : .white
-		}
-	}
+
 	
 	//Creamos un objeto
 	var category: CategoryModel? {
@@ -25,7 +17,6 @@ class CategoryCell: BaseCell {
 			guard let unwrappedCategory = category else {return}
 			var image = UIImageView()
 			categoryName.text = category?.name
-//			bgImage.dowloadFromServer(link: unwrappedCategory.image!)
 			guard let txt = unwrappedCategory.image else {return}
 			let img = UIImage(named: txt)
 			bgImage.image = img
@@ -38,8 +29,7 @@ class CategoryCell: BaseCell {
 		name.font = UIFont(name: "JosefinSlab-SemiBold", size: 25)
 		name.text = "namePrueba"
 		name.addShadowIcon()
-//		name.textColor = .white
-		name.textColor = .blue
+		name.textColor = .white
 		name.textAlignment = .center
 		name.translatesAutoresizingMaskIntoConstraints = false
 		return name
@@ -48,7 +38,7 @@ class CategoryCell: BaseCell {
 	let bgImage: UIImageView = {
 		let icon = UIImageView()
 		icon.addShadowIcon()
-		icon.image = #imageLiteral(resourceName: "tool")
+		icon.image = #imageLiteral(resourceName: "tool").withRenderingMode(.alwaysOriginal)
 		icon.backgroundColor = .red
 		icon.contentMode = UIViewContentMode.scaleAspectFit
 		icon.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +63,7 @@ class CategoryCell: BaseCell {
 	}
 }
 
+//getting image from url
 extension UIImageView {
 	func dowloadFromServer(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
 		contentMode = mode

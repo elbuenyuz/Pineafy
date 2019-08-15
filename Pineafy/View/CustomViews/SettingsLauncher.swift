@@ -151,26 +151,14 @@ class SettingsLauncher: NSObject ,UICollectionViewDelegate, UICollectionViewData
             case "Rate Us":
                 self.rateAction()
             case "Marketplace":
-                
-                if let mail = UserDefaults.standard.string(forKey: KEY_EMAIL_USER), let name = UserDefaults.standard.string(forKey: KEY_NAME_USER){
-                    print("user already registered, name: \(name) email: \(mail)")
-                    self.homeController?.navigationController?.pushViewController(CategoryVC(), animated: true)
-                    
-                }else{
-                     print("user NOT regsitered yet!")
-                     self.homeController?.navigationController?.pushViewController(FormVC(), animated: true)
-                }
-                
-              
+				self.homeController?.navigationController?.pushViewController(CategoryVC(), animated: true)
             case "":
                 print("no es nada")
             default:
                 break
             }
-            
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return settings.count
     }

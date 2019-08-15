@@ -37,11 +37,10 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     //define pages
     let pages = [
-        
-        
-        Page(bg: #imageLiteral(resourceName: "b1"), header: "Horoscope", body: "Free insight based on your birthdate every day.", showBtn: false),
-        Page(bg: #imageLiteral(resourceName: "b2"), header: "Marketplace", body: "The perfect place to find top-rate insights for any situation in your life.", showBtn: false),
-        Page(bg: #imageLiteral(resourceName: "b3"), header: "Pineafy", body: "Just the best astrologers, providing trustable insights and helping people to gain clarity in any situation.", showBtn: false)
+        Page(bg: #imageLiteral(resourceName: "b1"), header: "Pineafy", body: "Marketplace to hire astrologers services through the phone", showBtn: false),
+        Page(bg: #imageLiteral(resourceName: "b2"), header: "Horoscope", body: "Free insight based on your birthdate every day", showBtn: false),
+        Page(bg: #imageLiteral(resourceName: "b3"), header: "Marketplace", body: "The perfect place to find top-rate insights for any situation in your life", showBtn: false)
+		
         
         ]
     

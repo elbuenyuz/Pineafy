@@ -45,7 +45,7 @@ class FormVC: UIViewController {
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 6
-        titleLabel.text = "Book unique readings and experiences."
+        titleLabel.text = "."
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
@@ -66,11 +66,11 @@ class FormVC: UIViewController {
     
     let labelWhite: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = UIFont(name: "JosefinSlab-SemiBold", size: 18)
-        titleLabel.textColor = UIColor(red:0.89, green:0.44, blue:0.44, alpha:1.0)
+        titleLabel.font = UIFont(name: "JosefinSlab-Light", size: 18)
+        titleLabel.textColor = .purple
         titleLabel.numberOfLines = 3
         titleLabel.textAlignment = .center
-        titleLabel.text = "Register and obtain 25% OFF booking your first Reading"
+        titleLabel.text = "Find Situational Clarity"
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
@@ -86,7 +86,7 @@ class FormVC: UIViewController {
         phone.translatesAutoresizingMaskIntoConstraints = false
         return phone
     }()
-    
+
     let mailTextfield: UITextField = {
         let mail = UITextField()
         mail.textAlignment = .center
@@ -131,6 +131,14 @@ class FormVC: UIViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
+	
+	let dismissBtn : UIButton = {
+		var img = UIButton(type: .system)
+		img.setImage(#imageLiteral(resourceName: "x"), for: .normal)
+		img.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+		img.translatesAutoresizingMaskIntoConstraints = false
+		return img
+	}()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,13 +166,18 @@ class FormVC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
-    
+	
+	@objc func handleDismiss(){
+		print("dismiss")
+		self.dismiss(animated: true, completion: nil)
+	}
     
     @objc func hanldeBtnAction(){
        
         
         if let email = mailTextfield.text, mailTextfield.text != "", let name = nameField.text, nameField.text != "", let phone = phoneTextfield.text, phoneTextfield.text != "" {
-            print("\(email)")
+			
+			print("\(email)")
             print("\(name)")
             print("\(phone)")
             
@@ -269,6 +282,14 @@ class FormVC: UIViewController {
         titleImg.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         titleImg.widthAnchor.constraint(equalToConstant: 296).isActive = true
         titleImg.heightAnchor.constraint(equalToConstant: 80).isActive = true
+		
+		view.addSubview(dismissBtn)
+		dismissBtn.isUserInteractionEnabled = true
+		dismissBtn.isUserInteractionEnabled = true
+		dismissBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -10).isActive = true
+		dismissBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+		dismissBtn.widthAnchor.constraint(equalToConstant: 20).isActive = true
+		dismissBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         scrollView.addSubview(labelDesc)
         labelDesc.topAnchor.constraint(equalTo: self.titleImg.bottomAnchor, constant: 0).isActive = true
@@ -281,19 +302,21 @@ class FormVC: UIViewController {
         containerForm.bottomAnchor.constraint(lessThanOrEqualTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         containerForm.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         containerForm.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        containerForm.heightAnchor.constraint(equalToConstant: 275).isActive = true
+        containerForm.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         containerForm.addSubview(registerBtn)
-        registerBtn.bottomAnchor.constraint(equalTo: self.containerForm.bottomAnchor, constant: -10).isActive = true
+        registerBtn.bottomAnchor.constraint(equalTo: self.containerForm.bottomAnchor, constant: -30).isActive = true
         registerBtn.leadingAnchor.constraint(equalTo: self.labelDesc.leadingAnchor).isActive = true
         registerBtn.trailingAnchor.constraint(equalTo: self.labelDesc.trailingAnchor).isActive = true
         registerBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
+		
         
         containerForm.addSubview(line)
         line.bottomAnchor.constraint(equalTo: registerBtn.topAnchor, constant: -20).isActive = true
         line.leadingAnchor.constraint(equalTo: labelDesc.leadingAnchor, constant: 40).isActive = true
         line.trailingAnchor.constraint(equalTo: labelDesc.trailingAnchor, constant: -40 ).isActive = true
         line.heightAnchor.constraint(equalToConstant: 1).isActive = true
+		
         
         containerForm.addSubview(labelWhite)
         labelWhite.bottomAnchor.constraint(equalTo: self.line.topAnchor, constant: -20).isActive = true
@@ -303,19 +326,16 @@ class FormVC: UIViewController {
         
         
         view.addSubview(textfieldContainer)
-        
         bottomAnchor = textfieldContainer.bottomAnchor.constraint(equalTo: self.labelWhite.topAnchor, constant: -20)
         bottomKeyboard = textfieldContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -340)
-        
         bottomAnchor?.isActive = true
         
 //        textfieldContainer.bottomAnchor.constraint(equalTo: self.labelWhite.topAnchor, constant: -15).isActive = true
         textfieldContainer.leadingAnchor.constraint(equalTo: self.labelDesc.leadingAnchor).isActive = true
         textfieldContainer.trailingAnchor.constraint(equalTo: self.labelDesc.trailingAnchor).isActive = true
         textfieldContainer.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        
-        textfieldContainer.addSubview(nameField)
+		
+		textfieldContainer.addSubview(nameField)
         nameField.bottomAnchor.constraint(equalTo: self.textfieldContainer.bottomAnchor).isActive = true
         nameField.leadingAnchor.constraint(equalTo: self.textfieldContainer.leadingAnchor).isActive = true
         nameField.trailingAnchor.constraint(equalTo: self.textfieldContainer.trailingAnchor).isActive = true
@@ -353,7 +373,10 @@ class FormVC: UIViewController {
         let alert = UIAlertController(title: "Hello \(name)", message: "we would send you an email with all the information to book your first reading.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (alert) in
-            self.navigationController?.popToRootViewController(animated: true)
+//            self.navigationController?.popToRootViewController(animated: true)
+			self.dismiss(animated: true, completion: {
+				self.homeController?.handleGoToBooking()
+			})
         }))
         
         self.present(alert, animated: true)
@@ -371,6 +394,8 @@ class FormVC: UIViewController {
         self.present(alert, animated: true)
         
     }
+	
+	
 }
 
 

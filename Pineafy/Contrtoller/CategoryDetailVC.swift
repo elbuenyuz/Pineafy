@@ -8,11 +8,16 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	var blackView = UIView()
 	var titleCatgegory = ""
-	let services = [ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "profileImg"), price: "$75.00", categoryName: "Money"), ServiceProviderModel(name: "Monica Herrera", rate: #imageLiteral(resourceName: "rate3"), profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$65.00", categoryName: "Money"), ServiceProviderModel(name: "Brenda Tam", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$70.00", categoryName: "Business"),ServiceProviderModel(name: "Isabella Moreira", rate: #imageLiteral(resourceName: "rate4"), profileImg: #imageLiteral(resourceName: "profileImg"), price: "$75.00", categoryName: "Money"), ServiceProviderModel(name: "Monica Herrera", rate: #imageLiteral(resourceName: "rate3"), profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$65.00", categoryName: "Money"), ServiceProviderModel(name: "Brenda Tam", rate: #imageLiteral(resourceName: "rate45"), profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$70.00", categoryName: "Business")]
+	var ref: DatabaseReference!
+	
+	
+	
+	var services: [ServiceProviderModel] = []
 	
 	lazy var collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
@@ -69,10 +74,32 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		desc.font = UIFont(name: "JosefinSlab-Regular", size: 20)
 		desc.text = "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."
 		desc.numberOfLines = 10
-		desc.textAlignment = .center
+		desc.textAlignment = .justified
 		desc.translatesAutoresizingMaskIntoConstraints = false
 		return desc
 	}()
+	func getProviders(){
+		ref = Database.database().reference().child("providers")
+		self.ref.observe(.value, with: { (snapshot) in
+		let snap = snapshot.value as? NSDictionary
+			
+			//UID Filter firebase database per provider
+			let general = snap?["a12312312jqouhe9u"] as? [String:Any]
+			let account  = general?["account"] as? [String:Any]
+			print("snapshot:\( account)")
+			let name = account?["name"] as? String ?? ""
+			let price = "130"
+			let desc = account?["desc"] as? String ?? ""
+			let imgName = account?["url"] as? String ?? ""
+			let rate = account?["rate"] as? String ?? ""
+			guard let img = UIImage(named: imgName),let imgRate = UIImage(named: rate) else {return}
+			self.services.append(ServiceProviderModel(name: name, rate: imgRate, profileImg: img, price: price, categoryName: "money"))
+			print("snap \(name), price\(price)")
+		}) { (error) in
+			print("error")
+		}
+			
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -84,6 +111,10 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		collectionView.delegate = self
 		collectionView.register(ProviderCell.self, forCellWithReuseIdentifier: "providerId")
 		setupView()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		getProviders()
 	}
 	
 	func setupView(){
@@ -149,9 +180,10 @@ extension CategoryDetailVC: ProviderCellButtonTappedDelegate {
 	func didBookingTapped() {
 		print("boooking tapped")
         //SignInVC?.showSettings()
-        showSignIn()
-        
-		//navigationController?.pushViewController(BookingVC(), animated: true)
+//        showSignIn()
+		
+		navigationController?.present(FormVC(), animated: true, completion: {		
+		})
         //navigationController?.pushViewController(signInVC(), animated: true)
 	}
 }

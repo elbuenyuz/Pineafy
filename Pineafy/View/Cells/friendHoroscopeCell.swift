@@ -42,7 +42,7 @@ class friendHoroscopeCell: UICollectionViewCell {
         name.text = "Money"
         name.textAlignment = .center
         name.textColor = .white        
-        name.font = UIFont(name: "JosefinSlab-Bold", size: 18)
+        name.font = UIFont(name: "JosefinSlab-Bold", size: 17)
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
     }()
@@ -71,8 +71,8 @@ class friendHoroscopeCell: UICollectionViewCell {
         addSubview(imageHoroscope)
         imageHoroscope.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         imageHoroscope.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        imageHoroscope.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        imageHoroscope.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        imageHoroscope.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imageHoroscope.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         addSubview(nameHoroscope)
         nameHoroscope.bottomAnchor.constraint(equalTo: imageHoroscope.topAnchor).isActive = true

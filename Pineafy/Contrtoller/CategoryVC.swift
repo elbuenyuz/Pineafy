@@ -10,41 +10,55 @@ import UIKit
 
 class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 	
-	let categories = [CategoryModel(name: "Money", image: "money", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Relationship", image: "relationship", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Buisness", image: "business", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "Health", image: "health", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),CategoryModel(name: "General", image: "relationship", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers.")]
+	
+	let categories = [
+		CategoryModel(name: "Business", image: "job", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),
+		CategoryModel(name: "Money", image: "money", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),
+		CategoryModel(name: "Relationship", image: "relationship", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers."),
+		 CategoryModel(name: "Stuck", image: "stuck", description: "It is never late to find out why your finances are not as expect to be, Find insight with one of our services created by Professional Astrologers.")
+	]
 	
 	var cat = [CategoryModel]()
-
+	
+	let descCategory: UILabel = {
+		let desc = UILabel()
+		desc.font = UIFont(name: "JosefinSlab-Bold", size: 25)
+		desc.text = "Select a Category"
+		desc.numberOfLines = 10
+		desc.textAlignment = .center
+		desc.translatesAutoresizingMaskIntoConstraints = false
+		return desc
+	}()
+	
 	lazy var collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
 //		layout.scrollDirection = .horizontal
 		layout.minimumInteritemSpacing = 20
 		let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		cv.backgroundColor = .clear
+		cv.showsVerticalScrollIndicator = false
 		cv.translatesAutoresizingMaskIntoConstraints = false
 		return cv
 	}()
-	
-    let viewBg: UIImageView = {
-        var view = UIImageView()
-        view.image = #imageLiteral(resourceName: "bgEmpty")
-        view.contentMode = .scaleAspectFill
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = .white
+		view.backgroundColor = PINK_BG
 		collectionView.dataSource = self
 		collectionView.delegate = self
 	
 		collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "categoryId")
-		setupView()
+
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
-		self.navigationController?.navigationBar.topItem?.title = "Categories"
+	
 		fetchCategoryJSON()
+	
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		setupView()
 	}
 	
 	func setupView(){
@@ -52,19 +66,19 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		self.navigationController?.navigationBar.isTranslucent = true
 		self.navigationController?.navigationBar.tintColor = UIColor(red:0.15, green:0.60, blue:0.97, alpha:1.0)
 		self.navigationController?.view.backgroundColor = .clear
-		
-		
-		view.addSubview(viewBg)
-		viewBg.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-		viewBg.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-		viewBg.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-		viewBg.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+//		self.navigationController?.navigationBar.prefersLargeTitles = true
 		
 		view.addSubview(collectionView)
-		collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+		collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+		
+		view.addSubview(descCategory)
+		descCategory.bottomAnchor.constraint(equalTo: collectionView.topAnchor).isActive = true
+		descCategory.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+		descCategory.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+		descCategory.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -77,6 +91,8 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		let category = categories[indexPath.item]
 		cell.category = category
 		cell.addShadowIcon()
+		cell.layer.cornerRadius = 25
+		cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
 		return cell
 	}
 	
@@ -90,7 +106,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
-		return CGSize(width: collectionView.frame.width, height: 70)
+		return CGSize(width: collectionView.frame.width, height: 180)
 	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		

@@ -33,6 +33,10 @@ extension ViewController{
             }, completion: nil)
         }
     }
+	
+	func handleGoToBooking(){
+		self.navigationController?.pushViewController(BookingVC(), animated: true)
+	}
 
     //function handle the popup closing after ask for BDate and transaction of information
     @objc func handlePopupClosing(notification: Notification){
@@ -76,47 +80,51 @@ extension ViewController{
     //Constrains setup View
     func setupView(){
 		
-		
-        
         //Collection bottom
         view.addSubview(collectionview)
         collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
-        collectionview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        collectionview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         collectionview.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         view.addSubview(friendLabel)
         friendLabel.bottomAnchor.constraint(equalTo: collectionview.topAnchor).isActive = true
         friendLabel.leadingAnchor.constraint(equalTo: collectionview.leadingAnchor, constant: 20).isActive = true
         friendLabel.widthAnchor.constraint(equalTo: collectionview.widthAnchor).isActive = true
-        friendLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        //Description container
-        view.addSubview(descriptionContainer)
-        descriptionContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        descriptionContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        descriptionContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        descriptionContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
+        friendLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+		
+		view.addSubview(callToActionView)
+		callToActionView.bottomAnchor.constraint(equalTo: friendLabel.topAnchor, constant: -15).isActive = true
+		callToActionView.leadingAnchor.constraint(equalTo: collectionview.leadingAnchor, constant: 20).isActive = true
+		callToActionView.trailingAnchor.constraint(equalTo: collectionview.trailingAnchor, constant: -20).isActive = true
+		callToActionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+		
+		//Description container
+//		view.addSubview(descriptionContainer)
+//		descriptionContainer.backgroundColor = .red
+//		descriptionContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//		descriptionContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//		descriptionContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//		descriptionContainer.bottomAnchor.constraint(equalTo: callToActionView.topAnchor).isActive = true
 		
 		view.addSubview(zodiacSignImageView)
 		zodiacSignImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
 		zodiacSignImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-		zodiacSignImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-		zodiacSignImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+		zodiacSignImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
+		zodiacSignImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
 		
 		view.addSubview(dateLabel)
         dateLabel.topAnchor.constraint(equalTo: zodiacSignImageView.bottomAnchor).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: descriptionContainer.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: descriptionContainer.trailingAnchor).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
-        descriptionContainer.addSubview(horoscopeInfo)
-//        horoscopeInfo.backgroundColor = .yellow
+        view.addSubview(horoscopeInfo)
         horoscopeInfo.topAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
         horoscopeInfo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         horoscopeInfo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        horoscopeInfo.bottomAnchor.constraint(equalTo: friendLabel.topAnchor).isActive = true
-        
+        horoscopeInfo.bottomAnchor.constraint(equalTo: callToActionView.topAnchor).isActive = true
+		
        
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -143,8 +151,7 @@ extension ViewController{
     }
     
     func hiddenInfo(){
-       
-        self.descriptionContainer.isHidden = true
+		
         self.actionContainer.isHidden = true
         self.headerContainer.isHidden = true
         self.horoscopeInfo.isHidden = true
@@ -168,7 +175,7 @@ extension ViewController{
     
     //Handle Hidden of the items, we asign the value to them before we show them to the user
     @objc func handleHidden(){
-        self.descriptionContainer.isHidden = false
+
         self.actionContainer.isHidden = false
         self.headerContainer.isHidden = false
         self.horoscopeInfo.isHidden = false

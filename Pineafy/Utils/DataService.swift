@@ -18,8 +18,8 @@ class DataService{
     static let ds = DataService()
 
     fileprivate var _REF_BASE = DB_BASE
-    fileprivate var _REF_USERS = DB_BASE.child("preusers")
-    fileprivate  var _REF_FEEDBACK = DB_BASE.child("users").child("feedback")
+    fileprivate var _REF_USERS = DB_BASE.child("providers")
+    fileprivate  var _REF_FEEDBACK = DB_BASE.child("users")
 
     var REF_BASE:DatabaseReference{
         return _REF_BASE

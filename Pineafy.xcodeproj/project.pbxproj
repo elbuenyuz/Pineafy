@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,6 +53,7 @@
 		8E774DEF215B0A5500AD4350 /* JosefinSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DEE215B0A5500AD4350 /* JosefinSlab-Regular.ttf */; };
 		8E774DF1215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DF0215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf */; };
 		8E774DF3215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */; };
+		8E78A2962304EDDB004282A4 /* ButtonAndImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78A2952304EDDB004282A4 /* ButtonAndImageView.swift */; };
 		8E7ECD0F228A4E8600F8A4F3 /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7ECD0E228A4E8600F8A4F3 /* FeedbackCell.swift */; };
 		8E9EB485222A40870018539A /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EB484222A40870018539A /* AccountVC.swift */; };
 		8EB613C0216B0A7B00AB9475 /* FriendHorosocopeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */; };
@@ -132,6 +133,7 @@
 		8E774DEE215B0A5500AD4350 /* JosefinSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-Regular.ttf"; sourceTree = "<group>"; };
 		8E774DF0215B0A5E00AD4350 /* JosefinSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-SemiBold.ttf"; sourceTree = "<group>"; };
 		8E774DF2215B0A6C00AD4350 /* JosefinSlab-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSlab-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8E78A2952304EDDB004282A4 /* ButtonAndImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAndImageView.swift; sourceTree = "<group>"; };
 		8E7ECD0E228A4E8600F8A4F3 /* FeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
 		8E9EB484222A40870018539A /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendHorosocopeCollectionView.swift; path = Pineafy/View/CustomViews/FriendHorosocopeCollectionView.swift; sourceTree = SOURCE_ROOT; };
@@ -333,6 +335,7 @@
 				8E2CCBE522939B8D00486C3F /* titleDescView.swift */,
 				8EB613BF216B0A7A00AB9475 /* FriendHorosocopeCollectionView.swift */,
 				8E67E71621603183003EB09C /* DatePickerView.swift */,
+				8E78A2952304EDDB004282A4 /* ButtonAndImageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */,
 				8351C99322B8AD8400CDB1E5 /* signInVC.swift in Sources */,
 				8E585B52227BF8420061B004 /* CategoryCell.swift in Sources */,
+				8E78A2962304EDDB004282A4 /* ButtonAndImageView.swift in Sources */,
 				8E4E10602165E10A00F5840B /* HoroscopeModel.swift in Sources */,
 				8E17492F221D1E18007DC9E7 /* DataService.swift in Sources */,
 				8E21F86421B777790034640D /* CategoryVC.swift in Sources */,
