@@ -26,6 +26,8 @@
 		8E38CC0021DB0CB900D52F95 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CBFF21DB0CB900D52F95 /* SettingsLauncher.swift */; };
 		8E38CC0221DB0D2500D52F95 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CC0121DB0D2500D52F95 /* SettingsCell.swift */; };
 		8E38CC0421DB0DB700D52F95 /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38CC0321DB0DB700D52F95 /* SettingsMenuModel.swift */; };
+		8E434ACA2306384C0033C95E /* ProviderCellPerfect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E434AC92306384C0033C95E /* ProviderCellPerfect.swift */; };
+		8E434ACC230653CE0033C95E /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E434ACB230653CE0033C95E /* Spot.swift */; };
 		8E44678F21AB8D2100D13EE0 /* FriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E44678E21AB8D2100D13EE0 /* FriendVC.swift */; };
 		8E483D3C217C2ADE00C815E0 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483D3B217C2ADE00C815E0 /* NotificationNameExtension.swift */; };
 		8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483D3D217C2F4400C815E0 /* BaseUserModel.swift */; };
@@ -100,6 +102,8 @@
 		8E38CBFF21DB0CB900D52F95 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		8E38CC0121DB0D2500D52F95 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		8E38CC0321DB0DB700D52F95 /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
+		8E434AC92306384C0033C95E /* ProviderCellPerfect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderCellPerfect.swift; sourceTree = "<group>"; };
+		8E434ACB230653CE0033C95E /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		8E44678E21AB8D2100D13EE0 /* FriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVC.swift; sourceTree = "<group>"; };
 		8E483D3B217C2ADE00C815E0 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		8E483D3D217C2F4400C815E0 /* BaseUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUserModel.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				8E585B51227BF8420061B004 /* CategoryCell.swift */,
 				8E585B572280A3DC0061B004 /* ProviderCell.swift */,
 				8E7ECD0E228A4E8600F8A4F3 /* FeedbackCell.swift */,
+				8E434AC92306384C0033C95E /* ProviderCellPerfect.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				8E370D4E2281D7C90011844D /* ServiceProviderModel.swift */,
 				8E1C38852288B64600E6386D /* FeedbackModel.swift */,
 				8E1C38872288B7BC00E6386D /* ProviderModel.swift */,
+				8E434ACB230653CE0033C95E /* Spot.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -537,10 +543,12 @@
 				8E44678F21AB8D2100D13EE0 /* FriendVC.swift in Sources */,
 				8E774DAD2159CE9500AD4350 /* AppDelegate.swift in Sources */,
 				8E7ECD0F228A4E8600F8A4F3 /* FeedbackCell.swift in Sources */,
+				8E434ACC230653CE0033C95E /* Spot.swift in Sources */,
 				8E2CCBE4228BC48500486C3F /* profileProviderCell.swift in Sources */,
 				8E774DE12159FA8A00AD4350 /* Page.swift in Sources */,
 				8E67E71721603183003EB09C /* DatePickerView.swift in Sources */,
 				8E9EB485222A40870018539A /* AccountVC.swift in Sources */,
+				8E434ACA2306384C0033C95E /* ProviderCellPerfect.swift in Sources */,
 				8E483D3E217C2F4400C815E0 /* BaseUserModel.swift in Sources */,
 				8338649922BDFA6500BB7961 /* SignInVC+Handlers.swift in Sources */,
 				8E2D993722873A6E00BF1700 /* FeedbackLauncher.swift in Sources */,

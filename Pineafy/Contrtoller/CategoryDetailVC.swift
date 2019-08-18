@@ -15,8 +15,6 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	var titleCatgegory = ""
 	var ref: DatabaseReference!
 	
-	
-	
 	var services: [ServiceProviderModel] = []
 	
 	lazy var collectionView: UICollectionView = {
@@ -61,7 +59,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	
 	let astrologersLabel: UILabel = {
 		let label = UILabel()
-		label.text = "Exclusive Astrologers"
+		label.text = "Choose an astrologer"
 		label.font = UIFont(name: "JosefinSlab-Bold", size: 23)
 		label.textColor = UIColor(red:0.35, green:0.70, blue:0.93, alpha:1.0)
 		label.backgroundColor = .white
@@ -93,7 +91,6 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 			let imgName = account?["url"] as? String ?? ""
 			let rate = account?["rate"] as? String ?? ""
 			guard let img = UIImage(named: imgName),let imgRate = UIImage(named: rate) else {return}
-			self.services.append(ServiceProviderModel(name: name, rate: imgRate, profileImg: img, price: price, categoryName: "money"))
 			print("snap \(name), price\(price)")
 		}) { (error) in
 			print("error")
@@ -103,13 +100,17 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg3"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
+		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
+		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
+		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
 		blackView.backgroundColor = .red
 		blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handledismissBlackView)))
 		blackView.isUserInteractionEnabled = true
 		view.backgroundColor = PINK_BG
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		collectionView.register(ProviderCell.self, forCellWithReuseIdentifier: "providerId")
+		collectionView.register(ProviderCellPerfect.self, forCellWithReuseIdentifier: "providerId")
 		setupView()
 	}
 	
@@ -147,21 +148,28 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "providerId", for: indexPath) as! ProviderCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "providerId", for: indexPath) as! ProviderCellPerfect
 		let serv = services[indexPath.item]
 		cell.delegate = self
 		cell.service = serv
+		cell.layer.cornerRadius = 10
+		cell.layer.masksToBounds = true
+		cell.backgroundColor = .white
 		return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 	
-	return CGSize(width: collectionView.frame.width - 10, height: 120)
+	return CGSize(width: collectionView.frame.width - 10, height: 150)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		
 		return 20
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		self.navigationController?.pushViewController(BookingVC(), animated: true)
 	}
 }
 

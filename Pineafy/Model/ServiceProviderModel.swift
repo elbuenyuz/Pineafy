@@ -14,16 +14,20 @@ struct ServiceProviderModel{
 	let rate: UIImage?
 	let profileImg: UIImage?
 	let price: String?
-	let categoryName: String?
+	let batch: String?
+	let feedbacks: String?
+	let spots: String?
 	
 	
-	init(name: String, rate: UIImage, profileImg: UIImage, price: String, categoryName: String) {
+	init(name: String, rate: UIImage, profileImg: UIImage, price: String, batch: String, feedbacks: String, spots: String) {
 		
 		self.name = name
 		self.rate = rate
 		self.profileImg = profileImg
 		self.price = price
-		self.categoryName = categoryName
+		self.batch = batch
+		self.feedbacks = feedbacks
+		self.spots = spots
 	}
 	
 	

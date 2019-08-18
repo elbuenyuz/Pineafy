@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 struct ProviderModel {
+	
 	let name: String?
-	let nickName: String?
-	let email: String?
-	let cellPhone: String?
+	let batch: String?
+	let feedbacks: String?
 	let profileImg: UIImage?
-	let feedbacs: [FeedbackModel]?
-	
-	
+	let profileURL: String?
+	let services: String?
 }
