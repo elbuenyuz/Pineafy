@@ -76,27 +76,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		desc.translatesAutoresizingMaskIntoConstraints = false
 		return desc
 	}()
-	func getProviders(){
-		ref = Database.database().reference().child("providers")
-		self.ref.observe(.value, with: { (snapshot) in
-		let snap = snapshot.value as? NSDictionary
-			
-			//UID Filter firebase database per provider
-			let general = snap?["a12312312jqouhe9u"] as? [String:Any]
-			let account  = general?["account"] as? [String:Any]
-			print("snapshot:\( account)")
-			let name = account?["name"] as? String ?? ""
-			let price = "130"
-			let desc = account?["desc"] as? String ?? ""
-			let imgName = account?["url"] as? String ?? ""
-			let rate = account?["rate"] as? String ?? ""
-			guard let img = UIImage(named: imgName),let imgRate = UIImage(named: rate) else {return}
-			print("snap \(name), price\(price)")
-		}) { (error) in
-			print("error")
-		}
-			
-	}
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -104,6 +84,8 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
 		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg2"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
 		self.services.append(ServiceProviderModel(name: "Isabella Rodriguez", rate: #imageLiteral(resourceName: "star") , profileImg: #imageLiteral(resourceName: "profileImg"), price: "$120.00", batch: "Exclusive Astrologer", feedbacks: "5", spots: "10"))
+		
+		
 		blackView.backgroundColor = .red
 		blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handledismissBlackView)))
 		blackView.isUserInteractionEnabled = true
@@ -115,7 +97,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		getProviders()
+		
 	}
 	
 	func setupView(){
@@ -141,6 +123,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 	override func viewDidAppear(_ animated: Bool) {
 //		self.blackView.backgroundColor = UIColor(white: 0, alpha: 0.9)
 		self.navigationController?.navigationBar.topItem?.title = titleCatgegory
+		self.getProviders()
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,7 +158,7 @@ class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollection
 
 extension CategoryDetailVC: ProviderCellButtonTappedDelegate {
 	func didProfileTapped() {
-		showProfileProvider()
+	
 	}
 	
 	func didFeedbackTapped() {
@@ -283,33 +266,31 @@ extension CategoryDetailVC {
 			
 		}
 	}
-	
-	func showProfileProvider(){
-		if let window = UIApplication.shared.keyWindow{
+}
+
+extension CategoryDetailVC {
+	//Obtain the provider snapshot from firebase DB
+	func getProviders(){
+		
+		//Selecting the specific provider account
+		ref = Database.database().reference().child("providers").child("a12312312jqouhe9u")
+		self.ref.observe(.value, with: { (snapshot) in
+			let snap = snapshot.value as? NSDictionary
 			
-			blackView.backgroundColor = UIColor(white: 0, alpha: 0.7)
+			//UID Filter firebase database per provider
+			let account = snap?["account"] as? [String:Any]
+			let info = account?["info"] as? [String:Any]
+			print("snapshot:\(account)")
+			let feedbacks = snap?["feedbacks"] as? [String:Any]
+			print("number of feedbacks \(feedbacks?.count)")
+			let timeBlocks = snap?["timeBlock"] as? [String:Any]
+			print("number of services \(timeBlocks?.count)")
 			
-			window.addSubview(blackView)
-			window.addSubview(profileView)
 			
-			//collectionV
-			let heigth: CGFloat = 550
 			
-			//modificar posicion inicial de la colleccion
-			
-			profileView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: heigth)
-			
-			blackView.frame = window.frame
-			blackView.alpha = 0
-			
-			//animation
-			UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-				
-				self.blackView.alpha = 1
-				
-					self.profileView.frame = CGRect(x: window.frame.width/2 - window.frame.width/2, y: window.frame.height - heigth, width: window.frame.width, height: self.profileView.frame.height - 50)
-				
-			}, completion: nil)
+		}) { (error) in
+			print("error")
 		}
+		
 	}
 }

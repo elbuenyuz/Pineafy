@@ -16,7 +16,7 @@ class ButtonAndImageView: UIView{
 		label.text = "Going through some tough situation?, Find Clarity"
 		label.font = UIFont(name: "JosefinSlab-Bold", size: 18)
 		label.sizeToFit()
-		label.textColor = .gray
+		label.textColor = UIColor(red:0.95, green:0.42, blue:0.42, alpha:1.0)
 		label.numberOfLines = 2
 		label.textAlignment = .center
 		label.translatesAutoresizingMaskIntoConstraints = false

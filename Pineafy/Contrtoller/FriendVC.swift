@@ -42,15 +42,21 @@ class FriendVC: UIViewController {
     }()
     
     
-    let infoLabel: UILabel = {
-        let lbl = UILabel()
+    let infoLabel: UITextView = {
+        let lbl = UITextView()
         let size:CGFloat = 35
-        lbl.text = "Espresso Brown Classic Bristol Rose Gold Watch by Daniel Wellington features contrasting notches display. This classy watch is the perfect finishing touch to any ensemble Watch by Daniel Wellington features contrasting notches display. This classy watch is the perfect finishing touch."
-        lbl.textAlignment = .center
-        lbl.numberOfLines = 15
-        lbl.adjustsFontSizeToFitWidth = true
-        lbl.font = UIFont(name: "JosefinSlab-Light", size: 20)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
+		lbl.font = UIFont(name: "JosefinSlab-Light", size: 18)
+		lbl.textAlignment = .center
+		lbl.isUserInteractionEnabled = true
+		lbl.isScrollEnabled = true
+		lbl.textAlignment = .justified
+		lbl.backgroundColor = PINK_BG
+		lbl.sizeToFit()
+		lbl.addShadowIcon()
+		lbl.isHidden = false
+		lbl.adjustsFontForContentSizeCategory = true
+		lbl.contentInset = UIEdgeInsets(top: 20, left: 1, bottom: 0, right: 1)
+		lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
@@ -81,8 +87,8 @@ class FriendVC: UIViewController {
 		view.addSubview(icon)
 		icon.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
 		icon.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-		icon.heightAnchor.constraint(equalToConstant: 50).isActive = true
-		icon.widthAnchor.constraint(equalToConstant: 50).isActive = true
+		icon.heightAnchor.constraint(equalToConstant: 35).isActive = true
+		icon.widthAnchor.constraint(equalToConstant: 35).isActive = true
 		
         view.addSubview(dateLabel)
         dateLabel.topAnchor.constraint(equalTo: self.icon.bottomAnchor).isActive = true

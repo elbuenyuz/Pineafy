@@ -82,8 +82,8 @@ class ProviderCellPerfect: BaseCell {
 		let lbl = UITextView()
 		lbl.textContainerInset = UIEdgeInsets(top: 3, left: 5, bottom: 0, right: 0)
 		lbl.text = "2 spots left this week"
-		lbl.backgroundColor = PINK_BG
-//		lbl.textColor = UIColor(red:0.40, green:0.90, blue:0.76, alpha:1.0)
+		lbl.backgroundColor = UIColor(red:1.00, green:0.95, blue:0.95, alpha:1.0)
+		lbl.isUserInteractionEnabled = false
 		lbl.textColor = UIColor(red:0.10, green:0.85, blue:0.64, alpha:1.0)
 		lbl.font = UIFont(name: "JosefinSlab-Bold", size: 18)
 		lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -116,17 +116,17 @@ class ProviderCellPerfect: BaseCell {
 
 	override func setupViews() {
 		
-		self.addSubview(container)
-		container.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-		container.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
-		container.widthAnchor.constraint(equalToConstant: 230).isActive = true
-		container.heightAnchor.constraint(equalToConstant: 100).isActive = true
-		
 		self.addSubview(profileImg)
-		profileImg.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-		profileImg.rightAnchor.constraint(equalTo: container.leftAnchor).isActive = true
-		profileImg.widthAnchor.constraint(equalToConstant: 100).isActive = true
-		profileImg.heightAnchor.constraint(equalToConstant: 100).isActive = true
+		profileImg.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+		profileImg.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 15).isActive = true
+		profileImg.widthAnchor.constraint(equalToConstant: 80).isActive = true
+		profileImg.heightAnchor.constraint(equalToConstant: 80).isActive = true
+		
+		self.addSubview(container)
+		container.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+		container.leftAnchor.constraint(equalTo: profileImg.rightAnchor, constant: 5).isActive = true
+		container.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15).isActive = true
+		container.heightAnchor.constraint(equalToConstant: 100).isActive = true
 		
 		self.addSubview(priceLabel)
 		priceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
