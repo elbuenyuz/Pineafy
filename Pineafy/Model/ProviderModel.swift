@@ -6,15 +6,15 @@
 //  Copyright © 2019 Devius. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import Firebase
+import CodableFirebase
 
 struct ProviderModel {
 	
-	var name: String
-	var batch: String
-	var feedbacks: String
-	var profileImg: UIImage
-	var profileURL: String
-	var services: String
+	let name: String
+	let batch: String
+	let feedbacks: String
+	let profileImg: UIImage
+	let profileURL: String
+	let services: String
 }

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import CodableFirebase
 
 class CategoryDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	var blackView = UIView()
@@ -273,24 +274,32 @@ extension CategoryDetailVC {
 	func getProviders(){
 		
 		//Selecting the specific provider account
-		ref = Database.database().reference().child("providers").child("a12312312jqouhe9u")
+		ref = Database.database().reference().child("providers").child("a12312312jqouhe9u").child("account").child("info")
 		self.ref.observe(.value, with: { (snapshot) in
-			let snap = snapshot.value as? NSDictionary
+			guard let snap = snapshot.value else {return}
 			
-			//UID Filter firebase database per provider
-			let account = snap?["account"] as? [String:Any]
-			let info = account?["info"] as? [String:Any]
-			print("snapshot:\(account)")
-			let feedbacks = snap?["feedbacks"] as? [String:Any]
-			print("number of feedbacks \(feedbacks?.count)")
-			let timeBlocks = snap?["timeBlock"] as? [String:Any]
-			print("number of services \(timeBlocks?.count)")
-			
-			
+			do{
+				
+				let dataCard = try FirebaseDecoder().decode(ProviderCard.self, from: snap)
+				print("dataCard \(dataCard)")
+				
+			} catch let error {
+				print(error)
+			}
 			
 		}) { (error) in
 			print("error")
 		}
 		
 	}
+}
+
+struct ProviderCard: Codable {
+	let name: String
+	let batch: String
+	let experience: String
+	let about: String
+	let price: String
+	let rate: String
+	let profileImg:String
 }
